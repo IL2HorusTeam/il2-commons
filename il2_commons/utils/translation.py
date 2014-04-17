@@ -16,7 +16,9 @@ except ImportError:
         return gettext(message)
 
     def ugettext(message):
-        return unicode(gettext(message))
+        from six import PY2
+        result = gettext(message)
+        return unicode(result) if PY2 else result
 
     def ugettext_lazy(message):
         return ugettext(message)

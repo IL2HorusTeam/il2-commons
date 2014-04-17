@@ -5,3 +5,4 @@
 #     pip install -r requirements.pip
 
 candv==1.0.0
+six==1.6.1
