@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
-from candv import Values, VerboseValueConstant
+from candv import Values, ValueConstant, VerboseValueConstant
 
 from il2_commons.utils.translation import ugettext_lazy as _
 
 
-# TODO: add game versions
+class GameVersion(Values):
+    v4_12 = ValueConstant('4.12')
+    v4_12_1 = ValueConstant('4.12.1')
+    v4_12_2 = ValueConstant('4.12.2')
 
 
 class Skill(Values):
