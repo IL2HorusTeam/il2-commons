@@ -4,6 +4,9 @@ from candv import Values, VerboseValueConstant
 from il2_commons.utils.translation import ugettext_lazy as _
 
 
+# TODO: add game versions
+
+
 class Skill(Values):
     rookie = VerboseValueConstant(0, _("rookie"))
     average = VerboseValueConstant(1, _("average"))
