@@ -196,6 +196,10 @@ class AirForces(Values):
         help_text=_("Workers-Peasants Red Army Air Forces"))
 
     @classmethod
+    def get_squadron_prefixes(cls):
+        return map(lambda x: x.default_squadron_prefix, cls.iterconstants())
+
+    @classmethod
     def get_by_squadron_prefix(cls, prefix):
         for constant in cls.iterconstants():
             if constant.default_squadron_prefix == prefix:
@@ -253,3 +257,72 @@ class Regiment(object):
                     start = len(self.code_name)
                     return line[start:].strip().decode("unicode_escape")
         return ''
+
+
+class Regiments(object):
+
+    _cache = {}
+    _file_name = 'regiments.ini'
+
+    def __new__(cls):
+        raise TypeError("'{0}' may not be instantiated".format(cls.__name__))
+
+    @classmethod
+    def get_by_code_name(cls, code_name):
+        if code_name in cls._cache:
+            return cls._cache[code_name]
+
+        squadron_prefixes = AirForces.get_squadron_prefixes()
+        last_squadron_prefix = None
+
+        file_path = _get_data_file_path(cls._file_name)
+        with open(file_path) as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                if line in squadron_prefixes:
+                    last_squadron_prefix = line
+                    continue
+                if line == code_name:
+                    break
+
+        if last_squadron_prefix:
+            airforce = AirForces.get_by_squadron_prefix(last_squadron_prefix)
+            regiment = Regiment(airforce, code_name)
+            cls._cache[code_name] = regiment
+            return regiment
+
+        raise ValueError(
+            "Regiment with code name '{0}' is unknown".format(code_name))
+
+    @classmethod
+    def filter_by_airforce(cls, airforce):
+        result = []
+
+        squadron_prefixes = AirForces.get_squadron_prefixes()
+        found = False
+
+        file_path = _get_data_file_path(cls._file_name)
+        with open(file_path) as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                if line == airforce.default_squadron_prefix:
+                    # Flag that proper section was found.
+                    found = True
+                    continue
+                if found:
+                    if line in squadron_prefixes:
+                        # Next section was found. Fullstop.
+                        break
+
+                    if line in cls._cache:
+                        regiment = cls._cache[line]
+                    else:
+                        regiment = Regiment(airforce, line)
+                        cls._cache[line] = regiment
+
+                    result.append(regiment)
+        return result
