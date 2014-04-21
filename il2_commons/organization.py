@@ -224,9 +224,9 @@ class Regiment(object):
         self.airforce = airforce
         self.code_name = code_name
 
-    def __getattr__(self, name):
+    def __getattribute__(self, name):
         if not name.startswith('verbose_name_'):
-            return super(Regiment, self).__getattr__(name)
+            return super(Regiment, self).__getattribute__(name)
 
         start = name.rindex('_') + 1
         language_code = name[start:]
