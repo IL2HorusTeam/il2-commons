@@ -43,6 +43,7 @@ class Countries(Values):
     de = Country(Belligerents.blue, _("Germany"))
     hu = Country(Belligerents.blue, _("Hungary"))
     jp = Country(Belligerents.blue, _("Japan"))
+    it = Country(Belligerents.blue, _("Italy"))
     nl = Country(Belligerents.red, _("Netherlands"))
     nz = Country(Belligerents.red, _("New Zealand"))
     pl = Country(Belligerents.red, _("Poland"))
@@ -116,6 +117,12 @@ class AirForces(Values):
         value='pl',
         verbose_name=_("PAF"),
         help_text=_("Polish Air Force"))
+    rai = AirForce(
+        country=Countries.it,
+        default_squadron_prefix='i01',
+        value='it',
+        verbose_name=_("RAI"),
+        help_text=_("Regia Aeronautica Italiana"))
     raaf = AirForce(
         country=Countries.au,
         default_squadron_prefix='RA_NN',
