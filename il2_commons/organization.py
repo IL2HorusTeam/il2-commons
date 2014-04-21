@@ -314,7 +314,8 @@ class Regiments(object):
                     found = True
                     continue
                 if found:
-                    if line in squadron_prefixes:
+                    if line in squadron_prefixes or (line.startswith('[') and
+                                                     line.endswith(']')):
                         # Next section was found. Fullstop.
                         break
 
