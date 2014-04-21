@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
+import os
+
 from candv import Values, VerboseConstant, VerboseValueConstant
 
+from il2_commons import SUPPORTED_LANGUAGES
 from il2_commons.utils.translation import ugettext_lazy as _
 
 
@@ -193,6 +196,14 @@ class AirForces(Values):
         help_text=_("Workers-Peasants Red Army Air Forces"))
 
     @classmethod
+    def get_by_squadron_prefix(cls, prefix):
+        for constant in cls.iterconstants():
+            if constant.default_squadron_prefix == prefix:
+                return constant
+        raise ValueError("Airforce with prefix '{0}' is not present in '{1}'"
+                         .format(prefix, cls.__name__))
+
+    @classmethod
     def filter_by_country(cls, country):
         return filter(lambda x: x.country == country, cls.constants())
 
@@ -200,3 +211,42 @@ class AirForces(Values):
     def filter_by_belligerent(cls, belligerent):
         return filter(lambda x: x.country.belligerent == belligerent,
                       cls.constants())
+
+
+def _get_data_file_path(file_name):
+    root = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(root, 'data', file_name)
+
+
+class Regiment(object):
+
+    def __init__(self, airforce, code_name):
+        self.airforce = airforce
+        self.code_name = code_name
+
+    def __getattr__(self, name):
+        if not name.startswith('verbose_name_'):
+            return super(Regiment, self).__getattr__(name)
+
+        start = name.rindex('_') + 1
+        language_code = name[start:]
+        if not language_code in SUPPORTED_LANGUAGES:
+            raise ValueError(
+                "Verbose name for '{0}' language is not available. "
+                "Supported languages: {1}.".format(
+                language_code, ', '.join(SUPPORTED_LANGUAGES)))
+
+        value = self._get_verbose_name(language_code)
+        setattr(self, name, value)
+        return value
+
+    def _get_verbose_name(self, language_code):
+        file_name = "regShort_{0}.properties".format(language_code)
+        file_path = _get_data_file_path(file_name)
+
+        with open(file_path) as f:
+            for line in f:
+                if line.startswith(self.code_name):
+                    start = len(self.code_name)
+                    return line[start:].strip().decode("unicode_escape")
+        return ''

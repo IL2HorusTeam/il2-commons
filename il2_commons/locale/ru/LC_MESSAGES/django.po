@@ -1,0 +1,496 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-21 12:46+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: __init__.py:14
+msgid "rookie"
+msgstr ""
+
+#: __init__.py:15
+msgid "average"
+msgstr ""
+
+#: __init__.py:16
+msgid "veteran"
+msgstr ""
+
+#: __init__.py:17
+msgid "ace"
+msgstr ""
+
+#: flight.py:8
+msgid "echelon right"
+msgstr ""
+
+#: flight.py:9
+msgid "echelon left"
+msgstr ""
+
+#: flight.py:10
+msgid "rank"
+msgstr ""
+
+#: flight.py:11
+msgid "line abreast"
+msgstr ""
+
+#: flight.py:12
+msgid "line asteam"
+msgstr ""
+
+#: flight.py:13
+msgid "vic"
+msgstr ""
+
+#: flight.py:14
+msgid "finger four"
+msgstr ""
+
+#: flight.py:15
+msgid "diamond"
+msgstr ""
+
+#: flight.py:19
+msgid "takeoff (normal)"
+msgstr ""
+
+#: flight.py:20
+msgid "takeoff (pair)"
+msgstr ""
+
+#: flight.py:21
+msgid "takeoff (in line)"
+msgstr ""
+
+#: flight.py:23
+msgid "taxiing"
+msgstr ""
+
+#: flight.py:25
+msgid "normal fly"
+msgstr ""
+
+#: flight.py:27
+msgid "patrol (triangle)"
+msgstr ""
+
+#: flight.py:28
+msgid "patrol (square)"
+msgstr ""
+
+#: flight.py:29
+msgid "patrol (pentagon)"
+msgstr ""
+
+#: flight.py:30
+msgid "patrol (hexagon)"
+msgstr ""
+
+#: flight.py:31
+msgid "patrol (random)"
+msgstr ""
+
+#: flight.py:33
+msgid "landing (on left)"
+msgstr ""
+
+#: flight.py:34
+msgid "landing (on right)"
+msgstr ""
+
+#: flight.py:35
+msgid "landing (short on left)"
+msgstr ""
+
+#: flight.py:36
+msgid "landing (short on right)"
+msgstr ""
+
+#: flight.py:37
+msgid "landing (straight)"
+msgstr ""
+
+#: targets.py:8
+msgid "destroy"
+msgstr ""
+
+#: targets.py:9
+msgid "destroy bridge"
+msgstr ""
+
+#: targets.py:10
+msgid "destroy area"
+msgstr ""
+
+#: targets.py:11
+msgid "recon"
+msgstr ""
+
+#: targets.py:12
+msgid "escort"
+msgstr ""
+
+#: targets.py:13
+msgid "cover"
+msgstr ""
+
+#: targets.py:14
+msgid "cover area"
+msgstr ""
+
+#: targets.py:15
+msgid "cover bridge"
+msgstr ""
+
+#: targets.py:19
+msgid "primary"
+msgstr ""
+
+#: targets.py:20
+msgid "secondary"
+msgstr ""
+
+#: targets.py:21
+msgid "hidden"
+msgstr ""
+
+#: weather.py:8
+msgid "clear"
+msgstr ""
+
+#: weather.py:9
+msgid "good"
+msgstr ""
+
+#: weather.py:10
+msgid "hazy"
+msgstr ""
+
+#: weather.py:11
+msgid "poor"
+msgstr ""
+
+#: weather.py:12
+msgid "blind"
+msgstr ""
+
+#: weather.py:13
+msgid "rain or snow"
+msgstr ""
+
+#: weather.py:14
+msgid "thunderstorm"
+msgstr ""
+
+#: weather.py:18 weather.py:25
+msgid "none"
+msgstr ""
+
+#: weather.py:19 weather.py:26
+msgid "low"
+msgstr ""
+
+#: weather.py:20 weather.py:27
+msgid "moderate"
+msgstr ""
+
+#: weather.py:21 weather.py:28
+msgid "strong"
+msgstr ""
+
+#: weather.py:29
+msgid "very strong"
+msgstr ""
+
+#: organization/__init__.py:8
+msgid "neutral"
+msgstr ""
+
+#: organization/__init__.py:9
+msgid "allies"
+msgstr ""
+
+#: organization/__init__.py:10
+msgid "axis"
+msgstr ""
+
+#: organization/__init__.py:11
+msgid "green"
+msgstr ""
+
+#: organization/__init__.py:12
+msgid "gold"
+msgstr ""
+
+#: organization/__init__.py:13
+msgid "purple"
+msgstr ""
+
+#: organization/__init__.py:14
+msgid "aqua"
+msgstr ""
+
+#: organization/__init__.py:15
+msgid "maroon"
+msgstr ""
+
+#: organization/__init__.py:16
+msgid "navy"
+msgstr ""
+
+#: organization/__init__.py:17
+msgid "emerald"
+msgstr ""
+
+#: organization/__init__.py:18
+msgid "olive"
+msgstr ""
+
+#: organization/__init__.py:19
+msgid "magenta"
+msgstr ""
+
+#: organization/__init__.py:20
+msgid "teal"
+msgstr ""
+
+#: organization/__init__.py:21
+msgid "orange"
+msgstr ""
+
+#: organization/__init__.py:22
+msgid "turquoise"
+msgstr ""
+
+#: organization/__init__.py:23
+msgid "brown"
+msgstr ""
+
+#: organization/__init__.py:24
+msgid "salad"
+msgstr ""
+
+#: organization/__init__.py:42
+msgid "Australia"
+msgstr ""
+
+#: organization/__init__.py:43
+msgid "Finland"
+msgstr ""
+
+#: organization/__init__.py:44
+msgid "France"
+msgstr ""
+
+#: organization/__init__.py:45
+msgid "Germany"
+msgstr ""
+
+#: organization/__init__.py:46
+msgid "Hungary"
+msgstr ""
+
+#: organization/__init__.py:47
+msgid "Japan"
+msgstr ""
+
+#: organization/__init__.py:48
+msgid "Italy"
+msgstr ""
+
+#: organization/__init__.py:49
+msgid "Netherlands"
+msgstr ""
+
+#: organization/__init__.py:50
+msgid "New Zealand"
+msgstr ""
+
+#: organization/__init__.py:51
+msgid "Poland"
+msgstr ""
+
+#: organization/__init__.py:52
+msgid "Romania"
+msgstr ""
+
+#: organization/__init__.py:53
+msgid "Slovakia"
+msgstr ""
+
+#: organization/__init__.py:54
+msgid "Soviet Union"
+msgstr ""
+
+#: organization/__init__.py:55
+msgid "United Kingdom"
+msgstr ""
+
+#: organization/__init__.py:56
+msgid "United States"
+msgstr ""
+
+#: organization/__init__.py:85
+msgid "ALA"
+msgstr ""
+
+#: organization/__init__.py:86
+msgid "Army of the Air"
+msgstr ""
+
+#: organization/__init__.py:91
+msgid "FAF"
+msgstr ""
+
+#: organization/__init__.py:92
+msgid "Finnish Air Force"
+msgstr ""
+
+#: organization/__init__.py:97
+msgid "FAR"
+msgstr ""
+
+#: organization/__init__.py:98
+msgid "Romanian Air Force"
+msgstr ""
+
+#: organization/__init__.py:103
+msgid "HAF"
+msgstr ""
+
+#: organization/__init__.py:104
+msgid "Hungarian Air Force"
+msgstr ""
+
+#: organization/__init__.py:109
+msgid "Luftwaffe"
+msgstr ""
+
+#: organization/__init__.py:114
+msgid "IJA"
+msgstr ""
+
+#: organization/__init__.py:115
+msgid "Imperial Japanese Army"
+msgstr ""
+
+#: organization/__init__.py:120
+msgid "IJN"
+msgstr ""
+
+#: organization/__init__.py:121
+msgid "Imperial Japanese Navy"
+msgstr ""
+
+#: organization/__init__.py:126
+msgid "PAF"
+msgstr ""
+
+#: organization/__init__.py:127
+msgid "Polish Air Force"
+msgstr ""
+
+#: organization/__init__.py:132
+msgid "RAI"
+msgstr ""
+
+#: organization/__init__.py:133
+msgid "Regia Aeronautica Italiana"
+msgstr ""
+
+#: organization/__init__.py:138
+msgid "RAAF"
+msgstr ""
+
+#: organization/__init__.py:139
+msgid "Royal Australian Air Force"
+msgstr ""
+
+#: organization/__init__.py:144
+msgid "RAF"
+msgstr ""
+
+#: organization/__init__.py:145
+msgid "Royal Air Force"
+msgstr ""
+
+#: organization/__init__.py:150
+msgid "RN"
+msgstr ""
+
+#: organization/__init__.py:151
+msgid "Royal Navy"
+msgstr ""
+
+#: organization/__init__.py:156
+msgid "RNLAF"
+msgstr ""
+
+#: organization/__init__.py:157
+msgid "Royal Netherlands Air Force"
+msgstr ""
+
+#: organization/__init__.py:162
+msgid "RNZAF"
+msgstr ""
+
+#: organization/__init__.py:163
+msgid "Royal New Zealand Air Force"
+msgstr ""
+
+#: organization/__init__.py:168
+msgid "SAF"
+msgstr ""
+
+#: organization/__init__.py:169
+msgid "Slovak Air Force"
+msgstr ""
+
+#: organization/__init__.py:174
+msgid "USAAF"
+msgstr ""
+
+#: organization/__init__.py:175
+msgid "United States Army Air Forces"
+msgstr ""
+
+#: organization/__init__.py:180
+msgid "USMC"
+msgstr ""
+
+#: organization/__init__.py:181
+msgid "United States Marine Corps"
+msgstr ""
+
+#: organization/__init__.py:186
+msgid "USN"
+msgstr ""
+
+#: organization/__init__.py:187
+msgid "United States Navy"
+msgstr ""
+
+#: organization/__init__.py:192
+msgid "VVS RKKA"
+msgstr ""
+
+#: organization/__init__.py:193
+msgid "Workers-Peasants Red Army Air Forces"
+msgstr ""
