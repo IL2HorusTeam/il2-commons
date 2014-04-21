@@ -1,10 +1,17 @@
 # -*- coding: utf-8 -*-
-from candv import Values, ValueConstant, VerboseValueConstant
+from candv import (SimpleConstant, Constants, Values, ValueConstant,
+    VerboseValueConstant, )
 
 from il2_commons.utils.translation import ugettext_lazy as _
 
 
-SUPPORTED_LANGUAGES = ('en', 'ru', )
+class SupportedLanguages(Constants):
+    en = SimpleConstant()
+    ru = SimpleConstant()
+
+    @classmethod
+    def get_default(cls):
+        return cls.en
 
 
 class GameVersion(Values):

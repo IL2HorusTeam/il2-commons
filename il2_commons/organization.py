@@ -3,7 +3,7 @@ import os
 
 from candv import Values, VerboseConstant, VerboseValueConstant
 
-from il2_commons import SUPPORTED_LANGUAGES
+from il2_commons import SupportedLanguages
 from il2_commons.utils.translation import ugettext_lazy as _
 
 
@@ -230,13 +230,16 @@ class Regiment(object):
 
         start = name.rindex('_') + 1
         language_code = name[start:]
-        if not language_code in SUPPORTED_LANGUAGES:
-            raise ValueError(
-                "Verbose name for '{0}' language is not available. "
-                "Supported languages: {1}.".format(
-                language_code, ', '.join(SUPPORTED_LANGUAGES)))
+        default_language_code = SupportedLanguages.get_default().name
+
+        if not SupportedLanguages.contains(language_code):
+            language_code = default_language_code
 
         value = self._get_verbose_name(language_code)
+        if not value and language_code != default_language_code:
+            default_name = 'verbose_name_{0}'.format(default_language_code)
+            value = getattr(self, default_name)
+
         setattr(self, name, value)
         return value
 
