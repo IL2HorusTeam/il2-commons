@@ -27,8 +27,8 @@ class Belligerents(Values):
 class Country(VerboseConstant):
 
     def __init__(self, belligerent, verbose_name=None, help_text=None):
-        super(VerboseValueConstant, self).__init__(verbose_name=verbose_name,
-                                                   help_text=help_text)
+        super(Country, self).__init__(verbose_name=verbose_name,
+                                      help_text=help_text)
         self.belligerent = belligerent
 
     def merge_into_group(self, group):
@@ -37,6 +37,8 @@ class Country(VerboseConstant):
 
 
 class Countries(Values):
+    constant_class = Country
+
     au = Country(Belligerents.red, _("Australia"))
     fi = Country(Belligerents.blue, _("Finland"))
     fr = Country(Belligerents.red, _("France"))
@@ -51,15 +53,19 @@ class Countries(Values):
     sk = Country(Belligerents.blue, _("Slovakia"))
     su = Country(Belligerents.red, _("Soviet Union"))
     uk = Country(Belligerents.red, _("United Kingdom"))
+    us = Country(Belligerents.red, _("United States"))
+
+    @classmethod
+    def filter_by_belligerent(cls, belligerent):
+        return filter(lambda x: x.belligerent == belligerent, cls.constants())
 
 
 class AirForce(VerboseValueConstant):
 
     def __init__(self, country, default_squadron_prefix, value,
                  verbose_name=None, help_text=None):
-        super(VerboseValueConstant, self).__init__(value,
-                                                   verbose_name=verbose_name,
-                                                   help_text=help_text)
+        super(AirForce, self).__init__(value, verbose_name=verbose_name,
+                                              help_text=help_text)
         self.country = country
         self.default_squadron_prefix = default_squadron_prefix
 
@@ -70,6 +76,8 @@ class AirForce(VerboseValueConstant):
 
 
 class AirForces(Values):
+    constant_class = AirForce
+
     ala = AirForce(
         country=Countries.fr,
         default_squadron_prefix='fr01',
@@ -183,3 +191,12 @@ class AirForces(Values):
         value='ru',
         verbose_name=_("VVS RKKA"),
         help_text=_("Workers-Peasants Red Army Air Forces"))
+
+    @classmethod
+    def filter_by_country(cls, country):
+        return filter(lambda x: x.country == country, cls.constants())
+
+    @classmethod
+    def filter_by_belligerent(cls, belligerent):
+        return filter(lambda x: x.country.belligerent == belligerent,
+                      cls.constants())
