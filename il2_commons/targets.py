@@ -4,7 +4,7 @@ from candv import Values, VerboseValueConstant
 from il2_commons.utils.translation import ugettext_lazy as _
 
 
-class TargetType(Values):
+class TargetTypes(Values):
     destroy = VerboseValueConstant(0, _("destroy"))
     destroy_bridge = VerboseValueConstant(1, _("destroy bridge"))
     destroy_area = VerboseValueConstant(2, _("destroy area"))
@@ -15,7 +15,7 @@ class TargetType(Values):
     cover_bridge = VerboseValueConstant(7, _("cover bridge"))
 
 
-class TargetPriority(Values):
+class TargetPriorities(Values):
     primary = VerboseValueConstant(0, _("primary"))
     secondary = VerboseValueConstant(1, _("secondary"))
     hidden = VerboseValueConstant(2, _("hidden"))
