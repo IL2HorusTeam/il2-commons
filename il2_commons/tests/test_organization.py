@@ -45,16 +45,12 @@ class CountriesTestCase(unittest.TestCase):
         self.assertEqual(FOO.bar.names(), ['qux', ])
 
     def test_filter_by_belligerent(self):
-        self.assertEqual(Countries.filter_by_belligerent(Belligerents.none), [])
-        self.assertEqual(Countries.filter_by_belligerent(Belligerents.red),
-                         [Countries.au,
-                          Countries.fr,
-                          Countries.nl,
-                          Countries.nz,
-                          Countries.pl,
-                          Countries.su,
-                          Countries.uk,
-                          Countries.us, ])
+        self.assertEqual(
+            list(Countries.filter_by_belligerent(Belligerents.none)), [])
+        self.assertEqual(
+            list(Countries.filter_by_belligerent(Belligerents.red)),
+            [Countries.au, Countries.fr, Countries.nl, Countries.nz,
+             Countries.pl, Countries.su, Countries.uk, Countries.us, ])
 
 
 class AirForcesTestCase(unittest.TestCase):
@@ -77,7 +73,7 @@ class AirForcesTestCase(unittest.TestCase):
         self.assertEqual(FOO.bar.names(), ['qux', ])
 
     def test_get_squadron_prefixes(self):
-        self.assertEqual(AirForces.get_squadron_prefixes(),
+        self.assertEqual(list(AirForces.get_squadron_prefixes()),
                          ['fr01', 'f01', 'ro01', 'h01', 'g01', 'ja01', 'IN_NN',
                           'pl01', 'i01', 'RA_NN', 'gb01', 'RN_NN', 'DU_NN',
                           'RZ_NN', 'sk01', 'usa01', 'UM_NN', 'UN_NN', 'r01', ])
@@ -88,15 +84,20 @@ class AirForcesTestCase(unittest.TestCase):
         self.assertRaises(ValueError, AirForces.get_by_squadron_prefix, 'foo')
 
     def test_filter_by_country(self):
-        self.assertEqual(AirForces.filter_by_country(Countries.su),
+        self.assertEqual(list(AirForces.filter_by_country(Countries.su)),
                          [AirForces.vvs_rkka, ])
-        self.assertEqual(AirForces.filter_by_country(Countries.us),
+        self.assertEqual(list(AirForces.filter_by_country(Countries.us)),
                          [AirForces.usaaf, AirForces.usmc, AirForces.usn, ])
 
     def test_filter_by_belligerent(self):
-        self.assertEqual(AirForces.filter_by_belligerent(Belligerents.none), [])
-        self.assertEqual(AirForces.filter_by_belligerent(Belligerents.red),
-                         [AirForces.ala, AirForces.paf, AirForces.raaf,
-                          AirForces.raf, AirForces.rn, AirForces.rnlaf,
-                          AirForces.rnzaf, AirForces.usaaf, AirForces.usmc,
-                          AirForces.usn, AirForces.vvs_rkka, ])
+        self.assertEqual(
+            list(AirForces.filter_by_belligerent(Belligerents.none)), [])
+        self.assertEqual(
+            list(AirForces.filter_by_belligerent(Belligerents.red)),
+            [AirForces.ala, AirForces.paf, AirForces.raaf, AirForces.raf,
+             AirForces.rn, AirForces.rnlaf, AirForces.rnzaf, AirForces.usaaf,
+             AirForces.usmc, AirForces.usn, AirForces.vvs_rkka, ])
+
+
+class RegimentTestCase(unittest.TestCase):
+    pass
