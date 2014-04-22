@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from candv import (SimpleConstant, Constants, Values, ValueConstant,
-    VerboseValueConstant, )
+from candv import (
+    SimpleConstant, Constants, Values, ValueConstant, VerboseValueConstant, )
 
 from il2_commons.utils.translation import ugettext_lazy as _
 
@@ -14,13 +14,13 @@ class SupportedLanguages(Constants):
         return cls.en
 
 
-class GameVersion(Values):
+class GameVersions(Values):
     v4_12 = ValueConstant('4.12')
     v4_12_1 = ValueConstant('4.12.1')
     v4_12_2 = ValueConstant('4.12.2')
 
 
-class Skill(Values):
+class Skills(Values):
     rookie = VerboseValueConstant(0, _("rookie"))
     average = VerboseValueConstant(1, _("average"))
     veteran = VerboseValueConstant(2, _("veteran"))
