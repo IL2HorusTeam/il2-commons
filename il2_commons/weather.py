@@ -10,7 +10,7 @@ class Conditions(Values):
     hazy = VerboseValueConstant(2, _("hazy"))
     poor = VerboseValueConstant(3, _("poor"))
     blind = VerboseValueConstant(4, _("blind"))
-    rain_snow = VerboseValueConstant(5, _("rain or snow"))
+    precipitation = VerboseValueConstant(5, _("precipitation"))
     thunderstorm = VerboseValueConstant(6, _("thunderstorm"))
 
 
