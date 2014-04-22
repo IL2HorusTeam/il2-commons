@@ -254,7 +254,7 @@ class Regiment(object):
 
         with open(file_path) as f:
             for line in f:
-                if line.startswith(self.code_name):
+                if line.startswith(str(self.code_name)):
                     start = len(self.code_name)
                     return line[start:].strip().decode("unicode_escape")
         return ''

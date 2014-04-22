@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 import unittest
 
 from candv import Constants, SimpleConstant, Values
 
 from il2_commons.organization import (
-    Belligerents, Country, Countries, AirForce, AirForces, Regiments, )
+    Belligerents, Country, Countries, AirForce, AirForces, Regiment,
+    Regiments, )
 
 
 class BelligerentsTestCase(unittest.TestCase):
@@ -100,4 +103,29 @@ class AirForcesTestCase(unittest.TestCase):
 
 
 class RegimentTestCase(unittest.TestCase):
-    pass
+
+    def test_create_regiment(self):
+        r = Regiment(AirForces.vvs_rkka, 'foo')
+        self.assertEqual(r.air_force, AirForces.vvs_rkka)
+        self.assertEqual(r.code_name, 'foo')
+
+    def test_unknown_verbose_name(self):
+        r = Regiment(AirForces.vvs_rkka, 'foo')
+
+        self.assertEqual(r.verbose_name_en, "")
+        self.assertEqual(r.verbose_name_ru, "")
+        self.assertEqual(r.verbose_name_some, "")
+
+    def test_valid_verbose_name(self):
+        r = Regiment(AirForces.vvs_rkka, '1st_AE_1AR')
+
+        self.assertEqual(r.verbose_name_en, "OIR AE of 1st AG VVS")
+        self.assertEqual(r.verbose_name_ru, "ОИРАЭ 1-й АГ")
+        self.assertEqual(r.verbose_name_some, "OIR AE of 1st AG VVS")
+
+    def test_missing_translation(self):
+        r = Regiment(AirForces.usn, 'USN_VT_9B')
+
+        self.assertEqual(r.verbose_name_en, "VT-9, USS Essex CV-9")
+        self.assertEqual(r.verbose_name_ru, "VT-9, USS Essex CV-9")
+        self.assertEqual(r.verbose_name_some, "VT-9, USS Essex CV-9")
