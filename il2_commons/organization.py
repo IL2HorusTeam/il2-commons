@@ -67,8 +67,9 @@ class AirForce(VerboseValueConstant):
 
     def __init__(self, country, default_squadron_prefix, value,
                  verbose_name=None, help_text=None):
-        super(AirForce, self).__init__(value, verbose_name=verbose_name,
-                                              help_text=help_text)
+        super(AirForce, self).__init__(value,
+                                       verbose_name=verbose_name,
+                                       help_text=help_text)
         self.country = country
         self.default_squadron_prefix = default_squadron_prefix
 
@@ -94,7 +95,7 @@ class AirForces(Values):
         verbose_name=_("FAF"),
         help_text=_("Finnish Air Force"))
     far = AirForce(
-        country=Countries.nl,
+        country=Countries.ro,
         default_squadron_prefix='ro01',
         value='ro',
         verbose_name=_("FAR"),
@@ -224,8 +225,8 @@ def _get_data_file_path(file_name):
 
 class Regiment(object):
 
-    def __init__(self, airforce, code_name):
-        self.airforce = airforce
+    def __init__(self, air_force, code_name):
+        self.air_force = air_force
         self.code_name = code_name
 
     def __getattribute__(self, name):
@@ -288,8 +289,8 @@ class Regiments(object):
                     break
 
         if last_squadron_prefix:
-            airforce = AirForces.get_by_squadron_prefix(last_squadron_prefix)
-            regiment = Regiment(airforce, code_name)
+            air_force = AirForces.get_by_squadron_prefix(last_squadron_prefix)
+            regiment = Regiment(air_force, code_name)
             cls._cache[code_name] = regiment
             return regiment
 
@@ -297,7 +298,7 @@ class Regiments(object):
             "Regiment with code name '{0}' is unknown".format(code_name))
 
     @classmethod
-    def filter_by_airforce(cls, airforce):
+    def filter_by_air_force(cls, air_force):
         result = []
 
         squadron_prefixes = AirForces.get_squadron_prefixes()
@@ -309,7 +310,7 @@ class Regiments(object):
                 line = line.strip()
                 if not line:
                     continue
-                if line == airforce.default_squadron_prefix:
+                if line == air_force.default_squadron_prefix:
                     # Flag that proper section was found.
                     found = True
                     continue
@@ -322,7 +323,7 @@ class Regiments(object):
                     if line in cls._cache:
                         regiment = cls._cache[line]
                     else:
-                        regiment = Regiment(airforce, line)
+                        regiment = Regiment(air_force, line)
                         cls._cache[line] = regiment
 
                     result.append(regiment)
