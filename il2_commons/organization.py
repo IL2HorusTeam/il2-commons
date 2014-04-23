@@ -234,26 +234,51 @@ class Regiment(object):
         self.code_name = str(code_name)
 
     def __getattribute__(self, name):
-        if not name.startswith('verbose_name_'):
+        try:
             return super(Regiment, self).__getattribute__(name)
+        except AttributeError:
+            if name.startswith('verbose_name_'):
+                getter = self._get_verbose_name
+                default_name_prefix = 'verbose_name'
+            elif name.startswith('help_text_'):
+                getter = self._get_help_text
+                default_name_prefix = 'help_text'
+            else:
+                raise
 
+        # Get language code
         start = name.rindex('_') + 1
         language_code = name[start:]
-        default_language_code = SupportedLanguages.get_default().name
 
+        if not language_code:
+            raise AttributeError("'{0}' object has no attribute '{1}'".format(
+                                 self.__class__.__name__, name))
+
+        # Check language code is known
+        default_language_code = SupportedLanguages.get_default().name
         if not SupportedLanguages.contains(language_code):
             language_code = default_language_code
 
-        value = self._get_verbose_name(language_code)
+        # Try to get value for specified language or for default language
+        value = getter(language_code)
         if not value and language_code != default_language_code:
-            default_name = 'verbose_name_{0}'.format(default_language_code)
+            default_name = '{0}_{1}'.format(default_name_prefix,
+                                            default_language_code)
             value = getattr(self, default_name)
 
+        # Add missing attribute to object
         setattr(self, name, value)
         return value
 
     def _get_verbose_name(self, language_code):
         file_name = "regShort_{0}.properties".format(language_code)
+        return self._get_text(language_code, file_name)
+
+    def _get_help_text(self, language_code):
+        file_name = "regInfo_{0}.properties".format(language_code)
+        return self._get_text(language_code, file_name)
+
+    def _get_text(self, language_code, file_name):
         file_path = _get_data_file_path(file_name)
 
         with open(file_path, mode='r', encoding='cp1251') as f:

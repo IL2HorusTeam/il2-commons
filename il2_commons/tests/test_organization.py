@@ -123,12 +123,47 @@ class RegimentTestCase(unittest.TestCase):
         self.assertEqual(r.verbose_name_ru, "ОИРАЭ 1-й АГ")
         self.assertEqual(r.verbose_name_some, "OIR AE of 1st AG VVS")
 
-    def test_missing_translation(self):
+    def test_verbose_name_missing_translation(self):
         r = Regiment(AirForces.usn, 'USN_VT_9B')
 
         self.assertEqual(r.verbose_name_en, "VT-9, USS Essex CV-9")
         self.assertEqual(r.verbose_name_ru, "VT-9, USS Essex CV-9")
         self.assertEqual(r.verbose_name_some, "VT-9, USS Essex CV-9")
+
+    def test_unknown_help_text(self):
+        r = Regiment(AirForces.vvs_rkka, 'foo')
+
+        self.assertEqual(r.help_text_en, "")
+        self.assertEqual(r.help_text_ru, "")
+        self.assertEqual(r.help_text_some, "")
+
+    def test_valid_help_text(self):
+        r = Regiment(AirForces.vvs_rkka, '1st_AE_1AR')
+
+        self.assertEqual(r.help_text_en, "OIR AE of 1st AG VVS")
+        self.assertEqual(r.help_text_ru, "Отдельная Истребительно-Разведываетльния Авиаэскадрилья 1-й Авиагруппы")
+        self.assertEqual(r.help_text_some, "OIR AE of 1st AG VVS")
+
+    def test_help_text_missing_translation(self):
+        r = Regiment(AirForces.usn, 'USN_VT_9B')
+
+        self.assertEqual(r.help_text_en, "US Navy VT-9, USS Essex CV-9")
+        self.assertEqual(r.help_text_ru, "US Navy VT-9, USS Essex CV-9")
+        self.assertEqual(r.help_text_some, "US Navy VT-9, USS Essex CV-9")
+
+    def test_unknown_attributes(self):
+        r = Regiment(AirForces.usn, 'USN_VT_9B')
+
+        def _getattr(name):
+            return getattr(r, name)
+
+        self.assertRaises(AttributeError, _getattr, 'abracadabra')
+
+        self.assertRaises(AttributeError, _getattr, 'verbose_name')
+        self.assertRaises(AttributeError, _getattr, 'verbose_name_')
+
+        self.assertRaises(AttributeError, _getattr, 'help_text')
+        self.assertRaises(AttributeError, _getattr, 'help_text_')
 
 
 class RegimentsTestCase(unittest.TestCase):
