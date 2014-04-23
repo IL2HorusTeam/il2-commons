@@ -16,14 +16,14 @@ class Conditions(Values):
 
 class Gust(Values):
     none = VerboseValueConstant(0, _("none"))
-    low = VerboseValueConstant(1, _("low"))
-    moderate = VerboseValueConstant(2, _("moderate"))
-    strong = VerboseValueConstant(3, _("strong"))
+    low = VerboseValueConstant(1, _("low_gust"))
+    moderate = VerboseValueConstant(2, _("moderate_gust"))
+    strong = VerboseValueConstant(3, _("strong_gust"))
 
 
 class Turbulence(Values):
     none = VerboseValueConstant(0, _("none"))
-    low = VerboseValueConstant(1, _("low"))
-    moderate = VerboseValueConstant(2, _("moderate"))
-    strong = VerboseValueConstant(3, _("strong"))
-    very_strong = VerboseValueConstant(4, _("very strong"))
+    low = VerboseValueConstant(1, _("low_turbulence"))
+    moderate = VerboseValueConstant(2, _("moderate_turbulence"))
+    strong = VerboseValueConstant(3, _("strong_turbulence"))
+    very_strong = VerboseValueConstant(4, _("very_strong_turbulence"))

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-23 12:20+0300\n"
+"POT-Creation-Date: 2014-04-23 16:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -477,18 +477,30 @@ msgstr ""
 msgid "none"
 msgstr ""
 
-#: weather.py:19 weather.py:26
-msgid "low"
-msgstr ""
+#: weather.py:19
+msgid "low_gust"
+msgstr "low"
 
-#: weather.py:20 weather.py:27
-msgid "moderate"
-msgstr ""
+#: weather.py:20
+msgid "moderate_gust"
+msgstr "moderate"
 
-#: weather.py:21 weather.py:28
-msgid "strong"
-msgstr ""
+#: weather.py:21
+msgid "strong_gust"
+msgstr "strong"
+
+#: weather.py:26
+msgid "low_turbulence"
+msgstr "low"
+
+#: weather.py:27
+msgid "moderate_turbulence"
+msgstr "moderate"
+
+#: weather.py:28
+msgid "strong_turbulence"
+msgstr "strong"
 
 #: weather.py:29
-msgid "very strong"
-msgstr ""
+msgid "very_strong_turbulence"
+msgstr "very strong"
