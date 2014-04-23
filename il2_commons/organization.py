@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 import os
+import six
+
+if six.PY2:
+    from io import open
 
 from candv import Values, VerboseConstant, VerboseValueConstant
 
@@ -71,7 +75,7 @@ class AirForce(VerboseValueConstant):
                                        verbose_name=verbose_name,
                                        help_text=help_text)
         self.country = country
-        self.default_squadron_prefix = default_squadron_prefix
+        self.default_squadron_prefix = str(default_squadron_prefix)
 
     def merge_into_group(self, group):
         super(AirForce, self).merge_into_group(group)
@@ -227,7 +231,7 @@ class Regiment(object):
 
     def __init__(self, air_force, code_name):
         self.air_force = air_force
-        self.code_name = code_name
+        self.code_name = str(code_name)
 
     def __getattribute__(self, name):
         if not name.startswith('verbose_name_'):
@@ -252,11 +256,14 @@ class Regiment(object):
         file_name = "regShort_{0}.properties".format(language_code)
         file_path = _get_data_file_path(file_name)
 
-        with open(file_path) as f:
+        with open(file_path, mode='r', encoding='cp1251') as f:
             for line in f:
-                if line.startswith(str(self.code_name)):
+                if line.startswith(self.code_name):
                     start = len(self.code_name)
-                    return line[start:].strip().decode("unicode_escape")
+                    result = line[start:].strip()
+                    if six.PY3:
+                        result = bytes(result, 'ascii')
+                    return result.decode('unicode-escape')
         return ''
 
 
@@ -277,7 +284,7 @@ class Regiments(object):
         last_squadron_prefix = None
 
         file_path = _get_data_file_path(cls._file_name)
-        with open(file_path) as f:
+        with open(file_path, mode='r', encoding='cp1251') as f:
             for line in f:
                 line = line.strip()
                 if not line:
@@ -305,7 +312,7 @@ class Regiments(object):
         found = False
 
         file_path = _get_data_file_path(cls._file_name)
-        with open(file_path) as f:
+        with open(file_path, mode='r', encoding='cp1251') as f:
             for line in f:
                 line = line.strip()
                 if not line:
