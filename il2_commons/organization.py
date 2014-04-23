@@ -202,7 +202,10 @@ class AirForces(Values):
 
     @classmethod
     def get_squadron_prefixes(cls):
-        return map(lambda x: x.default_squadron_prefix, cls.iterconstants())
+        result = map(lambda x: x.default_squadron_prefix, cls.iterconstants())
+        if six.PY3:
+            result = list(result)
+        return result
 
     @classmethod
     def get_by_squadron_prefix(cls, prefix):
