@@ -129,3 +129,33 @@ class RegimentTestCase(unittest.TestCase):
         self.assertEqual(r.verbose_name_en, "VT-9, USS Essex CV-9")
         self.assertEqual(r.verbose_name_ru, "VT-9, USS Essex CV-9")
         self.assertEqual(r.verbose_name_some, "VT-9, USS Essex CV-9")
+
+
+class RegimentsTestCase(unittest.TestCase):
+
+    def test_create_regiments(self):
+
+        def create():
+            Regiments()
+
+        self.assertRaises(TypeError, create)
+
+    def test_get_by_code_name(self):
+        r = Regiments.get_by_code_name('1GvIAP')
+        self.assertEqual(r.air_force,  AirForces.vvs_rkka)
+
+        # test cache
+        r = Regiments.get_by_code_name('1GvIAP')
+
+    def test_get_by_code_name_invalid(self):
+        self.assertRaises(ValueError, Regiments.get_by_code_name, 'foo')
+
+    def test_filter_by_air_force(self):
+        regiments = Regiments.filter_by_air_force(AirForces.ala)
+        self.assertEquals(len(regiments), 1)
+
+        r = Regiments.get_by_code_name('NN')
+        self.assertEquals(regiments[0], r)
+
+        # test cache
+        regiments = Regiments.filter_by_air_force(AirForces.ala)

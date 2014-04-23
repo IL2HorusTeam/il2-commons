@@ -282,6 +282,7 @@ class Regiments(object):
 
         squadron_prefixes = AirForces.get_squadron_prefixes()
         last_squadron_prefix = None
+        found = False
 
         file_path = _get_data_file_path(cls._file_name)
         with open(file_path, mode='r', encoding='cp1251') as f:
@@ -293,9 +294,10 @@ class Regiments(object):
                     last_squadron_prefix = line
                     continue
                 if line == code_name:
+                    found = True
                     break
 
-        if last_squadron_prefix:
+        if found and last_squadron_prefix:
             air_force = AirForces.get_by_squadron_prefix(last_squadron_prefix)
             regiment = Regiment(air_force, code_name)
             cls._cache[code_name] = regiment
