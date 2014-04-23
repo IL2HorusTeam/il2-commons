@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-23 16:01+0300\n"
+"POT-Creation-Date: 2014-04-23 19:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: __init__.py:24
 msgid "rookie"
-msgstr ""
+msgstr "курсант"
 
 #: __init__.py:25
 msgid "average"
-msgstr ""
+msgstr "новичек"
 
 #: __init__.py:26
 msgid "veteran"
@@ -37,93 +37,93 @@ msgstr "ас"
 
 #: flight.py:8
 msgid "echelon right"
-msgstr ""
+msgstr "правый пеленг"
 
 #: flight.py:9
 msgid "echelon left"
-msgstr ""
+msgstr "левый пеленг"
 
 #: flight.py:10
-msgid "rank"
-msgstr ""
+msgid "line abreast"
+msgstr "шеренга"
 
 #: flight.py:11
-msgid "line abreast"
-msgstr ""
+msgid "line asteam"
+msgstr "колонна"
 
 #: flight.py:12
-msgid "line asteam"
-msgstr ""
+msgid "vic"
+msgstr "клин"
 
 #: flight.py:13
-msgid "vic"
-msgstr ""
+msgid "finger four"
+msgstr "4 пальца"
 
 #: flight.py:14
-msgid "finger four"
-msgstr ""
-
-#: flight.py:15
 msgid "diamond"
-msgstr ""
+msgstr "ромб"
 
-#: flight.py:22
+#: flight.py:21
 msgid "takeoff (normal)"
 msgstr "взлёт (нормальный)"
 
-#: flight.py:25
+#: flight.py:24
 msgid "takeoff (pair)"
 msgstr "взлёт (парой)"
 
-#: flight.py:28
+#: flight.py:27
 msgid "takeoff (in line)"
 msgstr "взлёт (в линию)"
 
-#: flight.py:33
+#: flight.py:32
 msgid "taxiing"
 msgstr "руление"
 
-#: flight.py:38
+#: flight.py:37
 msgid "normal fly"
 msgstr "нормальный полёт"
 
-#: flight.py:43
+#: flight.py:42
 msgid "patrol (triangle)"
 msgstr "патрулирование (треугольником)"
 
-#: flight.py:46
+#: flight.py:45
 msgid "patrol (square)"
 msgstr "патрулирование (квадратом)"
 
-#: flight.py:49
+#: flight.py:48
 msgid "patrol (pentagon)"
 msgstr "патрулирование (пятиугольником)"
 
-#: flight.py:52
+#: flight.py:51
 msgid "patrol (hexagon)"
 msgstr "патрулирование (шестиугольником)"
 
-#: flight.py:55
+#: flight.py:54
 msgid "patrol (random)"
 msgstr "патрулирование (произвольно)"
 
-#: flight.py:60
+#: flight.py:59
+msgid "artillery spotter"
+msgstr "артиллерийский корректировщик"
+
+#: flight.py:64
 msgid "landing (on left)"
 msgstr "посадка (слева)"
 
-#: flight.py:63
+#: flight.py:67
 msgid "landing (on right)"
 msgstr "посадка (справа)"
 
-#: flight.py:66
+#: flight.py:70
 msgid "landing (short on left)"
-msgstr "посадка (короткая слева)"
+msgstr "посадка (короткий слева)"
 
-#: flight.py:69
+#: flight.py:73
 msgid "landing (short on right)"
-msgstr "посадка (короткая справа)"
+msgstr "посадка (короткий справа)"
 
-#: flight.py:72
+#: flight.py:76
 msgid "landing (straight)"
 msgstr "посадка (по прямой)"
 
@@ -153,31 +153,31 @@ msgstr "фиолетовая"
 
 #: organization.py:21
 msgid "aqua"
-msgstr ""
+msgstr "лазурная"
 
 #: organization.py:22
 msgid "maroon"
-msgstr ""
+msgstr "бордовая"
 
 #: organization.py:23
 msgid "navy"
-msgstr ""
+msgstr "темно-синяя"
 
 #: organization.py:24
 msgid "emerald"
-msgstr ""
+msgstr "изумрудная"
 
 #: organization.py:25
 msgid "olive"
-msgstr ""
+msgstr "оливковая"
 
 #: organization.py:26
 msgid "magenta"
-msgstr ""
+msgstr "пурпурная"
 
 #: organization.py:27
 msgid "teal"
-msgstr ""
+msgstr "стальная"
 
 #: organization.py:28
 msgid "orange"
@@ -185,7 +185,7 @@ msgstr "оранжевая"
 
 #: organization.py:29
 msgid "turquoise"
-msgstr ""
+msgstr "бирюзовая"
 
 #: organization.py:30
 msgid "brown"
@@ -193,7 +193,7 @@ msgstr "коричневая"
 
 #: organization.py:31
 msgid "salad"
-msgstr ""
+msgstr "салатовая"
 
 #: organization.py:49
 msgid "Australia"
@@ -449,23 +449,23 @@ msgstr "скрытая"
 
 #: weather.py:8
 msgid "clear"
-msgstr ""
+msgstr "безоблачно"
 
 #: weather.py:9
 msgid "good"
-msgstr ""
+msgstr "ясно"
 
 #: weather.py:10
 msgid "hazy"
-msgstr ""
+msgstr "дымка"
 
 #: weather.py:11
 msgid "poor"
-msgstr ""
+msgstr "слабый туман"
 
 #: weather.py:12
 msgid "blind"
-msgstr ""
+msgstr "туман"
 
 #: weather.py:13
 msgid "precipitation"
@@ -477,7 +477,7 @@ msgstr "гроза"
 
 #: weather.py:18 weather.py:25
 msgid "none"
-msgstr "отсутствует"
+msgstr "нет"
 
 #: weather.py:19
 msgid "low_gust"

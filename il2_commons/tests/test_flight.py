@@ -8,9 +8,8 @@ class FlightTestCase(unittest.TestCase):
 
     def test_formations(self):
         data = [(x.name, x.value) for x in Formations.constants()]
-        self.assertEqual(data, [('echelon_right', 'F1'),
-                                ('echelon_left', 'F2'),
-                                ('rank', 'F3'),
+        self.assertEqual(data, [('echelon_right', 'F2'),
+                                ('echelon_left', 'F3'),
                                 ('line_abreast', 'F4'),
                                 ('line_asteam', 'F5'),
                                 ('vic', 'F6'),
@@ -31,6 +30,8 @@ class FlightTestCase(unittest.TestCase):
                                 ('patrol_pentagon', 'NORMFLY_403'),
                                 ('patrol_hexagon', 'NORMFLY_404'),
                                 ('patrol_random', 'NORMFLY_405'),
+
+                                ('artillery_spotter', 'NORMFLY_407'),
 
                                 ('landing_on_left', 'LANDING'),
                                 ('landing_on_right', 'LANDING_101'),

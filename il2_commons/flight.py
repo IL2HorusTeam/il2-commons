@@ -5,9 +5,8 @@ from il2_commons.utils.translation import ugettext_lazy as _
 
 
 class Formations(Values):
-    echelon_right = VerboseValueConstant('F1', _("echelon right"))
-    echelon_left = VerboseValueConstant('F2', _("echelon left"))
-    rank = VerboseValueConstant('F3', _("rank"))
+    echelon_right = VerboseValueConstant('F2', _("echelon right"))
+    echelon_left = VerboseValueConstant('F3', _("echelon left"))
     line_abreast = VerboseValueConstant('F4', _("line abreast"))
     line_asteam = VerboseValueConstant('F5', _("line asteam"))
     vic = VerboseValueConstant('F6', _("vic"))
@@ -53,6 +52,11 @@ class WaypointTypes(Values):
     patrol_random = VerboseValueConstant(
         'NORMFLY_405',
         _("patrol (random)"))
+
+    # Artillery spotter --------------------------------------------------------
+    artillery_spotter = VerboseValueConstant(
+        'NORMFLY_407',
+        _("artillery spotter"))
 
     # Langing ------------------------------------------------------------------
     landing_on_left = VerboseValueConstant(
