@@ -3,10 +3,13 @@ from candv import (
     SimpleConstant, Constants, Values, ValueConstant, VerboseValueConstant,
 )
 
-from il2fb.commons.utils.translation import ugettext_lazy as _
+from il2fb.commons.utils import translations
 
 
-class SupportedLanguages(Constants):
+_ = translations.ugettext_lazy
+
+
+class SUPPORTED_LANGUAGES(Constants):
     en = SimpleConstant()
     ru = SimpleConstant()
 
@@ -15,13 +18,13 @@ class SupportedLanguages(Constants):
         return cls.en
 
 
-class GameVersions(Values):
+class GAME_VERSIONS(Values):
     v4_12 = ValueConstant('4.12')
     v4_12_1 = ValueConstant('4.12.1')
     v4_12_2 = ValueConstant('4.12.2')
 
 
-class Skills(Values):
+class SKILLS(Values):
     rookie = VerboseValueConstant(0, _("rookie"))
     average = VerboseValueConstant(1, _("average"))
     veteran = VerboseValueConstant(2, _("veteran"))

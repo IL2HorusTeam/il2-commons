@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-23 19:02+0300\n"
+"POT-Creation-Date: 2014-07-19 11:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,490 +17,490 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:24
+#: __init__.py:28
 msgid "rookie"
 msgstr ""
 
-#: __init__.py:25
+#: __init__.py:29
 msgid "average"
 msgstr ""
 
-#: __init__.py:26
+#: __init__.py:30
 msgid "veteran"
 msgstr ""
 
-#: __init__.py:27
+#: __init__.py:31
 msgid "ace"
 msgstr ""
 
-#: flight.py:8
+#: flight.py:11
 msgid "echelon right"
 msgstr ""
 
-#: flight.py:9
+#: flight.py:12
 msgid "echelon left"
 msgstr ""
 
-#: flight.py:10
+#: flight.py:13
 msgid "line abreast"
 msgstr ""
 
-#: flight.py:11
+#: flight.py:14
 msgid "line asteam"
 msgstr ""
 
-#: flight.py:12
+#: flight.py:15
 msgid "vic"
 msgstr ""
 
-#: flight.py:13
+#: flight.py:16
 msgid "finger four"
 msgstr ""
 
-#: flight.py:14
+#: flight.py:17
 msgid "diamond"
 msgstr ""
 
-#: flight.py:21
+#: flight.py:24
 msgid "takeoff (normal)"
 msgstr ""
 
-#: flight.py:24
+#: flight.py:27
 msgid "takeoff (pair)"
 msgstr ""
 
-#: flight.py:27
+#: flight.py:30
 msgid "takeoff (in line)"
 msgstr ""
 
-#: flight.py:32
+#: flight.py:35
 msgid "taxiing"
 msgstr ""
 
-#: flight.py:37
+#: flight.py:40
 msgid "normal fly"
 msgstr ""
 
-#: flight.py:42
+#: flight.py:45
 msgid "patrol (triangle)"
 msgstr ""
 
-#: flight.py:45
+#: flight.py:48
 msgid "patrol (square)"
 msgstr ""
 
-#: flight.py:48
+#: flight.py:51
 msgid "patrol (pentagon)"
 msgstr ""
 
-#: flight.py:51
+#: flight.py:54
 msgid "patrol (hexagon)"
 msgstr ""
 
-#: flight.py:54
+#: flight.py:57
 msgid "patrol (random)"
 msgstr ""
 
-#: flight.py:59
+#: flight.py:62
 msgid "artillery spotter"
 msgstr ""
 
-#: flight.py:64
+#: flight.py:67
 msgid "landing (on left)"
 msgstr ""
 
-#: flight.py:67
+#: flight.py:70
 msgid "landing (on right)"
 msgstr ""
 
-#: flight.py:70
+#: flight.py:73
 msgid "landing (short on left)"
 msgstr ""
 
-#: flight.py:73
+#: flight.py:76
 msgid "landing (short on right)"
 msgstr ""
 
-#: flight.py:76
+#: flight.py:79
 msgid "landing (straight)"
 msgstr ""
 
-#: organization.py:15
+#: organization.py:18
 msgid "neutral"
 msgstr ""
 
-#: organization.py:16
+#: organization.py:19
 msgid "allies"
 msgstr ""
 
-#: organization.py:17
+#: organization.py:20
 msgid "axis"
 msgstr ""
 
-#: organization.py:18
+#: organization.py:21
 msgid "green"
 msgstr ""
 
-#: organization.py:19
+#: organization.py:22
 msgid "gold"
 msgstr ""
 
-#: organization.py:20
+#: organization.py:23
 msgid "purple"
 msgstr ""
 
-#: organization.py:21
+#: organization.py:24
 msgid "aqua"
 msgstr ""
 
-#: organization.py:22
+#: organization.py:25
 msgid "maroon"
 msgstr ""
 
-#: organization.py:23
+#: organization.py:26
 msgid "navy"
 msgstr ""
 
-#: organization.py:24
+#: organization.py:27
 msgid "emerald"
 msgstr ""
 
-#: organization.py:25
+#: organization.py:28
 msgid "olive"
 msgstr ""
 
-#: organization.py:26
+#: organization.py:29
 msgid "magenta"
 msgstr ""
 
-#: organization.py:27
+#: organization.py:30
 msgid "teal"
 msgstr ""
 
-#: organization.py:28
+#: organization.py:31
 msgid "orange"
 msgstr ""
 
-#: organization.py:29
+#: organization.py:32
 msgid "turquoise"
 msgstr ""
 
-#: organization.py:30
+#: organization.py:33
 msgid "brown"
 msgstr ""
 
-#: organization.py:31
+#: organization.py:34
 msgid "salad"
 msgstr ""
 
-#: organization.py:49
+#: organization.py:52
 msgid "Australia"
 msgstr ""
 
-#: organization.py:50
+#: organization.py:53
 msgid "Finland"
 msgstr ""
 
-#: organization.py:51
+#: organization.py:54
 msgid "France"
 msgstr ""
 
-#: organization.py:52
+#: organization.py:55
 msgid "Germany"
 msgstr ""
 
-#: organization.py:53
+#: organization.py:56
 msgid "Hungary"
 msgstr ""
 
-#: organization.py:54
+#: organization.py:57
 msgid "Japan"
 msgstr ""
 
-#: organization.py:55
+#: organization.py:58
 msgid "Italy"
 msgstr ""
 
-#: organization.py:56
+#: organization.py:59
 msgid "Netherlands"
 msgstr ""
 
-#: organization.py:57
+#: organization.py:60
 msgid "New Zealand"
 msgstr ""
 
-#: organization.py:58
+#: organization.py:61
 msgid "Poland"
 msgstr ""
 
-#: organization.py:59
+#: organization.py:62
 msgid "Romania"
 msgstr ""
 
-#: organization.py:60
+#: organization.py:63
 msgid "Slovakia"
 msgstr ""
 
-#: organization.py:61
+#: organization.py:64
 msgid "Soviet Union"
 msgstr ""
 
-#: organization.py:62
+#: organization.py:65
 msgid "United Kingdom"
 msgstr ""
 
-#: organization.py:63
+#: organization.py:66
 msgid "United States"
 msgstr ""
 
-#: organization.py:93
+#: organization.py:96
 msgid "ALA"
 msgstr ""
 
-#: organization.py:94
+#: organization.py:97
 msgid "Army of the Air"
 msgstr ""
 
-#: organization.py:99
+#: organization.py:102
 msgid "FAF"
 msgstr ""
 
-#: organization.py:100
+#: organization.py:103
 msgid "Finnish Air Force"
 msgstr ""
 
-#: organization.py:105
+#: organization.py:108
 msgid "FAR"
 msgstr ""
 
-#: organization.py:106
+#: organization.py:109
 msgid "Romanian Air Force"
 msgstr ""
 
-#: organization.py:111
+#: organization.py:114
 msgid "HAF"
 msgstr ""
 
-#: organization.py:112
+#: organization.py:115
 msgid "Hungarian Air Force"
 msgstr ""
 
-#: organization.py:117
+#: organization.py:120
 msgid "Luftwaffe"
 msgstr ""
 
-#: organization.py:122
+#: organization.py:125
 msgid "IJA"
 msgstr ""
 
-#: organization.py:123
+#: organization.py:126
 msgid "Imperial Japanese Army"
 msgstr ""
 
-#: organization.py:128
+#: organization.py:131
 msgid "IJN"
 msgstr ""
 
-#: organization.py:129
+#: organization.py:132
 msgid "Imperial Japanese Navy"
 msgstr ""
 
-#: organization.py:134
+#: organization.py:137
 msgid "PAF"
 msgstr ""
 
-#: organization.py:135
+#: organization.py:138
 msgid "Polish Air Force"
 msgstr ""
 
-#: organization.py:140
+#: organization.py:143
 msgid "RAI"
 msgstr ""
 
-#: organization.py:141
+#: organization.py:144
 msgid "Regia Aeronautica Italiana"
 msgstr ""
 
-#: organization.py:146
+#: organization.py:149
 msgid "RAAF"
 msgstr ""
 
-#: organization.py:147
+#: organization.py:150
 msgid "Royal Australian Air Force"
 msgstr ""
 
-#: organization.py:152
+#: organization.py:155
 msgid "RAF"
 msgstr ""
 
-#: organization.py:153
+#: organization.py:156
 msgid "Royal Air Force"
 msgstr ""
 
-#: organization.py:158
+#: organization.py:161
 msgid "RN"
 msgstr ""
 
-#: organization.py:159
+#: organization.py:162
 msgid "Royal Navy"
 msgstr ""
 
-#: organization.py:164
+#: organization.py:167
 msgid "RNLAF"
 msgstr ""
 
-#: organization.py:165
+#: organization.py:168
 msgid "Royal Netherlands Air Force"
 msgstr ""
 
-#: organization.py:170
+#: organization.py:173
 msgid "RNZAF"
 msgstr ""
 
-#: organization.py:171
+#: organization.py:174
 msgid "Royal New Zealand Air Force"
 msgstr ""
 
-#: organization.py:176
+#: organization.py:179
 msgid "SAF"
 msgstr ""
 
-#: organization.py:177
+#: organization.py:180
 msgid "Slovak Air Force"
 msgstr ""
 
-#: organization.py:182
+#: organization.py:185
 msgid "USAAF"
 msgstr ""
 
-#: organization.py:183
+#: organization.py:186
 msgid "United States Army Air Forces"
 msgstr ""
 
-#: organization.py:188
+#: organization.py:191
 msgid "USMC"
 msgstr ""
 
-#: organization.py:189
+#: organization.py:192
 msgid "United States Marine Corps"
 msgstr ""
 
-#: organization.py:194
+#: organization.py:197
 msgid "USN"
 msgstr ""
 
-#: organization.py:195
+#: organization.py:198
 msgid "United States Navy"
 msgstr ""
 
-#: organization.py:200
+#: organization.py:203
 msgid "VVS RKKA"
 msgstr ""
 
-#: organization.py:201
+#: organization.py:204
 msgid "Workers-Peasants Red Army Air Forces"
 msgstr ""
 
-#: targets.py:8
+#: targets.py:11
 msgid "destroy"
 msgstr ""
 
-#: targets.py:9
+#: targets.py:12
 msgid "destroy bridge"
 msgstr ""
 
-#: targets.py:10
+#: targets.py:13
 msgid "destroy area"
 msgstr ""
 
-#: targets.py:11
+#: targets.py:14
 msgid "recon"
 msgstr ""
 
-#: targets.py:12
+#: targets.py:15
 msgid "escort"
 msgstr ""
 
-#: targets.py:13
+#: targets.py:16
 msgid "cover"
 msgstr ""
 
-#: targets.py:14
+#: targets.py:17
 msgid "cover area"
 msgstr ""
 
-#: targets.py:15
+#: targets.py:18
 msgid "cover bridge"
 msgstr ""
 
-#: targets.py:19
+#: targets.py:22
 msgid "primary"
 msgstr ""
 
-#: targets.py:20
+#: targets.py:23
 msgid "secondary"
 msgstr ""
 
-#: targets.py:21
+#: targets.py:24
 msgid "hidden"
 msgstr ""
 
-#: weather.py:8
+#: weather.py:11
 msgid "clear"
 msgstr ""
 
-#: weather.py:9
+#: weather.py:12
 msgid "good"
 msgstr ""
 
-#: weather.py:10
+#: weather.py:13
 msgid "hazy"
 msgstr ""
 
-#: weather.py:11
+#: weather.py:14
 msgid "poor"
 msgstr ""
 
-#: weather.py:12
+#: weather.py:15
 msgid "blind"
 msgstr ""
 
-#: weather.py:13
+#: weather.py:16
 msgid "precipitation"
 msgstr ""
 
-#: weather.py:14
+#: weather.py:17
 msgid "thunderstorm"
 msgstr ""
 
-#: weather.py:18 weather.py:25
+#: weather.py:21 weather.py:28
 msgid "none"
 msgstr ""
 
-#: weather.py:19
+#: weather.py:22
 msgid "low_gust"
 msgstr "low"
 
-#: weather.py:20
+#: weather.py:23
 msgid "moderate_gust"
 msgstr "moderate"
 
-#: weather.py:21
+#: weather.py:24
 msgid "strong_gust"
 msgstr "strong"
 
-#: weather.py:26
+#: weather.py:29
 msgid "low_turbulence"
 msgstr "low"
 
-#: weather.py:27
+#: weather.py:30
 msgid "moderate_turbulence"
 msgstr "moderate"
 
-#: weather.py:28
+#: weather.py:31
 msgid "strong_turbulence"
 msgstr "strong"
 
-#: weather.py:29
+#: weather.py:32
 msgid "very_strong_turbulence"
 msgstr "very strong"

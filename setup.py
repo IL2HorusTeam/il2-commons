@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='il2fb-commons',
-    version='1.0.0',
+    version='0.9.0',
     description="Common helpers and data structures for projects related to"
                 "IL-2 Forgotten Battles",
     keywords=[
@@ -16,7 +16,6 @@ setup(
     author_email='oblovatniy@gmail.com',
     packages=[
         'il2fb.commons',
-        'il2fb.commons.utils',
     ],
     namespace_packages=[
         'il2fb',
@@ -25,7 +24,7 @@ setup(
         i.strip() for i in open("requirements.txt").readlines()
     ],
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
         'Natural Language :: English',

@@ -7,8 +7,11 @@ if six.PY2:
 
 from candv import Values, VerboseConstant, VerboseValueConstant
 
-from il2fb.commons import SupportedLanguages
-from il2fb.commons.utils.translation import ugettext_lazy as _
+from il2fb.commons import SUPPORTED_LANGUAGES
+from il2fb.commons.utils import translations
+
+
+_ = translations.ugettext_lazy
 
 
 class Belligerents(Values):
@@ -258,8 +261,8 @@ class Regiment(object):
                                  self.__class__.__name__, name))
 
         # Check language code is known
-        default_language_code = SupportedLanguages.get_default().name
-        if not SupportedLanguages.contains(language_code):
+        default_language_code = SUPPORTED_LANGUAGES.get_default().name
+        if not SUPPORTED_LANGUAGES.contains(language_code):
             language_code = default_language_code
 
         # Try to get value for specified language or for default language

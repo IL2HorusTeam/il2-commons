@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from candv import Values, VerboseValueConstant
 
-from il2fb.commons.utils.translation import ugettext_lazy as _
+from il2fb.commons.utils import translations
+
+
+_ = translations.ugettext_lazy
 
 
 class Formations(Values):
