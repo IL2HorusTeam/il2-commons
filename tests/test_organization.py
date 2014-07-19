@@ -6,31 +6,33 @@ import unittest
 from candv import Constants, SimpleConstant, Values
 
 from il2fb.commons.organization import (
-    Belligerents, Country, Countries, AirForce, AirForces, Regiment,
-    Regiments, )
+    Belligerents, Country, Countries, AirForce, AirForces, Regiment, Regiments,
+)
 
 
 class BelligerentsTestCase(unittest.TestCase):
 
     def test_belligerents(self):
         data = [(x.name, x.value) for x in Belligerents.constants()]
-        self.assertEqual(data, [('none', 0),
-                                ('red', 1),
-                                ('blue', 2),
-                                ('green', 3),
-                                ('gold', 4),
-                                ('purple', 5),
-                                ('aqua', 6),
-                                ('maroon', 7),
-                                ('navy', 8),
-                                ('emerald', 9),
-                                ('olive', 10),
-                                ('magenta', 11),
-                                ('teal', 12),
-                                ('orange', 13),
-                                ('turquoise', 14),
-                                ('brown', 15),
-                                ('salad', 16), ])
+        self.assertEqual(data, [
+            ('none', 0),
+            ('red', 1),
+            ('blue', 2),
+            ('green', 3),
+            ('gold', 4),
+            ('purple', 5),
+            ('aqua', 6),
+            ('maroon', 7),
+            ('navy', 8),
+            ('emerald', 9),
+            ('olive', 10),
+            ('magenta', 11),
+            ('teal', 12),
+            ('orange', 13),
+            ('turquoise', 14),
+            ('brown', 15),
+            ('salad', 16),
+        ])
 
 
 class CountriesTestCase(unittest.TestCase):
@@ -76,10 +78,13 @@ class AirForcesTestCase(unittest.TestCase):
         self.assertEqual(FOO.bar.names(), ['qux', ])
 
     def test_get_squadron_prefixes(self):
-        self.assertEqual(list(AirForces.get_squadron_prefixes()),
-                         ['fr01', 'f01', 'ro01', 'h01', 'g01', 'ja01', 'IN_NN',
-                          'pl01', 'i01', 'RA_NN', 'gb01', 'RN_NN', 'DU_NN',
-                          'RZ_NN', 'sk01', 'usa01', 'UM_NN', 'UN_NN', 'r01', ])
+        self.assertEqual(
+            list(AirForces.get_squadron_prefixes()),
+            [
+                'fr01', 'f01', 'ro01', 'h01', 'g01', 'ja01', 'IN_NN', 'pl01',
+                'i01', 'RA_NN', 'gb01', 'RN_NN', 'DU_NN', 'RZ_NN', 'sk01',
+                'usa01', 'UM_NN', 'UN_NN', 'r01',
+            ])
 
     def test_get_by_squadron_prefix(self):
         self.assertEqual(AirForces.get_by_squadron_prefix('r01'),
@@ -97,9 +102,11 @@ class AirForcesTestCase(unittest.TestCase):
             list(AirForces.filter_by_belligerent(Belligerents.none)), [])
         self.assertEqual(
             list(AirForces.filter_by_belligerent(Belligerents.red)),
-            [AirForces.ala, AirForces.paf, AirForces.raaf, AirForces.raf,
-             AirForces.rn, AirForces.rnlaf, AirForces.rnzaf, AirForces.usaaf,
-             AirForces.usmc, AirForces.usn, AirForces.vvs_rkka, ])
+            [
+                AirForces.ala, AirForces.paf, AirForces.raaf, AirForces.raf,
+                AirForces.rn, AirForces.rnlaf, AirForces.rnzaf, AirForces.usaaf,
+                AirForces.usmc, AirForces.usn, AirForces.vvs_rkka,
+            ])
 
 
 class RegimentTestCase(unittest.TestCase):
@@ -141,7 +148,11 @@ class RegimentTestCase(unittest.TestCase):
         r = Regiment(AirForces.vvs_rkka, '1st_AE_1AR')
 
         self.assertEqual(r.help_text_en, "OIR AE of 1st AG VVS")
-        self.assertEqual(r.help_text_ru, "Отдельная Истребительно-Разведываетльния Авиаэскадрилья 1-й Авиагруппы")
+        self.assertEqual(
+            r.help_text_ru,
+            "Отдельная Истребительно-Разведываетльния Авиаэскадрилья "
+            "1-й Авиагруппы"
+        )  # yes, there are mistakes in word 'Разведываетльния'
         self.assertEqual(r.help_text_some, "OIR AE of 1st AG VVS")
 
     def test_help_text_missing_translation(self):

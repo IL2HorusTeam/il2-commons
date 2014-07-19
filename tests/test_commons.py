@@ -4,7 +4,7 @@ import unittest
 from il2fb.commons import SupportedLanguages, GameVersions, Skills
 
 
-class IL2CommonsTestCase(unittest.TestCase):
+class CommonsTestCase(unittest.TestCase):
 
     def test_languages(self):
         self.assertEqual(SupportedLanguages.names(), ['en', 'ru', ])
@@ -12,11 +12,15 @@ class IL2CommonsTestCase(unittest.TestCase):
                          SupportedLanguages.en)
 
     def test_game_versions(self):
-        self.assertEqual(GameVersions.values(), ['4.12', '4.12.1', '4.12.2', ])
+        self.assertEqual(GameVersions.values(), [
+            '4.12', '4.12.1', '4.12.2',
+        ])
 
     def test_skills(self):
         data = [(x.name, x.value) for x in Skills.constants()]
-        self.assertEqual(data, [('rookie', 0),
-                                ('average', 1),
-                                ('veteran', 2),
-                                ('ace', 3), ])
+        self.assertEqual(data, [
+            ('rookie', 0),
+            ('average', 1),
+            ('veteran', 2),
+            ('ace', 3),
+        ])
