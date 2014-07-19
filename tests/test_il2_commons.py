@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from il2_commons import SupportedLanguages, GameVersions, Skills
+from il2fb.commons import SupportedLanguages, GameVersions, Skills
 
 
 class IL2CommonsTestCase(unittest.TestCase):

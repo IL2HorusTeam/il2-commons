@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from il2_commons.targets import TargetTypes, TargetPriorities
+from il2fb.commons.targets import TargetTypes, TargetPriorities
 
 
 class TargetsTestCase(unittest.TestCase):

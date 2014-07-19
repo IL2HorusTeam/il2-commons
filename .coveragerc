@@ -1,5 +1,5 @@
 [run]
-source = il2_commons
+source = il2fb/commons
 omit = */tests/*
 
 [report]

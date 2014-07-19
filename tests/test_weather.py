@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from il2_commons.weather import Conditions, Gust, Turbulence
+from il2fb.commons.weather import Conditions, Gust, Turbulence
 
 
 class WeatherTestCase(unittest.TestCase):

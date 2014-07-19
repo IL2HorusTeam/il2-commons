@@ -7,8 +7,8 @@ if six.PY2:
 
 from candv import Values, VerboseConstant, VerboseValueConstant
 
-from il2_commons import SupportedLanguages
-from il2_commons.utils.translation import ugettext_lazy as _
+from il2fb.commons import SupportedLanguages
+from il2fb.commons.utils.translation import ugettext_lazy as _
 
 
 class Belligerents(Values):

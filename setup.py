@@ -1,20 +1,33 @@
-from setuptools import setup, find_packages
+# -*- coding: utf-8 -*-
+from setuptools import setup
+
 
 setup(
-    name='il2-commons',
+    name='il2fb-commons',
     version='1.0.0',
-    description='Common helpers and data structures for projects related to IL-2.',
-    license='GPLv2',
-    url='https://github.com/IL2HorusTeam/il2-commons',
+    description="Common helpers and data structures for projects related to"
+                "IL-2 Forgotten Battles",
+    keywords=[
+        'il2', 'il-2', 'fb', 'forgotten battles', 'commons',
+    ],
+    license='LGPLv3',
+    url='https://github.com/IL2HorusTeam/il2fb-commons',
     author='Alexander Oblovatniy',
     author_email='oblovatniy@gmail.com',
-    packages=find_packages(),
-    install_requires=[i.strip() for i in open("requirements.pip").readlines()],
+    packages=[
+        'il2fb.commons',
+        'il2fb.commons.utils',
+    ],
+    namespace_packages=[
+        'il2fb',
+    ],
+    install_requires=[
+        i.strip() for i in open("requirements.txt").readlines()
+    ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
-        'License :: Free for non-commercial use',
+        'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',

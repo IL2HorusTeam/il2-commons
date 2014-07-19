@@ -5,7 +5,7 @@ import unittest
 
 from candv import Constants, SimpleConstant, Values
 
-from il2_commons.organization import (
+from il2fb.commons.organization import (
     Belligerents, Country, Countries, AirForce, AirForces, Regiment,
     Regiments, )
 

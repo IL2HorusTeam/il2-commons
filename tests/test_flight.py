@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from il2_commons.flight import Formations, WaypointTypes
+from il2fb.commons.flight import Formations, WaypointTypes
 
 
 class FlightTestCase(unittest.TestCase):
