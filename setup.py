@@ -1,12 +1,19 @@
 # -*- coding: utf-8 -*-
+import os
+
 from setuptools import setup
 
+
+here = os.path.abspath(os.path.dirname(__file__))
+
+README = open(os.path.join(here, 'README.rst')).read()
 
 setup(
     name='il2fb-commons',
     version='0.9.0',
     description="Common helpers and data structures for projects related to"
                 "IL-2 Forgotten Battles",
+    long_description=README,
     keywords=[
         'il2', 'il-2', 'fb', 'forgotten battles', 'commons',
     ],
@@ -33,5 +40,8 @@ setup(
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Topic :: Software Development :: Libraries',
+    ],
+    platforms=[
+        'any',
     ],
 )
