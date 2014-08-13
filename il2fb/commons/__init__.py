@@ -9,7 +9,7 @@ from il2fb.commons.utils import translations
 _ = translations.ugettext_lazy
 
 
-class SUPPORTED_LANGUAGES(Constants):
+class SupportedLanguages(Constants):
     en = SimpleConstant()
     ru = SimpleConstant()
 
@@ -18,13 +18,13 @@ class SUPPORTED_LANGUAGES(Constants):
         return cls.en
 
 
-class GAME_VERSIONS(Values):
+class GameVersions(Values):
     v4_12 = ValueConstant('4.12')
     v4_12_1 = ValueConstant('4.12.1')
     v4_12_2 = ValueConstant('4.12.2')
 
 
-class SKILLS(Values):
+class Skills(Values):
     rookie = VerboseValueConstant(0, _("rookie"))
     average = VerboseValueConstant(1, _("average"))
     veteran = VerboseValueConstant(2, _("veteran"))
