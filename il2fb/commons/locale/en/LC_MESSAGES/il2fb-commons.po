@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-19 11:59+0300\n"
+"POT-Creation-Date: 2014-08-17 14:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +31,46 @@ msgstr ""
 
 #: __init__.py:31
 msgid "ace"
+msgstr ""
+
+#: __init__.py:35
+msgid "airplane"
+msgstr ""
+
+#: __init__.py:36
+msgid "armor"
+msgstr ""
+
+#: __init__.py:37
+msgid "artillery"
+msgstr ""
+
+#: __init__.py:38
+msgid "balloon"
+msgstr ""
+
+#: __init__.py:39
+msgid "light"
+msgstr ""
+
+#: __init__.py:40
+msgid "radio"
+msgstr ""
+
+#: __init__.py:41
+msgid "ship"
+msgstr ""
+
+#: __init__.py:42
+msgid "stationary"
+msgstr ""
+
+#: __init__.py:43
+msgid "train"
+msgstr ""
+
+#: __init__.py:44
+msgid "vehicle"
 msgstr ""
 
 #: flight.py:11
