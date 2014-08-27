@@ -10,8 +10,8 @@ class TargetsTestCase(unittest.TestCase):
         data = [(x.name, x.value) for x in TargetTypes.constants()]
         self.assertEqual(data, [
             ('destroy', 0),
-            ('destroy_bridge', 1),
-            ('destroy_area', 2),
+            ('destroy_area', 1),
+            ('destroy_bridge', 2),
             ('recon', 3),
             ('escort', 4),
             ('cover', 5),
