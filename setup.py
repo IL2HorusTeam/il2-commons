@@ -27,6 +27,7 @@ setup(
     namespace_packages=[
         'il2fb',
     ],
+    include_package_data=True,
     install_requires=[
         i.strip() for i in open("requirements.txt").readlines()
     ],
