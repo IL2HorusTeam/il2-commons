@@ -10,7 +10,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 
 setup(
     name='il2fb-commons',
-    version='0.9.3',
+    version='0.9.4',
     description="Common helpers and data structures for projects related to "
                 "IL-2 Forgotten Battles",
     long_description=README,
@@ -40,6 +40,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
         'Topic :: Software Development :: Libraries',
     ],
     platforms=[

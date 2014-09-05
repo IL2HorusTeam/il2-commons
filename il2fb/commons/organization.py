@@ -297,6 +297,9 @@ class Regiment(object):
                     return result.decode('unicode-escape')
         return ''
 
+    def __repr__(self):
+        return "<Regiment '{:}'>".format(self.code_name)
+
 
 class Regiments(object):
 
