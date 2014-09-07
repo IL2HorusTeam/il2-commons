@@ -27,6 +27,7 @@ class FlightTestCase(unittest.TestCase):
 
             ('taxiing', 'TAKEOFF_004'),
             ('normal_fly', 'NORMFLY'),
+            ('attack', 'GATTACK'),
 
             ('patrol_triangle', 'NORMFLY_401'),
             ('patrol_square', 'NORMFLY_402'),

@@ -39,6 +39,11 @@ class WaypointTypes(Values):
         'NORMFLY',
         _("normal fly"))
 
+    # Attack -------------------------------------------------------------------
+    attack = VerboseValueConstant(
+        'GATTACK',
+        _("attack"))
+
     # Patrol -------------------------------------------------------------------
     patrol_triangle = VerboseValueConstant(
         'NORMFLY_401',
