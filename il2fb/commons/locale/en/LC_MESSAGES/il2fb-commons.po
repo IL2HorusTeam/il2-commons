@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-17 14:29+0300\n"
+"POT-Creation-Date: 2014-09-07 13:44+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,46 +122,50 @@ msgid "normal fly"
 msgstr ""
 
 #: flight.py:45
+msgid "attack"
+msgstr ""
+
+#: flight.py:50
 msgid "patrol (triangle)"
 msgstr ""
 
-#: flight.py:48
+#: flight.py:53
 msgid "patrol (square)"
 msgstr ""
 
-#: flight.py:51
+#: flight.py:56
 msgid "patrol (pentagon)"
 msgstr ""
 
-#: flight.py:54
+#: flight.py:59
 msgid "patrol (hexagon)"
 msgstr ""
 
-#: flight.py:57
+#: flight.py:62
 msgid "patrol (random)"
 msgstr ""
 
-#: flight.py:62
+#: flight.py:67
 msgid "artillery spotter"
 msgstr ""
 
-#: flight.py:67
+#: flight.py:72
 msgid "landing (on left)"
 msgstr ""
 
-#: flight.py:70
+#: flight.py:75
 msgid "landing (on right)"
 msgstr ""
 
-#: flight.py:73
+#: flight.py:78
 msgid "landing (short on left)"
 msgstr ""
 
-#: flight.py:76
+#: flight.py:81
 msgid "landing (short on right)"
 msgstr ""
 
-#: flight.py:79
+#: flight.py:84
 msgid "landing (straight)"
 msgstr ""
 
@@ -446,11 +450,11 @@ msgid "destroy"
 msgstr ""
 
 #: targets.py:12
-msgid "destroy bridge"
+msgid "destroy area"
 msgstr ""
 
 #: targets.py:13
-msgid "destroy area"
+msgid "destroy bridge"
 msgstr ""
 
 #: targets.py:14
