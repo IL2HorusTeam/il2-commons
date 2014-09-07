@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from il2fb.commons.flight import Formations, WaypointTypes
+from il2fb.commons.flight import Formations, RoutePointTypes
 
 
 class FlightTestCase(unittest.TestCase):
@@ -19,7 +19,7 @@ class FlightTestCase(unittest.TestCase):
         ])
 
     def test_waypoint_types(self):
-        data = [(x.name, x.value) for x in WaypointTypes.constants()]
+        data = [(x.name, x.value) for x in RoutePointTypes.constants()]
         self.assertEqual(data, [
             ('takeoff_normal', 'TAKEOFF'),
             ('takeoff_pair', 'TAKEOFF_002'),

@@ -17,7 +17,7 @@ class Formations(Values):
     diamond = VerboseValueConstant('F8', _("diamond"))
 
 
-class WaypointTypes(Values):
+class RoutePointTypes(Values):
     # Take-off -----------------------------------------------------------------
     takeoff_normal = VerboseValueConstant(
         'TAKEOFF',
