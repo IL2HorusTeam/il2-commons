@@ -239,9 +239,9 @@ class Regiment(object):
         self.air_force = air_force
         self.code_name = str(code_name)
 
-    def __getattribute__(self, name):
+    def __getattr__(self, name):
         try:
-            return super(Regiment, self).__getattribute__(name)
+            return super(Regiment, self).__getattr__(name)
         except AttributeError:
             if name.startswith('verbose_name_'):
                 getter = self._get_verbose_name
@@ -255,7 +255,6 @@ class Regiment(object):
         # Get language code
         start = name.rindex('_') + 1
         language_code = name[start:]
-
         if not language_code:
             raise AttributeError("'{0}' object has no attribute '{1}'".format(
                                  self.__class__.__name__, name))
