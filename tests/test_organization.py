@@ -65,31 +65,34 @@ class AirForcesTestCase(unittest.TestCase):
         class FOO(Values):
             constant_class = AirForce
 
-            bar = AirForce(
-                country=Countries.au,
-                default_squadron_prefix='brrr',
-                value='br',
-                verbose_name="BAR").to_group(
+            bar = (
+                AirForce(
+                    country=Countries.au,
+                    default_flight_prefix='brrr',
+                    value='br',
+                    verbose_name="BAR")
+                .to_group(
                     Constants,
                     qux=SimpleConstant())
+            )
 
         self.assertEqual(FOO.bar.country, Countries.au)
-        self.assertEqual(FOO.bar.default_squadron_prefix, 'brrr')
+        self.assertEqual(FOO.bar.default_flight_prefix, 'brrr')
         self.assertEqual(FOO.bar.names(), ['qux', ])
 
-    def test_get_squadron_prefixes(self):
+    def test_get_flight_prefixes(self):
         self.assertEqual(
-            list(AirForces.get_squadron_prefixes()),
+            list(AirForces.get_flight_prefixes()),
             [
                 'fr01', 'f01', 'ro01', 'h01', 'g01', 'ja01', 'IN_NN', 'pl01',
                 'i01', 'RA_NN', 'gb01', 'RN_NN', 'DU_NN', 'RZ_NN', 'sk01',
                 'usa01', 'UM_NN', 'UN_NN', 'r01',
             ])
 
-    def test_get_by_squadron_prefix(self):
-        self.assertEqual(AirForces.get_by_squadron_prefix('r01'),
+    def test_get_by_flight_prefix(self):
+        self.assertEqual(AirForces.get_by_flight_prefix('r01'),
                          AirForces.vvs_rkka)
-        self.assertRaises(ValueError, AirForces.get_by_squadron_prefix, 'foo')
+        self.assertRaises(ValueError, AirForces.get_by_flight_prefix, 'foo')
 
     def test_filter_by_country(self):
         self.assertEqual(list(AirForces.filter_by_country(Countries.su)),

@@ -72,18 +72,18 @@ class Countries(Values):
 
 class AirForce(VerboseValueConstant):
 
-    def __init__(self, country, default_squadron_prefix, value,
+    def __init__(self, country, default_flight_prefix, value,
                  verbose_name=None, help_text=None):
         super(AirForce, self).__init__(value,
                                        verbose_name=verbose_name,
                                        help_text=help_text)
         self.country = country
-        self.default_squadron_prefix = str(default_squadron_prefix)
+        self.default_flight_prefix = str(default_flight_prefix)
 
     def merge_into_group(self, group):
         super(AirForce, self).merge_into_group(group)
         group.country = self.country
-        group.default_squadron_prefix = self.default_squadron_prefix
+        group.default_flight_prefix = self.default_flight_prefix
 
 
 class AirForces(Values):
@@ -91,129 +91,129 @@ class AirForces(Values):
 
     ala = AirForce(
         country=Countries.fr,
-        default_squadron_prefix='fr01',
+        default_flight_prefix='fr01',
         value='fr',
         verbose_name=_("ALA"),
         help_text=_("Army of the Air"))
     faf = AirForce(
         country=Countries.fi,
-        default_squadron_prefix='f01',
+        default_flight_prefix='f01',
         value='fi',
         verbose_name=_("FAF"),
         help_text=_("Finnish Air Force"))
     far = AirForce(
         country=Countries.ro,
-        default_squadron_prefix='ro01',
+        default_flight_prefix='ro01',
         value='ro',
         verbose_name=_("FAR"),
         help_text=_("Romanian Air Force"))
     haf = AirForce(
         country=Countries.hu,
-        default_squadron_prefix='h01',
+        default_flight_prefix='h01',
         value='hu',
         verbose_name=_("HAF"),
         help_text=_("Hungarian Air Force"))
     luftwaffe = AirForce(
         country=Countries.de,
-        default_squadron_prefix='g01',
+        default_flight_prefix='g01',
         value='de',
         verbose_name=_("Luftwaffe"))
     ija = AirForce(
         country=Countries.jp,
-        default_squadron_prefix='ja01',
+        default_flight_prefix='ja01',
         value='ja',
         verbose_name=_("IJA"),
         help_text=_("Imperial Japanese Army"))
     ijn = AirForce(
         country=Countries.jp,
-        default_squadron_prefix='IN_NN',
+        default_flight_prefix='IN_NN',
         value='in',
         verbose_name=_("IJN"),
         help_text=_("Imperial Japanese Navy"))
     paf = AirForce(
         country=Countries.pl,
-        default_squadron_prefix='pl01',
+        default_flight_prefix='pl01',
         value='pl',
         verbose_name=_("PAF"),
         help_text=_("Polish Air Force"))
     rai = AirForce(
         country=Countries.it,
-        default_squadron_prefix='i01',
+        default_flight_prefix='i01',
         value='it',
         verbose_name=_("RAI"),
         help_text=_("Regia Aeronautica Italiana"))
     raaf = AirForce(
         country=Countries.au,
-        default_squadron_prefix='RA_NN',
+        default_flight_prefix='RA_NN',
         value='ra',
         verbose_name=_("RAAF"),
         help_text=_("Royal Australian Air Force"))
     raf = AirForce(
         country=Countries.uk,
-        default_squadron_prefix='gb01',
+        default_flight_prefix='gb01',
         value='gb',
         verbose_name=_("RAF"),
         help_text=_("Royal Air Force"))
     rn = AirForce(
         country=Countries.uk,
-        default_squadron_prefix='RN_NN',
+        default_flight_prefix='RN_NN',
         value='rn',
         verbose_name=_("RN"),
         help_text=_("Royal Navy"))
     rnlaf = AirForce(
         country=Countries.nl,
-        default_squadron_prefix='DU_NN',
+        default_flight_prefix='DU_NN',
         value='du',
         verbose_name=_("RNLAF"),
         help_text=_("Royal Netherlands Air Force"))
     rnzaf = AirForce(
         country=Countries.nz,
-        default_squadron_prefix='RZ_NN',
+        default_flight_prefix='RZ_NN',
         value='rz',
         verbose_name=_("RNZAF"),
         help_text=_("Royal New Zealand Air Force"))
     saf = AirForce(
         country=Countries.sk,
-        default_squadron_prefix='sk01',
+        default_flight_prefix='sk01',
         value='sk',
         verbose_name=_("SAF"),
         help_text=_("Slovak Air Force"))
     usaaf = AirForce(
         country=Countries.us,
-        default_squadron_prefix='usa01',
+        default_flight_prefix='usa01',
         value='us',
         verbose_name=_("USAAF"),
         help_text=_("United States Army Air Forces"))
     usmc = AirForce(
         country=Countries.us,
-        default_squadron_prefix='UM_NN',
+        default_flight_prefix='UM_NN',
         value='um',
         verbose_name=_("USMC"),
         help_text=_("United States Marine Corps"))
     usn = AirForce(
         country=Countries.us,
-        default_squadron_prefix='UN_NN',
+        default_flight_prefix='UN_NN',
         value='un',
         verbose_name=_("USN"),
         help_text=_("United States Navy"))
     vvs_rkka = AirForce(
         country=Countries.su,
-        default_squadron_prefix='r01',
+        default_flight_prefix='r01',
         value='ru',
         verbose_name=_("VVS RKKA"),
         help_text=_("Workers-Peasants Red Army Air Forces"))
 
     @classmethod
-    def get_squadron_prefixes(cls):
-        result = map(lambda x: x.default_squadron_prefix, cls.iterconstants())
+    def get_flight_prefixes(cls):
+        result = map(lambda x: x.default_flight_prefix, cls.iterconstants())
         if six.PY3:
             result = list(result)
         return result
 
     @classmethod
-    def get_by_squadron_prefix(cls, prefix):
+    def get_by_flight_prefix(cls, prefix):
         for constant in cls.iterconstants():
-            if constant.default_squadron_prefix == prefix:
+            if constant.default_flight_prefix == prefix:
                 return constant
         raise ValueError("Airforce with prefix '{0}' is not present in '{1}'"
                          .format(prefix, cls.__name__))
@@ -314,8 +314,8 @@ class Regiments(object):
         if code_name in cls._cache:
             return cls._cache[code_name]
 
-        squadron_prefixes = AirForces.get_squadron_prefixes()
-        last_squadron_prefix = None
+        flight_prefixes = AirForces.get_flight_prefixes()
+        last_flight_prefix = None
         found = False
 
         file_path = _get_data_file_path(cls._file_name)
@@ -324,15 +324,15 @@ class Regiments(object):
                 line = line.strip()
                 if not line:
                     continue
-                if line in squadron_prefixes:
-                    last_squadron_prefix = line
+                if line in flight_prefixes:
+                    last_flight_prefix = line
                     continue
                 if line == code_name:
                     found = True
                     break
 
-        if found and last_squadron_prefix:
-            air_force = AirForces.get_by_squadron_prefix(last_squadron_prefix)
+        if found and last_flight_prefix:
+            air_force = AirForces.get_by_flight_prefix(last_flight_prefix)
             regiment = Regiment(air_force, code_name)
             cls._cache[code_name] = regiment
             return regiment
@@ -344,7 +344,7 @@ class Regiments(object):
     def filter_by_air_force(cls, air_force):
         result = []
 
-        squadron_prefixes = AirForces.get_squadron_prefixes()
+        flight_prefixes = AirForces.get_flight_prefixes()
         found = False
 
         file_path = _get_data_file_path(cls._file_name)
@@ -353,12 +353,12 @@ class Regiments(object):
                 line = line.strip()
                 if not line:
                     continue
-                if line == air_force.default_squadron_prefix:
+                if line == air_force.default_flight_prefix:
                     # Flag that proper section was found.
                     found = True
                     continue
                 if found:
-                    if line in squadron_prefixes or (line.startswith('[') and
+                    if line in flight_prefixes or (line.startswith('[') and
                                                      line.endswith(']')):
                         # Next section was found. Fullstop.
                         break
