@@ -35,14 +35,20 @@ class RoutePointTypes(Values):
         _("taxiing"))
 
     # Normal flight ------------------------------------------------------------
-    normal_fly = VerboseValueConstant(
+    normal = VerboseValueConstant(
         'NORMFLY',
-        _("normal fly"))
+        _("normal"))
 
     # Attack -------------------------------------------------------------------
-    attack = VerboseValueConstant(
+    #: .. warning::
+    #:   air attack is not present in game. It is calculated as ``NORMFLY``
+    #:   with a target
+    air_attack = VerboseValueConstant(
+        'X_AIR_ATTACK',
+        _("air attack"))
+    ground_attack = VerboseValueConstant(
         'GATTACK',
-        _("attack"))
+        _("ground attack"))
 
     # Patrol -------------------------------------------------------------------
     patrol_triangle = VerboseValueConstant(

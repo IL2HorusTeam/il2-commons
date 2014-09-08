@@ -26,8 +26,9 @@ class FlightTestCase(unittest.TestCase):
             ('takeoff_in_line', 'TAKEOFF_003'),
 
             ('taxiing', 'TAKEOFF_004'),
-            ('normal_fly', 'NORMFLY'),
-            ('attack', 'GATTACK'),
+            ('normal', 'NORMFLY'),
+            ('air_attack', 'X_AIR_ATTACK'),
+            ('ground_attack', 'GATTACK'),
 
             ('patrol_triangle', 'NORMFLY_401'),
             ('patrol_square', 'NORMFLY_402'),
