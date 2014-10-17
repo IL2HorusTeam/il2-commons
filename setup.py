@@ -1,21 +1,26 @@
 # -*- coding: utf-8 -*-
+
 import os
 
 from setuptools import setup
 
 
-here = os.path.abspath(os.path.dirname(__file__))
+__here__ = os.path.abspath(os.path.dirname(__file__))
 
-README = open(os.path.join(here, 'README.rst')).read()
+README = open(os.path.join(__here__, 'README.rst')).read()
+REQUIREMENTS = [
+    i.strip()
+    for i in os.path.join(__here__, 'requirements.txt').readlines()
+]
 
 setup(
     name='il2fb-commons',
-    version='0.9.5',
+    version='0.9.6',
     description="Common helpers and data structures for projects related to "
                 "IL-2 Forgotten Battles",
     long_description=README,
     keywords=[
-        'il2', 'il-2', 'fb', 'forgotten battles', 'commons',
+        'il2', 'il-2', 'fb', 'forgotten battles', 'common', 'structure',
     ],
     license='LGPLv3',
     url='https://github.com/IL2HorusTeam/il2fb-commons',
@@ -28,9 +33,7 @@ setup(
         'il2fb',
     ],
     include_package_data=True,
-    install_requires=[
-        i.strip() for i in open("requirements.txt").readlines()
-    ],
+    install_requires=REQUIREMENTS,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',

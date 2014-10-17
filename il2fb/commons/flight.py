@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+
 from candv import Values, VerboseValueConstant
 
-from il2fb.commons.utils import translations
+from .utils import translations
 
 
 _ = translations.ugettext_lazy
@@ -18,7 +19,7 @@ class Formations(Values):
 
 
 class RoutePointTypes(Values):
-    # Take-off -----------------------------------------------------------------
+    # Take-off ----------------------------------------------------------------
     takeoff_normal = VerboseValueConstant(
         'TAKEOFF',
         _("takeoff (normal)"))
@@ -28,18 +29,16 @@ class RoutePointTypes(Values):
     takeoff_in_line = VerboseValueConstant(
         'TAKEOFF_003',
         _("takeoff (in line)"))
-
-    # Taxiing ------------------------------------------------------------------
-    taxiing = VerboseValueConstant(
+    takeoff_taxiing = VerboseValueConstant(
         'TAKEOFF_004',
-        _("taxiing"))
+        _("takeoff (taxiing)"))
 
-    # Normal flight ------------------------------------------------------------
+    # Normal flight -----------------------------------------------------------
     normal = VerboseValueConstant(
         'NORMFLY',
         _("normal"))
 
-    # Attack -------------------------------------------------------------------
+    # Attack ------------------------------------------------------------------
     #: .. warning::
     #:   air attack is not present in game. It is calculated as ``NORMFLY``
     #:   with a target
@@ -50,7 +49,7 @@ class RoutePointTypes(Values):
         'GATTACK',
         _("ground attack"))
 
-    # Patrol -------------------------------------------------------------------
+    # Patrol ------------------------------------------------------------------
     patrol_triangle = VerboseValueConstant(
         'NORMFLY_401',
         _("patrol (triangle)"))
@@ -67,12 +66,12 @@ class RoutePointTypes(Values):
         'NORMFLY_405',
         _("patrol (random)"))
 
-    # Artillery spotter --------------------------------------------------------
+    # Artillery spotter -------------------------------------------------------
     artillery_spotter = VerboseValueConstant(
         'NORMFLY_407',
         _("artillery spotter"))
 
-    # Langing ------------------------------------------------------------------
+    # Langing -----------------------------------------------------------------
     landing_on_left = VerboseValueConstant(
         'LANDING',
         _("landing (on left)"))

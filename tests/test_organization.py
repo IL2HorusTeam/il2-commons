@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 import unittest
 
-from candv import Constants, SimpleConstant, Values
+from candv import Constants, SimpleConstant, Values, with_constant_class
 
 from il2fb.commons.organization import (
     Belligerents, Country, Countries, AirForce, AirForces, Regiment, Regiments,
@@ -13,58 +13,62 @@ from il2fb.commons.organization import (
 class BelligerentsTestCase(unittest.TestCase):
 
     def test_belligerents(self):
-        data = [(x.name, x.value) for x in Belligerents.constants()]
-        self.assertEqual(data, [
-            ('none', 0),
-            ('red', 1),
-            ('blue', 2),
-            ('green', 3),
-            ('gold', 4),
-            ('purple', 5),
-            ('aqua', 6),
-            ('maroon', 7),
-            ('navy', 8),
-            ('emerald', 9),
-            ('olive', 10),
-            ('magenta', 11),
-            ('teal', 12),
-            ('orange', 13),
-            ('turquoise', 14),
-            ('brown', 15),
-            ('salad', 16),
-        ])
+        self.assertEqual(
+            [(x.name, x.value) for x in Belligerents.constants()],
+            [
+                ('none', 0),
+                ('red', 1),
+                ('blue', 2),
+                ('green', 3),
+                ('gold', 4),
+                ('purple', 5),
+                ('aqua', 6),
+                ('maroon', 7),
+                ('navy', 8),
+                ('emerald', 9),
+                ('olive', 10),
+                ('magenta', 11),
+                ('teal', 12),
+                ('orange', 13),
+                ('turquoise', 14),
+                ('brown', 15),
+                ('salad', 16),
+            ]
+        )
 
 
 class CountriesTestCase(unittest.TestCase):
 
     def test_country_as_group(self):
 
-        class FOO(Values):
-            constant_class = Country
-
+        class FOO(with_constant_class(Country), Values):
             bar = Country(Belligerents.red, "Bar").to_group(
-                Constants,
-                qux=SimpleConstant())
+                group_class=Constants,
+                qux=SimpleConstant()
+            )
 
         self.assertEqual(FOO.bar.belligerent, Belligerents.red)
         self.assertEqual(FOO.bar.names(), ['qux', ])
 
     def test_filter_by_belligerent(self):
         self.assertEqual(
-            list(Countries.filter_by_belligerent(Belligerents.none)), [])
+            list(Countries.filter_by_belligerent(Belligerents.none)),
+            []
+        )
         self.assertEqual(
             list(Countries.filter_by_belligerent(Belligerents.red)),
-            [Countries.au, Countries.fr, Countries.nl, Countries.nz,
-             Countries.pl, Countries.su, Countries.uk, Countries.us, ])
+            [
+                Countries.au, Countries.fr, Countries.nl, Countries.nz,
+                Countries.pl, Countries.su, Countries.uk, Countries.us,
+            ]
+        )
 
 
 class AirForcesTestCase(unittest.TestCase):
 
     def test_air_force_as_group(self):
 
-        class FOO(Values):
-            constant_class = AirForce
-
+        class FOO(with_constant_class(AirForce), Values):
             bar = (
                 AirForce(
                     country=Countries.au,
@@ -72,7 +76,7 @@ class AirForcesTestCase(unittest.TestCase):
                     value='br',
                     verbose_name="BAR")
                 .to_group(
-                    Constants,
+                    group_class=Constants,
                     qux=SimpleConstant())
             )
 
@@ -87,29 +91,40 @@ class AirForcesTestCase(unittest.TestCase):
                 'fr01', 'f01', 'ro01', 'h01', 'g01', 'ja01', 'IN_NN', 'pl01',
                 'i01', 'RA_NN', 'gb01', 'RN_NN', 'DU_NN', 'RZ_NN', 'sk01',
                 'usa01', 'UM_NN', 'UN_NN', 'r01',
-            ])
+            ]
+        )
 
     def test_get_by_flight_prefix(self):
-        self.assertEqual(AirForces.get_by_flight_prefix('r01'),
-                         AirForces.vvs_rkka)
+        self.assertEqual(
+            AirForces.get_by_flight_prefix('r01'),
+            AirForces.vvs_rkka
+        )
         self.assertRaises(ValueError, AirForces.get_by_flight_prefix, 'foo')
 
     def test_filter_by_country(self):
-        self.assertEqual(list(AirForces.filter_by_country(Countries.su)),
-                         [AirForces.vvs_rkka, ])
-        self.assertEqual(list(AirForces.filter_by_country(Countries.us)),
-                         [AirForces.usaaf, AirForces.usmc, AirForces.usn, ])
+        self.assertEqual(
+            list(AirForces.filter_by_country(Countries.su)),
+            [AirForces.vvs_rkka, ]
+        )
+        self.assertEqual(
+            list(AirForces.filter_by_country(Countries.us)),
+            [AirForces.usaaf, AirForces.usmc, AirForces.usn, ]
+        )
 
     def test_filter_by_belligerent(self):
         self.assertEqual(
-            list(AirForces.filter_by_belligerent(Belligerents.none)), [])
+            list(AirForces.filter_by_belligerent(Belligerents.none)),
+            []
+        )
         self.assertEqual(
             list(AirForces.filter_by_belligerent(Belligerents.red)),
             [
                 AirForces.ala, AirForces.paf, AirForces.raaf, AirForces.raf,
-                AirForces.rn, AirForces.rnlaf, AirForces.rnzaf, AirForces.usaaf,
-                AirForces.usmc, AirForces.usn, AirForces.vvs_rkka,
-            ])
+                AirForces.rn, AirForces.rnlaf, AirForces.rnzaf,
+                AirForces.usaaf, AirForces.usmc, AirForces.usn,
+                AirForces.vvs_rkka,
+            ]
+        )
 
 
 class RegimentTestCase(unittest.TestCase):
@@ -178,6 +193,10 @@ class RegimentTestCase(unittest.TestCase):
 
         self.assertRaises(AttributeError, _getattr, 'help_text')
         self.assertRaises(AttributeError, _getattr, 'help_text_')
+
+    def test_repr(self):
+        r = Regiment(AirForces.usn, 'USN_VT_9B')
+        self.assertEqual(repr(r), "<Regiment 'USN_VT_9B'>")
 
 
 class RegimentsTestCase(unittest.TestCase):

@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
+
 import os
 import six
 
 if six.PY2:
     from io import open
 
-from candv import Values, VerboseConstant, VerboseValueConstant
+from candv import (
+    Values, VerboseConstant, VerboseValueConstant, with_constant_class,
+)
 
-from il2fb.commons import SupportedLanguages
-from il2fb.commons.utils import translations
+from . import SupportedLanguages
+from .utils import translations
 
 
 _ = translations.ugettext_lazy
@@ -46,9 +49,7 @@ class Country(VerboseConstant):
         group.belligerent = self.belligerent
 
 
-class Countries(Values):
-    constant_class = Country
-
+class Countries(with_constant_class(Country), Values):
     au = Country(Belligerents.red, _("Australia"))
     fi = Country(Belligerents.blue, _("Finland"))
     fr = Country(Belligerents.red, _("France"))
@@ -86,9 +87,7 @@ class AirForce(VerboseValueConstant):
         group.default_flight_prefix = self.default_flight_prefix
 
 
-class AirForces(Values):
-    constant_class = AirForce
-
+class AirForces(with_constant_class(AirForce), Values):
     ala = AirForce(
         country=Countries.fr,
         default_flight_prefix='fr01',
@@ -215,8 +214,10 @@ class AirForces(Values):
         for constant in cls.iterconstants():
             if constant.default_flight_prefix == prefix:
                 return constant
-        raise ValueError("Airforce with prefix '{0}' is not present in '{1}'"
-                         .format(prefix, cls.__name__))
+        raise ValueError(
+            "Air force with prefix '{0}' is not present in '{1}'"
+            .format(prefix, cls.__name__)
+        )
 
     @classmethod
     def filter_by_country(cls, country):
@@ -256,12 +257,14 @@ class Regiment(object):
         start = name.rindex('_') + 1
         language_code = name[start:]
         if not language_code:
-            raise AttributeError("'{0}' object has no attribute '{1}'".format(
-                                 self.__class__.__name__, name))
+            raise AttributeError(
+                "'{0}' object has no attribute '{1}'"
+                .format(self.__class__.__name__, name)
+            )
 
         # Check language code is known
         default_language_code = SupportedLanguages.get_default().name
-        if not SupportedLanguages.contains(language_code):
+        if not language_code in SupportedLanguages:
             language_code = default_language_code
 
         # Try to get value for specified language or for default language
@@ -357,8 +360,10 @@ class Regiments(object):
                     found = True
                     continue
                 if found:
-                    if line in flight_prefixes or (line.startswith('[') and
-                                                     line.endswith(']')):
+                    if (
+                        line in flight_prefixes
+                        or (line.startswith('[') and line.endswith(']'))
+                    ):
                         # Next section was found. Fullstop.
                         break
 

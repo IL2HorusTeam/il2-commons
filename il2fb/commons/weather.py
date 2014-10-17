@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+
 from candv import Values, VerboseValueConstant
 
-from il2fb.commons.utils import translations
+from .utils import translations
 
 
 _ = translations.ugettext_lazy

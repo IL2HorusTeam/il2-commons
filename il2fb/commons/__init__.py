@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+
 from candv import (
     SimpleConstant, Constants, Values, ValueConstant, VerboseValueConstant,
 )
 
-from il2fb.commons.utils import translations
+from .utils import translations
 
 
 _ = translations.ugettext_lazy
@@ -32,7 +33,7 @@ class Skills(Values):
 
 
 class UnitTypes(Values):
-    airplane = VerboseValueConstant('planes', _("airplane"))
+    aircraft = VerboseValueConstant('planes', _("aircraft"))
     armor = VerboseValueConstant('armor', _("armor"))
     artillery = VerboseValueConstant('artillery', _("artillery"))
     balloon = VerboseValueConstant('aeronautics', _("balloon"))
