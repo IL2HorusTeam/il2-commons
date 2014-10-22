@@ -1,9 +1,9 @@
 language: python
 python:
-  - "2.7"
-  - "3.2"
-  - "3.3"
-  - "3.4"
+  - '2.7'
+  - '3.2'
+  - '3.3'
+  - '3.4'
 install:
   - pip install -e . --use-mirrors
   - pip install nose coverage coveralls --use-mirrors
@@ -15,4 +15,4 @@ after_success:
 notifications:
   email: false
   slack:
-    secure: nxRz9GAFrugMmfQtX0Mjti2JeH8CLqu2NnU15XthG4DdBwKTVsSWLFygMPhx0b9NmopzRi3OVwWngNhdAW3Pim6HxXeJhCk32H/Vw6Mc6btbJCHGAhBP204EefDyoYZEDy2fo9lU3mGe/kfxHAUBStEFfTzjvXwOYke6xiyZq4Y=
+    secure: Hbtx8OQOQ4WKs/Nniql+wPOSSgE9KCLAN3OiICPbi58v1YFQK+RgC/R0ictqedg2qDKpl2nRYDO6DaXw2JE+/goNbgl79V/Tw28lU5dfNXYDFo9WaxdfLwIfoN/n1csv1D8485NDqnVv7TeJbHvGmmTdx9v0vg4fenUhqVcgqHw=
