@@ -79,7 +79,11 @@ class AirForce(VerboseValueConstant):
                                        verbose_name=verbose_name,
                                        help_text=help_text)
         self.country = country
-        self.default_flight_prefix = str(default_flight_prefix)
+
+        if default_flight_prefix is not None:
+            self.default_flight_prefix = str(default_flight_prefix)
+        else:
+            self.default_flight_prefix = None
 
     def merge_into_group(self, group):
         super(AirForce, self).merge_into_group(group)
@@ -250,8 +254,10 @@ class AirForces(with_constant_class(AirForce), Values):
 
     @classmethod
     def filter_by_belligerent(cls, belligerent):
-        return filter(lambda x: x.country.belligerent == belligerent,
-                      cls.constants())
+        return filter(
+            lambda x: x.country.belligerent == belligerent if x.country else False,
+            cls.constants()
+        )
 
 
 def _get_data_file_path(file_name):

@@ -90,7 +90,7 @@ class AirForcesTestCase(unittest.TestCase):
             [
                 'fr01', 'f01', 'ro01', 'h01', 'g01', 'ja01', 'IN_NN', 'pl01',
                 'i01', 'RA_NN', 'gb01', 'RN_NN', 'DU_NN', 'RZ_NN', 'sk01',
-                'usa01', 'UM_NN', 'UN_NN', 'r01',
+                'usa01', 'UM_NN', 'UN_NN', 'r01', None,
             ]
         )
 
