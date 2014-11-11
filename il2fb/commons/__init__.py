@@ -24,6 +24,10 @@ class GameVersions(Values):
     v4_12_1 = ValueConstant('4.12.1')
     v4_12_2 = ValueConstant('4.12.2')
 
+    @classmethod
+    def get_default(cls):
+        return cls.constants()[-1]
+
 
 class Skills(Values):
     rookie = VerboseValueConstant(0, _("rookie"))

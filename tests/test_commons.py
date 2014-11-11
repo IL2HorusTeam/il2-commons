@@ -9,13 +9,19 @@ class CommonsTestCase(unittest.TestCase):
 
     def test_languages(self):
         self.assertEqual(SupportedLanguages.names(), ['en', 'ru', ])
-        self.assertEqual(SupportedLanguages.get_default(),
-                         SupportedLanguages.en)
+        self.assertEqual(
+            SupportedLanguages.get_default(),
+            SupportedLanguages.en
+        )
 
     def test_GameVersions(self):
         self.assertEqual(
             GameVersions.values(),
             ['4.12', '4.12.1', '4.12.2', ]
+        )
+        self.assertEqual(
+            GameVersions.get_default(),
+            GameVersions.v4_12_2
         )
 
     def test_skills(self):
