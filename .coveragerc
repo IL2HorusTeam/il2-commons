@@ -1,6 +1,8 @@
 [run]
 source = il2fb/commons
-omit = */tests/*
+omit =
+    */tests/*
+    il2fb/commons/version.py
 
 [report]
 exclude_lines =

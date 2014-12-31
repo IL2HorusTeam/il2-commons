@@ -9,6 +9,7 @@ if six.PY2:
 from candv import (
     Values, VerboseConstant, VerboseValueConstant, with_constant_class,
 )
+from verboselib import get_language
 
 from . import SupportedLanguages
 from .utils import translations
@@ -285,49 +286,40 @@ class Regiment(object):
         self.code_name = str(code_name)
 
     def __getattr__(self, name):
-        try:
-            return super(Regiment, self).__getattr__(name)
-        except AttributeError:
-            if name.startswith('verbose_name_'):
-                getter = self._get_verbose_name
-                default_name_prefix = 'verbose_name'
-            elif name.startswith('help_text_'):
-                getter = self._get_help_text
-                default_name_prefix = 'help_text'
-            else:
-                raise
+        if name == 'verbose_name':
+            getter = self._get_verbose_name
+        elif name == 'help_text':
+            getter = self._get_help_text
+        else:
+            raise AttributeError("%r object has no attribute %r"
+                                 % (self.__class__, name))
 
-        # Get language code
-        start = name.rindex('_') + 1
-        language_code = name[start:]
-        if not language_code:
-            raise AttributeError(
-                "'{0}' object has no attribute '{1}'"
-                .format(self.__class__.__name__, name)
-            )
+        language = get_language()
+        final_name = "{0}_{1}".format(name, language)
+
+        if hasattr(self, final_name):
+            return getattr(self, final_name)
 
         # Check language code is known
-        default_language_code = SupportedLanguages.get_default().name
-        if not language_code in SupportedLanguages:
-            language_code = default_language_code
+        default_language = SupportedLanguages.get_default().name
+        if language not in SupportedLanguages:
+            language = default_language
 
         # Try to get value for specified language or for default language
-        value = getter(language_code)
-        if not value and language_code != default_language_code:
-            default_name = '{0}_{1}'.format(default_name_prefix,
-                                            default_language_code)
-            value = getattr(self, default_name)
+        value = getter(language)
+        if not value and language != default_language:
+            value = getter(default_language)
 
-        # Add missing attribute to object
-        setattr(self, name, value)
+        # Add missing attribute to the object
+        setattr(self, final_name, value)
         return value
 
-    def _get_verbose_name(self, language_code):
-        file_name = "regShort_{0}.properties".format(language_code)
+    def _get_verbose_name(self, language):
+        file_name = "regShort_{0}.properties".format(language)
         return self._get_text(file_name)
 
-    def _get_help_text(self, language_code):
-        file_name = "regInfo_{0}.properties".format(language_code)
+    def _get_help_text(self, language):
+        file_name = "regInfo_{0}.properties".format(language)
         return self._get_text(file_name)
 
     def _get_text(self, file_name):
@@ -342,6 +334,17 @@ class Regiment(object):
                         result = bytes(result, 'ascii')
                     return result.decode('unicode-escape')
         return ''
+
+    def to_primitive(self, context=None):
+        """
+        Add for consistency with constants.
+        """
+        return {
+            'air_force': self.air_force.to_primitive(context),
+            'code_name': self.code_name,
+            'verbose_name': six.text_type(self.verbose_name),
+            'help_text': six.text_type(self.help_text),
+        }
 
     def __repr__(self):
         return "<Regiment '{:}'>".format(self.code_name)
@@ -383,8 +386,8 @@ class Regiments(object):
             cls._cache[code_name] = regiment
             return regiment
 
-        raise ValueError(
-            "Regiment with code name '{0}' is unknown".format(code_name))
+        raise ValueError("Regiment with code name '{0}' is unknown"
+                         .format(code_name))
 
     @classmethod
     def filter_by_air_force(cls, air_force):
@@ -397,12 +400,15 @@ class Regiments(object):
         with open(file_path, mode='r', encoding='cp1251') as f:
             for line in f:
                 line = line.strip()
+
                 if not line:
                     continue
+
                 if line == air_force.default_flight_prefix:
                     # Flag that proper section was found.
                     found = True
                     continue
+
                 if found:
                     if (
                         line in flight_prefixes
@@ -418,4 +424,5 @@ class Regiments(object):
                         cls._cache[line] = regiment
 
                     result.append(regiment)
+
         return result

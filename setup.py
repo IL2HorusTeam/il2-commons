@@ -13,9 +13,14 @@ REQUIREMENTS = [
     for i in open(os.path.join(__here__, 'requirements.txt')).readlines()
 ]
 
+# Get VERSION, which is all stored in 'il2fb.parsers.mission/version.py'
+version_file = os.path.join('il2fb', 'parsers', 'events', 'version.py')
+# Use exec for compabibility with Python 3
+exec(open(version_file).read())
+
 setup(
     name='il2fb-commons',
-    version='0.9.9',
+    version=VERSION,
     description="Common helpers and data structures for projects related to "
                 "IL-2 Forgotten Battles",
     long_description=README,
