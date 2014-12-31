@@ -14,7 +14,7 @@ REQUIREMENTS = [
 ]
 
 # Get VERSION, which is all stored in 'il2fb.parsers.mission/version.py'
-version_file = os.path.join('il2fb', 'parsers', 'events', 'version.py')
+version_file = os.path.join('il2fb', 'commons', 'version.py')
 # Use exec for compabibility with Python 3
 exec(open(version_file).read())
 
