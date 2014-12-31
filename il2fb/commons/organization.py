@@ -48,6 +48,11 @@ class Country(VerboseConstant):
         super(Country, self).merge_into_group(group)
         group.belligerent = self.belligerent
 
+    def to_primitive(self, context=None):
+        primitive = super(Country, self).to_primitive(context)
+        primitive['belligerent'] = self.belligerent.to_primitive(context)
+        return primitive
+
 
 class Countries(with_constant_class(Country), Values):
     au = Country(Belligerents.red, _("Australia"))
@@ -89,6 +94,14 @@ class AirForce(VerboseValueConstant):
         super(AirForce, self).merge_into_group(group)
         group.country = self.country
         group.default_flight_prefix = self.default_flight_prefix
+
+    def to_primitive(self, context=None):
+        primitive = super(AirForce, self).to_primitive(context)
+        primitive.update({
+            'country': self.country.to_primitive(context),
+            'default_flight_prefix': self.default_flight_prefix,
+        })
+        return primitive
 
 
 class AirForces(with_constant_class(AirForce), Values):
@@ -311,13 +324,13 @@ class Regiment(object):
 
     def _get_verbose_name(self, language_code):
         file_name = "regShort_{0}.properties".format(language_code)
-        return self._get_text(language_code, file_name)
+        return self._get_text(file_name)
 
     def _get_help_text(self, language_code):
         file_name = "regInfo_{0}.properties".format(language_code)
-        return self._get_text(language_code, file_name)
+        return self._get_text(file_name)
 
-    def _get_text(self, language_code, file_name):
+    def _get_text(self, file_name):
         file_path = _get_data_file_path(file_name)
 
         with open(file_path, mode='r', encoding='cp1251') as f:

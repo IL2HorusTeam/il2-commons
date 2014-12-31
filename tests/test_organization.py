@@ -39,16 +39,39 @@ class BelligerentsTestCase(unittest.TestCase):
 
 class CountriesTestCase(unittest.TestCase):
 
-    def test_country_as_group(self):
+    def test_to_group(self):
 
         class FOO(with_constant_class(Country), Values):
-            bar = Country(Belligerents.red, "Bar").to_group(
+            bar = Country(
+                belligerent=Belligerents.red,
+                verbose_name="Bar",
+            ).to_group(
                 group_class=Constants,
-                qux=SimpleConstant()
+                qux=SimpleConstant(),
             )
 
         self.assertEqual(FOO.bar.belligerent, Belligerents.red)
         self.assertEqual(FOO.bar.names(), ['qux', ])
+
+    def test_to_primitive(self):
+
+        class FOO(with_constant_class(Country), Values):
+            bar = Country(Belligerents.red, "Bar")
+
+        self.assertEqual(
+            FOO.bar.to_primitive(),
+            {
+                'name': 'bar',
+                'verbose_name': "Bar",
+                'help_text': None,
+                'belligerent': {
+                    'name': 'red',
+                    'verbose_name': "allies",
+                    'help_text': None,
+                    'value': 1,
+                }
+            }
+        )
 
     def test_filter_by_belligerent(self):
         self.assertEqual(
@@ -66,23 +89,54 @@ class CountriesTestCase(unittest.TestCase):
 
 class AirForcesTestCase(unittest.TestCase):
 
-    def test_air_force_as_group(self):
+    def test_to_group(self):
 
         class FOO(with_constant_class(AirForce), Values):
-            bar = (
-                AirForce(
-                    country=Countries.au,
-                    default_flight_prefix='brrr',
-                    value='br',
-                    verbose_name="BAR")
-                .to_group(
-                    group_class=Constants,
-                    qux=SimpleConstant())
+            bar = AirForce(
+                country=Countries.au,
+                default_flight_prefix='brrr',
+                value='br',
+                verbose_name="BAR",
+            ).to_group(
+                group_class=Constants,
+                qux=SimpleConstant(),
             )
 
         self.assertEqual(FOO.bar.country, Countries.au)
         self.assertEqual(FOO.bar.default_flight_prefix, 'brrr')
         self.assertEqual(FOO.bar.names(), ['qux', ])
+
+    def test_to_primitive(self):
+
+        class FOO(with_constant_class(AirForce), Values):
+            bar = AirForce(
+                country=Countries.au,
+                default_flight_prefix='brrr',
+                value='br',
+                verbose_name="BAR",
+            )
+
+        self.assertEqual(
+            FOO.bar.to_primitive(),
+            {
+                'name': "bar",
+                'country': {
+                    'name': 'au',
+                    'verbose_name': "Australia",
+                    'help_text': None,
+                    'belligerent': {
+                        'name': 'red',
+                        'verbose_name': "allies",
+                        'help_text': None,
+                        'value': 1,
+                    }
+                },
+                'default_flight_prefix': 'brrr',
+                'value': 'br',
+                'verbose_name': "BAR",
+                'help_text': None,
+            }
+        )
 
     def test_get_flight_prefixes(self):
         self.assertEqual(
