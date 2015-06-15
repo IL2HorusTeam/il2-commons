@@ -21,8 +21,6 @@ class SupportedLanguages(Constants):
 
 class GameVersions(Values):
     v4_12 = ValueConstant('4.12')
-    v4_12_1 = ValueConstant('4.12.1')
-    v4_12_2 = ValueConstant('4.12.2')
 
     @classmethod
     def get_default(cls):
