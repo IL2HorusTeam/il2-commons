@@ -17,11 +17,11 @@ class CommonsTestCase(unittest.TestCase):
     def test_GameVersions(self):
         self.assertEqual(
             GameVersions.values(),
-            ['4.12', ]
+            ['4.12', '4.13', ]
         )
         self.assertEqual(
             GameVersions.get_default(),
-            GameVersions.v4_12
+            GameVersions.v4_13
         )
 
     def test_skills(self):
