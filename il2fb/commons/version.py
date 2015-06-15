@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-VERSION_MAJOR = 0
-VERSION_MINOR = 10
-VERSION_PATCH = 0
+from version import Version
 
-VERSION_INFO = (VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH)
-VERSION = '.'.join([str(x) for x in VERSION_INFO])
+
+VERSION = Version('0.11.0-dev')

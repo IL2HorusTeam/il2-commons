@@ -20,7 +20,7 @@ exec(open(version_file).read())
 
 setup(
     name='il2fb-commons',
-    version=VERSION,
+    version=str(VERSION),
     description="Common helpers and data structures for projects related to "
                 "IL-2 Forgotten Battles",
     long_description=README,
