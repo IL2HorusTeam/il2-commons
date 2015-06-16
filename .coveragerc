@@ -9,3 +9,4 @@ exclude_lines =
     pragma: no cover
     raise NotImplementedError
     pass
+    def __repr__
