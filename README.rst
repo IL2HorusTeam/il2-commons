@@ -32,7 +32,7 @@ Common helpers and data structures for projects related to
    :target: https://crate.io/packages/il2fb-commons/
    :alt: Number of downloads of PyPI package
 
-.. |python_versions| image:: https://img.shields.io/badge/Python-2.6,2.7,3.3,3.4-brightgreen.svg?style=flat
+.. |python_versions| image:: https://img.shields.io/badge/Python-2.7,3.4-brightgreen.svg?style=flat
    :alt: Supported versions of Python
 
 .. |license| image:: https://img.shields.io/badge/license-LGPLv3-blue.svg?style=flat
