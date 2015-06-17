@@ -3,7 +3,7 @@ IL-2 FB Commons
 
 |pypi_package| |pypi_downloads| |python_versions| |license|
 
-|unix_build| |windows_build| |coverage_status| |quality|
+|unix_build| |windows_build| |coverage_status| |codacy| |quality| |health| |requirements|
 
 Common helpers and data structures for projects related to
 ``IL-2 Forgotten Battles``.
@@ -20,9 +20,21 @@ Common helpers and data structures for projects related to
    :target: https://codecov.io/github/IL2HorusTeam/il2fb-commons?branch=master
    :alt: Test coverage
 
+.. |codacy| image:: https://www.codacy.com/project/badge/1bbb6d1dddc84e19910d1501f9db47a1
+    :target: https://www.codacy.com/app/oblovatniy_3001/il2fb-commons
+    :alt: Codacy Code Review
+
 .. |quality| image:: https://scrutinizer-ci.com/g/IL2HorusTeam/il2fb-commons/badges/quality-score.png?b=master&style=flat
    :target: https://scrutinizer-ci.com/g/IL2HorusTeam/il2fb-commons/?branch=master
    :alt: Code quality provided by Scrutinizer
+
+.. |health| image:: https://landscape.io/github/IL2HorusTeam/il2fb-commons/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/IL2HorusTeam/il2fb-commons/master
+   :alt: Code Health
+
+.. |requirements| image:: https://requires.io/github/IL2HorusTeam/il2fb-commons/requirements.svg?branch=master
+     :target: https://requires.io/github/IL2HorusTeam/il2fb-commons/requirements/?branch=master
+     :alt: Requirements Status
 
 .. |pypi_package| image:: http://img.shields.io/pypi/v/il2fb-commons.svg?style=flat
    :target: http://badge.fury.io/py/il2fb-commons/
