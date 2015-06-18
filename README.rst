@@ -3,7 +3,9 @@ IL-2 FB Commons
 
 |pypi_package| |pypi_downloads| |python_versions| |license|
 
-|unix_build| |windows_build| |coverage_status| |codacy| |quality| |health| |requirements|
+|unix_build| |windows_build| |coverage_status|
+
+|codeclimate| |codacy| |quality| |health| |requirements|
 
 Common helpers and data structures for projects related to
 ``IL-2 Forgotten Battles``.
@@ -19,6 +21,10 @@ Common helpers and data structures for projects related to
 .. |coverage_status| image:: https://codecov.io/github/IL2HorusTeam/il2fb-commons/coverage.svg?branch=master
    :target: https://codecov.io/github/IL2HorusTeam/il2fb-commons?branch=master
    :alt: Test coverage
+
+.. |codeclimate| image:: https://codeclimate.com/github/IL2HorusTeam/il2fb-commons/badges/gpa.svg
+   :target: https://codeclimate.com/github/IL2HorusTeam/il2fb-commons
+   :alt: Code Climate
 
 .. |codacy| image:: https://www.codacy.com/project/badge/1bbb6d1dddc84e19910d1501f9db47a1
     :target: https://www.codacy.com/app/oblalex/il2fb-commons
