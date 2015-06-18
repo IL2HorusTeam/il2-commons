@@ -21,7 +21,7 @@ Common helpers and data structures for projects related to
    :alt: Test coverage
 
 .. |codacy| image:: https://www.codacy.com/project/badge/1bbb6d1dddc84e19910d1501f9db47a1
-    :target: https://www.codacy.com/app/oblovatniy_3001/il2fb-commons
+    :target: https://www.codacy.com/app/oblalex/il2fb-commons
     :alt: Codacy Code Review
 
 .. |quality| image:: https://scrutinizer-ci.com/g/IL2HorusTeam/il2fb-commons/badges/quality-score.png?b=master&style=flat
