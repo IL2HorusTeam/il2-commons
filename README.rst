@@ -14,7 +14,7 @@ Common helpers and data structures for projects related to
 .. |unix_build| image:: http://img.shields.io/travis/IL2HorusTeam/il2fb-commons.svg?style=flat&branch=master
    :target: https://travis-ci.org/IL2HorusTeam/il2fb-commons
 
-.. |windows_build|  image:: https://ci.appveyor.com/api/projects/status/mbi1ajws3e4p4nll/branch/master?svg=true
+.. |windows_build| image:: https://ci.appveyor.com/api/projects/status/mbi1ajws3e4p4nll/branch/master?svg=true
     :target: https://ci.appveyor.com/project/oblalex/il2fb-commons
     :alt: Build status of the master branch on Windows
 
