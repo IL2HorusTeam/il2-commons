@@ -220,13 +220,13 @@ class RegimentTestCase(unittest.TestCase):
         r = Regiment(AirForces.usn, 'USN_VT_9B')
 
         use_language('en')
-        self.assertEqual(r.verbose_name, "VT-9, USS Essex CV-9")
+        self.assertEqual(r.verbose_name, "VT-9 USS Essex CV-9")
 
         use_language('ru')
-        self.assertEqual(r.verbose_name, "VT-9, USS Essex CV-9")
+        self.assertEqual(r.verbose_name, "VT-9 USS Essex CV-9")
 
         use_language('ja')
-        self.assertEqual(r.verbose_name, "VT-9, USS Essex CV-9")
+        self.assertEqual(r.verbose_name, "VT-9 USS Essex CV-9")
 
     def test_unknown_help_text(self):
         r = Regiment(AirForces.vvs_rkka, 'foo')
@@ -259,16 +259,16 @@ class RegimentTestCase(unittest.TestCase):
     def test_help_text_missing_translation(self):
         r = Regiment(AirForces.usn, 'USN_VT_9B')
 
-        self.assertEqual(r.help_text, "US Navy VT-9, USS Essex CV-9")
+        self.assertEqual(r.help_text, "US Navy Torpedo Squadron 9 USS Essex CV-9")
 
         use_language('en')
-        self.assertEqual(r.help_text, "US Navy VT-9, USS Essex CV-9")
+        self.assertEqual(r.help_text, "US Navy Torpedo Squadron 9 USS Essex CV-9")
 
         use_language('ru')
-        self.assertEqual(r.help_text, "US Navy VT-9, USS Essex CV-9")
+        self.assertEqual(r.help_text, "US Navy Torpedo Squadron 9 USS Essex CV-9")
 
         use_language('ja')
-        self.assertEqual(r.help_text, "US Navy VT-9, USS Essex CV-9")
+        self.assertEqual(r.help_text, "US Navy Torpedo Squadron 9 USS Essex CV-9")
 
     def test_unknown_attributes(self):
         r = Regiment(AirForces.usn, 'USN_VT_9B')
@@ -279,32 +279,34 @@ class RegimentTestCase(unittest.TestCase):
         self.assertEqual(repr(r), "<Regiment 'USN_VT_9B'>")
 
     def test_to_primitive(self):
-        self.assertEqual(
-            Regiment(AirForces.usn, 'USN_VT_9B').to_primitive(),
-            {
-                'air_force': {
-                    'name': "usn",
-                    'country': {
-                        'name': 'us',
-                        'verbose_name': "United States",
-                        'help_text': None,
-                        'belligerent': {
-                            'name': 'red',
-                            'verbose_name': "allies",
-                            'help_text': None,
-                            'value': 1,
-                        }
-                    },
-                    'default_flight_prefix': 'UN_NN',
-                    'value': 'un',
-                    'verbose_name': "USN",
-                    'help_text': "United States Navy",
-                },
-                'code_name': 'USN_VT_9B',
-                'verbose_name': "VT-9, USS Essex CV-9",
-                'help_text': "US Navy VT-9, USS Essex CV-9",
-            }
-        )
+        primitive = Regiment(AirForces.usn, 'USN_VT_9B').to_primitive()
+
+        self.assertEqual(primitive.pop('code_name'), "USN_VT_9B")
+        self.assertEqual(primitive.pop('verbose_name'), "VT-9 USS Essex CV-9")
+        self.assertEqual(primitive.pop('help_text'), "US Navy Torpedo Squadron 9 USS Essex CV-9")
+
+        air_force = primitive.pop('air_force')
+        self.assertEqual(air_force.pop('name'), "usn")
+        self.assertEqual(air_force.pop('default_flight_prefix'), "UN_NN")
+        self.assertEqual(air_force.pop('value'), "un")
+        self.assertEqual(air_force.pop('verbose_name'), "USN")
+        self.assertEqual(air_force.pop('help_text'), "United States Navy")
+
+        country = air_force.pop('country')
+        self.assertEqual(country.pop('name'), "us")
+        self.assertEqual(country.pop('verbose_name'), "United States")
+        self.assertIsNone(country.pop('help_text'))
+
+        belligerent = country.pop('belligerent')
+        self.assertEqual(belligerent.pop('name'), "red")
+        self.assertEqual(belligerent.pop('verbose_name'), "allies")
+        self.assertIsNone(belligerent.pop('help_text'))
+        self.assertEqual(belligerent.pop('value'), 1)
+
+        self.assertFalse(belligerent)
+        self.assertFalse(country)
+        self.assertFalse(air_force)
+        self.assertFalse(primitive)
 
 
 class RegimentsTestCase(unittest.TestCase):
