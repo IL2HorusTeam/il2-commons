@@ -19,15 +19,6 @@ class SupportedLanguages(Constants):
         return cls.en
 
 
-class GameVersions(Values):
-    v4_12 = ValueConstant('4.12')
-    v4_13 = ValueConstant('4.13')
-
-    @classmethod
-    def get_default(cls):
-        return cls.constants()[-1]
-
-
 class Skills(Values):
     rookie = VerboseValueConstant(0, _("rookie"))
     average = VerboseValueConstant(1, _("average"))

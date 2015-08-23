@@ -2,7 +2,7 @@
 
 import unittest
 
-from il2fb.commons import SupportedLanguages, GameVersions, Skills
+from il2fb.commons import SupportedLanguages, Skills
 
 
 class CommonsTestCase(unittest.TestCase):
@@ -12,16 +12,6 @@ class CommonsTestCase(unittest.TestCase):
         self.assertEqual(
             SupportedLanguages.get_default(),
             SupportedLanguages.en
-        )
-
-    def test_GameVersions(self):
-        self.assertEqual(
-            GameVersions.values(),
-            ['4.12', '4.13', ]
-        )
-        self.assertEqual(
-            GameVersions.get_default(),
-            GameVersions.v4_13
         )
 
     def test_skills(self):
