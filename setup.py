@@ -14,14 +14,10 @@ REQUIREMENTS = [
     open(os.path.join(__here__, 'requirements', 'dist.txt')).readlines()
 ]
 
-# Get VERSION
-version_file = os.path.join('il2fb', 'commons', 'version.py')
-# Use exec for compabibility with Python 3
-exec(open(version_file).read())
 
 setup(
     name='il2fb-commons',
-    version=str(VERSION),
+    version='0.11.0.dev0',
     description="Common helpers and data structures for projects related to "
                 "IL-2 Forgotten Battles",
     long_description=README,
