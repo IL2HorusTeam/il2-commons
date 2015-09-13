@@ -5,7 +5,7 @@ IL-2 FB Commons
 
 |unix_build| |windows_build| |coverage_status|
 
-|codeclimate| |codacy| |quality| |health| |requirements|
+|code_issues| |codeclimate| |codacy| |quality| |health| |requirements|
 
 Common helpers and data structures for projects related to
 ``IL-2 Forgotten Battles``.
@@ -41,6 +41,10 @@ Common helpers and data structures for projects related to
 .. |requirements| image:: https://requires.io/github/IL2HorusTeam/il2fb-commons/requirements.svg?branch=master
      :target: https://requires.io/github/IL2HorusTeam/il2fb-commons/requirements/?branch=master
      :alt: Requirements Status
+
+.. |code_issues| image:: https://www.quantifiedcode.com/api/v1/project/81fbabc323b94109a2b380f6132ba29c/badge.svg
+     :target: https://www.quantifiedcode.com/app/project/81fbabc323b94109a2b380f6132ba29c
+     :alt: Code issues
 
 .. |pypi_package| image:: http://img.shields.io/pypi/v/il2fb-commons.svg?style=flat
    :target: http://badge.fury.io/py/il2fb-commons/
