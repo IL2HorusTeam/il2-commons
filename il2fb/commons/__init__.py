@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from candv import (
-    SimpleConstant, Constants, Values, ValueConstant, VerboseValueConstant,
-)
+from candv import SimpleConstant, Constants, Values, VerboseValueConstant
 
 from .utils import translations
 
