@@ -26,9 +26,9 @@ class WeatherTestCase(unittest.TestCase):
             [(x.name, x.value) for x in Gust.constants()],
             [
                 ('none', 0),
-                ('low', 1),
-                ('moderate', 2),
-                ('strong', 3),
+                ('low', 8),
+                ('moderate', 10),
+                ('strong', 12),
             ],
         )
 
@@ -37,9 +37,9 @@ class WeatherTestCase(unittest.TestCase):
             [(x.name, x.value) for x in Turbulence.constants()],
             [
                 ('none', 0),
-                ('low', 1),
-                ('moderate', 2),
-                ('strong', 3),
-                ('very_strong', 4),
+                ('low', 3),
+                ('moderate', 4),
+                ('strong', 5),
+                ('very_strong', 6),
             ]
         )
