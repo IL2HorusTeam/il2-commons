@@ -29,6 +29,7 @@ class FlightTestCase(unittest.TestCase):
                 ('takeoff_pair', 'TAKEOFF_002'),
                 ('takeoff_in_line', 'TAKEOFF_003'),
                 ('takeoff_taxiing', 'TAKEOFF_004'),
+                ('takeoff_taxiing_from_static', 'TAKEOFF_005'),
 
                 ('normal', 'NORMFLY'),
 

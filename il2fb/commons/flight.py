@@ -32,6 +32,9 @@ class RoutePointTypes(Values):
     takeoff_taxiing = VerboseValueConstant(
         'TAKEOFF_004',
         _("takeoff (taxiing)"))
+    takeoff_taxiing_from_static = VerboseValueConstant(
+        'TAKEOFF_005',
+        _("takeoff (taxiing from static)"))
 
     # Normal flight -----------------------------------------------------------
     normal = VerboseValueConstant(
