@@ -98,8 +98,9 @@ class AirForce(VerboseValueConstant):
 
     def to_primitive(self, context=None):
         primitive = super(AirForce, self).to_primitive(context)
+        country = self.country.to_primitive(context) if self.country else None
         primitive.update({
-            'country': self.country.to_primitive(context),
+            'country': country,
             'default_flight_prefix': self.default_flight_prefix,
         })
         return primitive
