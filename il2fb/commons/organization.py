@@ -140,6 +140,7 @@ class AirForces(with_constant_class(AirForce), Values):
         default_flight_prefix='g01',
         value='de',
         verbose_name=_("Luftwaffe"),
+        help_text=_("German Air Force"),
     )
     ija = AirForce(
         country=Countries.jp,
@@ -244,6 +245,7 @@ class AirForces(with_constant_class(AirForce), Values):
         default_flight_prefix=None,
         value='nn',
         verbose_name=_("None"),
+        help_text=_("No Air Force"),
     )
 
     @classmethod

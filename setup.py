@@ -17,9 +17,11 @@ REQUIREMENTS = [
 
 setup(
     name='il2fb-commons',
-    version='0.11.0.dev2',
-    description="Common helpers and data structures for projects related to "
-                "IL-2 Forgotten Battles",
+    version='0.11.0.dev3',
+    description=(
+        "Common helpers and data structures for projects related to "
+        "IL-2 Forgotten Battles"
+    ),
     long_description=README,
     keywords=[
         'il2', 'il-2', 'fb', 'forgotten battles', 'common', 'structure',

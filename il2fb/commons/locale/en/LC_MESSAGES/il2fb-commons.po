@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-10 14:30+0300\n"
+"POT-Creation-Date: 2016-10-13 22:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -340,120 +340,128 @@ msgstr ""
 msgid "Luftwaffe"
 msgstr ""
 
-#: organization.py:148
-msgid "IJA"
+#: organization.py:143
+msgid "German Air Force"
 msgstr ""
 
 #: organization.py:149
+msgid "IJA"
+msgstr ""
+
+#: organization.py:150
 msgid "Imperial Japanese Army"
 msgstr ""
 
-#: organization.py:155
+#: organization.py:156
 msgid "IJN"
 msgstr ""
 
-#: organization.py:156
+#: organization.py:157
 msgid "Imperial Japanese Navy"
 msgstr ""
 
-#: organization.py:162
+#: organization.py:163
 msgid "PAF"
 msgstr ""
 
-#: organization.py:163
+#: organization.py:164
 msgid "Polish Air Force"
 msgstr ""
 
-#: organization.py:169
+#: organization.py:170
 msgid "RAI"
 msgstr ""
 
-#: organization.py:170
+#: organization.py:171
 msgid "Regia Aeronautica Italiana"
 msgstr ""
 
-#: organization.py:176
+#: organization.py:177
 msgid "RAAF"
 msgstr ""
 
-#: organization.py:177
+#: organization.py:178
 msgid "Royal Australian Air Force"
 msgstr ""
 
-#: organization.py:183
+#: organization.py:184
 msgid "RAF"
 msgstr ""
 
-#: organization.py:184
+#: organization.py:185
 msgid "Royal Air Force"
 msgstr ""
 
-#: organization.py:190
+#: organization.py:191
 msgid "RN"
 msgstr ""
 
-#: organization.py:191
+#: organization.py:192
 msgid "Royal Navy"
 msgstr ""
 
-#: organization.py:197
+#: organization.py:198
 msgid "RNLAF"
 msgstr ""
 
-#: organization.py:198
+#: organization.py:199
 msgid "Royal Netherlands Air Force"
 msgstr ""
 
-#: organization.py:204
+#: organization.py:205
 msgid "RNZAF"
 msgstr ""
 
-#: organization.py:205
+#: organization.py:206
 msgid "Royal New Zealand Air Force"
 msgstr ""
 
-#: organization.py:211
+#: organization.py:212
 msgid "SAF"
 msgstr ""
 
-#: organization.py:212
+#: organization.py:213
 msgid "Slovak Air Force"
 msgstr ""
 
-#: organization.py:218
+#: organization.py:219
 msgid "USAAF"
 msgstr ""
 
-#: organization.py:219
+#: organization.py:220
 msgid "United States Army Air Forces"
 msgstr ""
 
-#: organization.py:225
+#: organization.py:226
 msgid "USMC"
 msgstr ""
 
-#: organization.py:226
+#: organization.py:227
 msgid "United States Marine Corps"
 msgstr ""
 
-#: organization.py:232
+#: organization.py:233
 msgid "USN"
 msgstr ""
 
-#: organization.py:233
+#: organization.py:234
 msgid "United States Navy"
 msgstr ""
 
-#: organization.py:239
+#: organization.py:240
 msgid "VVS RKKA"
 msgstr ""
 
-#: organization.py:240
+#: organization.py:241
 msgid "Workers-Peasants Red Army Air Forces"
 msgstr ""
 
-#: organization.py:246
+#: organization.py:247
 msgid "None"
+msgstr ""
+
+#: organization.py:248
+msgid "No Air Force"
 msgstr ""
 
 #: targets.py:12
