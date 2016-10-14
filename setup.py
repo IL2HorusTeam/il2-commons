@@ -1,18 +1,38 @@
 # coding: utf-8
 
 import os
+import sys
 
 from setuptools import setup
+
+if sys.version_info[0] < 3:
+    from io import open
 
 
 __here__ = os.path.abspath(os.path.dirname(__file__))
 
-README = open(os.path.join(__here__, 'README.rst')).read()
-REQUIREMENTS = [
-    i.strip()
-    for i in
-    open(os.path.join(__here__, 'requirements', 'dist.txt')).readlines()
-]
+
+def split_requirements(lines):
+    requirements, dependencies = [], []
+
+    for line in lines:
+        if line.startswith('-e'):
+            line = line.split(' ', 1)[1]
+            dependencies.append(line)
+            line = line.split('#egg=', 1)[1]
+
+        requirements.append(line)
+
+    return requirements, dependencies
+
+
+with open(os.path.join(__here__, 'requirements', 'dist.txt'), encoding="utf8") as f:
+    REQUIREMENTS = [x.strip() for x in f]
+    REQUIREMENTS = [x for x in REQUIREMENTS if x and not x.startswith('#')]
+    REQUIREMENTS, DEPENDENCIES = split_requirements(REQUIREMENTS)
+
+
+README = open(os.path.join(__here__, 'README.rst'), encoding="utf8").read()
 
 
 setup(
@@ -38,6 +58,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=REQUIREMENTS,
+    dependency_links=DEPENDENCIES,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',

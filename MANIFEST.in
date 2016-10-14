@@ -2,4 +2,3 @@ include README.rst
 include LICENSE
 include requirements/dist.txt
 recursive-include il2fb/commons/locale *
-recursive-include il2fb/commons/data *
