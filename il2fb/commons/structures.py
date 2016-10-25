@@ -8,6 +8,9 @@ class BaseStructure(object):
         if not isinstance(other, self.__class__):
             return NotImplemented
 
+        if self.__class__ != other.__class__:
+            return False
+
         return all([
             getattr(self, x) == getattr(other, x)
             for x in self.__slots__
