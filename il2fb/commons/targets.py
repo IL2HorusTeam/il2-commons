@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from candv import Values, VerboseValueConstant
+from candv import Values, VerboseValueConstant, with_constant_class
 
 from .utils import translations
 
@@ -8,7 +8,11 @@ from .utils import translations
 _ = translations.ugettext_lazy
 
 
-class TargetTypes(Values):
+class TargetType(VerboseValueConstant):
+    pass
+
+
+class TargetTypes(with_constant_class(TargetType), Values):
     destroy = VerboseValueConstant(0, _("destroy"))
     destroy_area = VerboseValueConstant(1, _("destroy area"))
     destroy_bridge = VerboseValueConstant(2, _("destroy bridge"))
@@ -19,7 +23,11 @@ class TargetTypes(Values):
     cover_bridge = VerboseValueConstant(7, _("cover bridge"))
 
 
-class TargetPriorities(Values):
-    primary = VerboseValueConstant(0, _("primary"))
-    secondary = VerboseValueConstant(1, _("secondary"))
-    hidden = VerboseValueConstant(2, _("hidden"))
+class TargetPriority(VerboseValueConstant):
+    pass
+
+
+class TargetPriorities(with_constant_class(TargetPriority), Values):
+    primary = TargetPriority(0, _("primary"))
+    secondary = TargetPriority(1, _("secondary"))
+    hidden = TargetPriority(2, _("hidden"))

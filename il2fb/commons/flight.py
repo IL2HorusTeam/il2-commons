@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from candv import Values, VerboseValueConstant
+from candv import Values, VerboseValueConstant, with_constant_class
 
 from .utils import translations
 
@@ -8,36 +8,44 @@ from .utils import translations
 _ = translations.ugettext_lazy
 
 
-class Formations(Values):
-    echelon_right = VerboseValueConstant('F2', _("echelon right"))
-    echelon_left = VerboseValueConstant('F3', _("echelon left"))
-    line_abreast = VerboseValueConstant('F4', _("line abreast"))
-    line_asteam = VerboseValueConstant('F5', _("line asteam"))
-    vic = VerboseValueConstant('F6', _("vic"))
-    finger_four = VerboseValueConstant('F7', _("finger four"))
-    diamond = VerboseValueConstant('F8', _("diamond"))
+class Formation(VerboseValueConstant):
+    pass
 
 
-class RoutePointTypes(Values):
+class Formations(with_constant_class(Formation), Values):
+    echelon_right = Formation('F2', _("echelon right"))
+    echelon_left = Formation('F3', _("echelon left"))
+    line_abreast = Formation('F4', _("line abreast"))
+    line_asteam = Formation('F5', _("line asteam"))
+    vic = Formation('F6', _("vic"))
+    finger_four = Formation('F7', _("finger four"))
+    diamond = Formation('F8', _("diamond"))
+
+
+class RoutePointType(VerboseValueConstant):
+    pass
+
+
+class RoutePointTypes(with_constant_class(RoutePointType), Values):
     # Take-off ----------------------------------------------------------------
-    takeoff_normal = VerboseValueConstant(
+    takeoff_normal = RoutePointType(
         'TAKEOFF',
         _("takeoff (normal)"))
-    takeoff_pair = VerboseValueConstant(
+    takeoff_pair = RoutePointType(
         'TAKEOFF_002',
         _("takeoff (pair)"))
-    takeoff_in_line = VerboseValueConstant(
+    takeoff_in_line = RoutePointType(
         'TAKEOFF_003',
         _("takeoff (in line)"))
-    takeoff_taxiing = VerboseValueConstant(
+    takeoff_taxiing = RoutePointType(
         'TAKEOFF_004',
         _("takeoff (taxiing)"))
-    takeoff_taxiing_from_static = VerboseValueConstant(
+    takeoff_taxiing_from_static = RoutePointType(
         'TAKEOFF_005',
         _("takeoff (taxiing from static)"))
 
     # Normal flight -----------------------------------------------------------
-    normal = VerboseValueConstant(
+    normal = RoutePointType(
         'NORMFLY',
         _("normal"))
 
@@ -45,48 +53,48 @@ class RoutePointTypes(Values):
     #: .. warning::
     #:   air attack is not present in game. It is calculated as ``NORMFLY``
     #:   with a target
-    air_attack = VerboseValueConstant(
+    air_attack = RoutePointType(
         'X_AIR_ATTACK',
         _("air attack"))
-    ground_attack = VerboseValueConstant(
+    ground_attack = RoutePointType(
         'GATTACK',
         _("ground attack"))
 
     # Patrol ------------------------------------------------------------------
-    patrol_triangle = VerboseValueConstant(
+    patrol_triangle = RoutePointType(
         'NORMFLY_401',
         _("patrol (triangle)"))
-    patrol_square = VerboseValueConstant(
+    patrol_square = RoutePointType(
         'NORMFLY_402',
         _("patrol (square)"))
-    patrol_pentagon = VerboseValueConstant(
+    patrol_pentagon = RoutePointType(
         'NORMFLY_403',
         _("patrol (pentagon)"))
-    patrol_hexagon = VerboseValueConstant(
+    patrol_hexagon = RoutePointType(
         'NORMFLY_404',
         _("patrol (hexagon)"))
-    patrol_random = VerboseValueConstant(
+    patrol_random = RoutePointType(
         'NORMFLY_405',
         _("patrol (random)"))
 
     # Artillery spotter -------------------------------------------------------
-    artillery_spotter = VerboseValueConstant(
+    artillery_spotter = RoutePointType(
         'NORMFLY_407',
         _("artillery spotter"))
 
     # Langing -----------------------------------------------------------------
-    landing_on_left = VerboseValueConstant(
+    landing_on_left = RoutePointType(
         'LANDING',
         _("landing (on left)"))
-    landing_on_right = VerboseValueConstant(
+    landing_on_right = RoutePointType(
         'LANDING_101',
         _("landing (on right)"))
-    landing_short_on_left = VerboseValueConstant(
+    landing_short_on_left = RoutePointType(
         'LANDING_102',
         _("landing (short on left)"))
-    landing_short_on_right = VerboseValueConstant(
+    landing_short_on_right = RoutePointType(
         'LANDING_103',
         _("landing (short on right)"))
-    landing_straight = VerboseValueConstant(
+    landing_straight = RoutePointType(
         'LANDING_104',
         _("landing (straight)"))
