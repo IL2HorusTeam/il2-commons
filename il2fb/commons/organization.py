@@ -12,24 +12,28 @@ from .utils import translations
 _ = translations.ugettext_lazy
 
 
-class Belligerents(Values):
-    none = VerboseValueConstant(0, _("neutral"))
-    red = VerboseValueConstant(1, _("allies"))
-    blue = VerboseValueConstant(2, _("axis"))
-    green = VerboseValueConstant(3, _("green"))
-    gold = VerboseValueConstant(4, _("gold"))
-    purple = VerboseValueConstant(5, _("purple"))
-    aqua = VerboseValueConstant(6, _("aqua"))
-    maroon = VerboseValueConstant(7, _("maroon"))
-    navy = VerboseValueConstant(8, _("navy"))
-    emerald = VerboseValueConstant(9, _("emerald"))
-    olive = VerboseValueConstant(10, _("olive"))
-    magenta = VerboseValueConstant(11, _("magenta"))
-    teal = VerboseValueConstant(12, _("teal"))
-    orange = VerboseValueConstant(13, _("orange"))
-    turquoise = VerboseValueConstant(14, _("turquoise"))
-    brown = VerboseValueConstant(15, _("brown"))
-    salad = VerboseValueConstant(16, _("salad"))
+class Belligerent(VerboseValueConstant):
+    pass
+
+
+class Belligerents(with_constant_class(Belligerent), Values):
+    none = Belligerent(0, _("neutral"))
+    red = Belligerent(1, _("allies"))
+    blue = Belligerent(2, _("axis"))
+    green = Belligerent(3, _("green"))
+    gold = Belligerent(4, _("gold"))
+    purple = Belligerent(5, _("purple"))
+    aqua = Belligerent(6, _("aqua"))
+    maroon = Belligerent(7, _("maroon"))
+    navy = Belligerent(8, _("navy"))
+    emerald = Belligerent(9, _("emerald"))
+    olive = Belligerent(10, _("olive"))
+    magenta = Belligerent(11, _("magenta"))
+    teal = Belligerent(12, _("teal"))
+    orange = Belligerent(13, _("orange"))
+    turquoise = Belligerent(14, _("turquoise"))
+    brown = Belligerent(15, _("brown"))
+    salad = Belligerent(16, _("salad"))
 
 
 class Country(VerboseConstant):
