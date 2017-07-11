@@ -1,6 +1,9 @@
 # coding: utf-8
 
-from candv import SimpleConstant, Constants, Values, VerboseValueConstant
+from candv import (
+    SimpleConstant, Constants, Values, VerboseValueConstant,
+    with_constant_class
+)
 
 from .utils import translations
 
@@ -35,3 +38,13 @@ class UnitTypes(Values):
     stationary = VerboseValueConstant('stationary', _("stationary"))
     train = VerboseValueConstant('trains', _("train"))
     vehicle = VerboseValueConstant('vehicles', _("vehicle"))
+
+
+class MissionStatus(SimpleConstant):
+    pass
+
+
+class MissionStatuses(with_constant_class(MissionStatus), Constants):
+    not_loaded = MissionStatus()
+    loaded = MissionStatus()
+    playing = MissionStatus()
