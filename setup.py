@@ -26,7 +26,7 @@ def split_requirements(lines):
     return requirements, dependencies
 
 
-with open(os.path.join(__here__, 'requirements', 'dist.txt'), encoding="utf8") as f:
+with open(os.path.join(__here__, 'requirements', 'dist.txt')) as f:
     REQUIREMENTS = [x.strip() for x in f]
     REQUIREMENTS = [x for x in REQUIREMENTS if x and not x.startswith('#')]
     REQUIREMENTS, DEPENDENCIES = split_requirements(REQUIREMENTS)
@@ -37,7 +37,7 @@ README = open(os.path.join(__here__, 'README.rst'), encoding="utf8").read()
 
 setup(
     name='il2fb-commons',
-    version='0.11.0.dev3',
+    version='1.0.0',
     description=(
         "Common helpers and data structures for projects related to "
         "IL-2 Forgotten Battles"
@@ -60,7 +60,7 @@ setup(
     install_requires=REQUIREMENTS,
     dependency_links=DEPENDENCIES,
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
         'Natural Language :: English',
