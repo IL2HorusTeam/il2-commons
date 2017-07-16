@@ -3,7 +3,8 @@
 import six
 
 from candv import (
-    Values, VerboseConstant, VerboseValueConstant, with_constant_class,
+    Constants, Values, VerboseConstant, VerboseValueConstant,
+    with_constant_class,
 )
 
 from .utils import translations
@@ -37,42 +38,25 @@ class Belligerents(with_constant_class(Belligerent), Values):
 
 
 class Country(VerboseConstant):
-
-    def __init__(self, belligerent, verbose_name=None, help_text=None):
-        super(Country, self).__init__(verbose_name=verbose_name,
-                                      help_text=help_text)
-        self.belligerent = belligerent
-
-    def merge_into_group(self, group):
-        super(Country, self).merge_into_group(group)
-        group.belligerent = self.belligerent
-
-    def to_primitive(self, context=None):
-        primitive = super(Country, self).to_primitive(context)
-        primitive['belligerent'] = self.belligerent.to_primitive(context)
-        return primitive
+    pass
 
 
-class Countries(with_constant_class(Country), Values):
-    au = Country(Belligerents.red, _("Australia"))
-    fi = Country(Belligerents.blue, _("Finland"))
-    fr = Country(Belligerents.red, _("France"))
-    de = Country(Belligerents.blue, _("Germany"))
-    hu = Country(Belligerents.blue, _("Hungary"))
-    jp = Country(Belligerents.blue, _("Japan"))
-    it = Country(Belligerents.blue, _("Italy"))
-    nl = Country(Belligerents.red, _("Netherlands"))
-    nz = Country(Belligerents.red, _("New Zealand"))
-    pl = Country(Belligerents.red, _("Poland"))
-    ro = Country(Belligerents.blue, _("Romania"))
-    sk = Country(Belligerents.blue, _("Slovakia"))
-    su = Country(Belligerents.red, _("Soviet Union"))
-    uk = Country(Belligerents.red, _("United Kingdom"))
-    us = Country(Belligerents.red, _("United States"))
-
-    @classmethod
-    def filter_by_belligerent(cls, belligerent):
-        return filter(lambda x: x.belligerent == belligerent, cls.constants())
+class Countries(with_constant_class(Country), Constants):
+    au = Country(verbose_name=_("Australia"))
+    fi = Country(verbose_name=_("Finland"))
+    fr = Country(verbose_name=_("France"))
+    de = Country(verbose_name=_("Germany"))
+    hu = Country(verbose_name=_("Hungary"))
+    jp = Country(verbose_name=_("Japan"))
+    it = Country(verbose_name=_("Italy"))
+    nl = Country(verbose_name=_("Netherlands"))
+    nz = Country(verbose_name=_("New Zealand"))
+    pl = Country(verbose_name=_("Poland"))
+    ro = Country(verbose_name=_("Romania"))
+    sk = Country(verbose_name=_("Slovakia"))
+    su = Country(verbose_name=_("Soviet Union"))
+    uk = Country(verbose_name=_("United Kingdom"))
+    us = Country(verbose_name=_("United States"))
 
 
 class AirForce(VerboseValueConstant):
@@ -266,10 +250,3 @@ class AirForces(with_constant_class(AirForce), Values):
     @classmethod
     def filter_by_country(cls, country):
         return filter(lambda x: x.country == country, cls.constants())
-
-    @classmethod
-    def filter_by_belligerent(cls, belligerent):
-        return filter(
-            lambda x: x.country.belligerent == belligerent if x.country else False,
-            cls.constants()
-        )

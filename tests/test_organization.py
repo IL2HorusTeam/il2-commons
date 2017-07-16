@@ -43,20 +43,18 @@ class CountriesTestCase(unittest.TestCase):
 
         class FOO(with_constant_class(Country), Values):
             bar = Country(
-                belligerent=Belligerents.red,
                 verbose_name="Bar",
             ).to_group(
                 group_class=Constants,
                 qux=SimpleConstant(),
             )
 
-        self.assertEqual(FOO.bar.belligerent, Belligerents.red)
         self.assertEqual(FOO.bar.names(), ['qux', ])
 
     def test_to_primitive(self):
 
         class FOO(with_constant_class(Country), Values):
-            bar = Country(Belligerents.red, "Bar")
+            bar = Country("Bar")
 
         self.assertEqual(
             FOO.bar.to_primitive(),
@@ -64,26 +62,7 @@ class CountriesTestCase(unittest.TestCase):
                 'name': 'bar',
                 'verbose_name': "Bar",
                 'help_text': None,
-                'belligerent': {
-                    'name': 'red',
-                    'verbose_name': "allies",
-                    'help_text': None,
-                    'value': 1,
-                }
             }
-        )
-
-    def test_filter_by_belligerent(self):
-        self.assertEqual(
-            list(Countries.filter_by_belligerent(Belligerents.none)),
-            []
-        )
-        self.assertEqual(
-            list(Countries.filter_by_belligerent(Belligerents.red)),
-            [
-                Countries.au, Countries.fr, Countries.nl, Countries.nz,
-                Countries.pl, Countries.su, Countries.uk, Countries.us,
-            ]
         )
 
 
@@ -124,12 +103,6 @@ class AirForcesTestCase(unittest.TestCase):
                     'name': 'au',
                     'verbose_name': "Australia",
                     'help_text': None,
-                    'belligerent': {
-                        'name': 'red',
-                        'verbose_name': "allies",
-                        'help_text': None,
-                        'value': 1,
-                    }
                 },
                 'default_flight_prefix': 'brrr',
                 'value': 'br',
@@ -163,19 +136,4 @@ class AirForcesTestCase(unittest.TestCase):
         self.assertEqual(
             list(AirForces.filter_by_country(Countries.us)),
             [AirForces.usaaf, AirForces.usmc, AirForces.usn, ]
-        )
-
-    def test_filter_by_belligerent(self):
-        self.assertEqual(
-            list(AirForces.filter_by_belligerent(Belligerents.none)),
-            []
-        )
-        self.assertEqual(
-            list(AirForces.filter_by_belligerent(Belligerents.red)),
-            [
-                AirForces.ala, AirForces.paf, AirForces.raaf, AirForces.raf,
-                AirForces.rn, AirForces.rnlaf, AirForces.rnzaf,
-                AirForces.usaaf, AirForces.usmc, AirForces.usn,
-                AirForces.vvs_rkka,
-            ]
         )
