@@ -18,9 +18,9 @@ class Belligerent(VerboseValueConstant):
 
 
 class Belligerents(with_constant_class(Belligerent), Values):
-    none = Belligerent(0, _("neutral"))
-    red = Belligerent(1, _("allies"))
-    blue = Belligerent(2, _("axis"))
+    none = Belligerent(0, _("none"))
+    red = Belligerent(1, _("red"))
+    blue = Belligerent(2, _("blue"))
     green = Belligerent(3, _("green"))
     gold = Belligerent(4, _("gold"))
     purple = Belligerent(5, _("purple"))
