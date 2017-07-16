@@ -13,14 +13,14 @@ class TargetType(VerboseValueConstant):
 
 
 class TargetTypes(with_constant_class(TargetType), Values):
-    destroy = VerboseValueConstant(0, _("destroy"))
-    destroy_area = VerboseValueConstant(1, _("destroy area"))
-    destroy_bridge = VerboseValueConstant(2, _("destroy bridge"))
-    recon = VerboseValueConstant(3, _("recon"))
-    escort = VerboseValueConstant(4, _("escort"))
-    cover = VerboseValueConstant(5, _("cover"))
-    cover_area = VerboseValueConstant(6, _("cover area"))
-    cover_bridge = VerboseValueConstant(7, _("cover bridge"))
+    destroy = TargetType(0, _("destroy"))
+    destroy_area = TargetType(1, _("destroy area"))
+    destroy_bridge = TargetType(2, _("destroy bridge"))
+    recon = TargetType(3, _("recon"))
+    escort = TargetType(4, _("escort"))
+    cover = TargetType(5, _("cover"))
+    cover_area = TargetType(6, _("cover area"))
+    cover_bridge = TargetType(7, _("cover bridge"))
 
 
 class TargetPriority(VerboseValueConstant):
