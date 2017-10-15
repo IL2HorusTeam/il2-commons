@@ -37,7 +37,7 @@ README = open(os.path.join(__here__, 'README.rst'), encoding="utf8").read()
 
 setup(
     name='il2fb-commons',
-    version='1.0.0',
+    version='1.0.1',
     description=(
         "Common helpers and data structures for projects related to "
         "IL-2 Forgotten Battles"
