@@ -1,11 +1,11 @@
 IL-2 FB Commons
 ===============
 
-|pypi_package| |pypi_downloads| |python_versions| |license|
+|pypi_package| |python_versions| |license|
 
 |unix_build| |windows_build| |coverage_status|
 
-|code_issues| |codeclimate| |codacy| |quality| |health| |requirements|
+|codeclimate| |codacy| |quality| |health| |requirements|
 
 Common helpers and data structures for projects related to
 ``IL-2 Forgotten Battles``.
@@ -42,17 +42,9 @@ Common helpers and data structures for projects related to
      :target: https://requires.io/github/IL2HorusTeam/il2fb-commons/requirements/?branch=master
      :alt: Requirements Status
 
-.. |code_issues| image:: https://www.quantifiedcode.com/api/v1/project/81fbabc323b94109a2b380f6132ba29c/badge.svg
-     :target: https://www.quantifiedcode.com/app/project/81fbabc323b94109a2b380f6132ba29c
-     :alt: Code issues
-
 .. |pypi_package| image:: http://img.shields.io/pypi/v/il2fb-commons.svg?style=flat
    :target: http://badge.fury.io/py/il2fb-commons/
    :alt: Version of PyPI package
-
-.. |pypi_downloads| image::  http://img.shields.io/pypi/dm/il2fb-commons.svg?style=flat
-   :target: https://crate.io/packages/il2fb-commons/
-   :alt: Number of downloads of PyPI package
 
 .. |python_versions| image:: https://img.shields.io/badge/Python-2.7,3.4,3.5,3.6-brightgreen.svg?style=flat
    :alt: Supported versions of Python
