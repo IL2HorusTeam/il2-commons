@@ -4,6 +4,7 @@ import abc
 
 import six
 
+from il2fb.commons.exceptions import IL2FBParsingException
 from il2fb.commons.structures import BaseStructure
 
 
