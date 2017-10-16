@@ -70,3 +70,7 @@ class ParsableEvent(Event):
         if match:
             data = cls.transform(match.groupdict())
             return cls(**data)
+
+
+class EventParsingException(IL2FBParsingException):
+    pass
