@@ -2,7 +2,7 @@ from candv import Values
 from candv import VerboseValueConstant
 from candv import with_constant_class
 
-from .translations import gettext_lazy as _
+from ._translations import gettext_lazy as _
 
 
 class ConditionType(VerboseValueConstant):
