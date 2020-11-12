@@ -11,7 +11,6 @@ install:
 script:
   - py.test --doctest-modules --verbose ./il2fb/commons ./tests --cov ./il2fb/commons ./tests
 after_success:
-  - codecov
   - ocular --data-file ".coverage" --config-file ".coveragerc"
 notifications:
   email: false
