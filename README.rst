@@ -3,7 +3,7 @@ IL-2 FB Commons
 
 |pypi_package| |python_versions| |license|
 
-|linux_build| |windows_build| |codebeat| |codacy| |scrutinizer|
+|linux_build| |windows_build| |coverage| |codebeat| |codacy| |scrutinizer|
 
 
 This repository contains common helpers and data structures for projects related to «IL-2 Sturmovik: Forgotten Battles» flight simulator.
