@@ -3,38 +3,41 @@ from candv import VerboseValueConstant
 from candv import with_constant_class
 
 from ._translations import gettext_lazy as _
+from ._utils import export
 
 
-class RoutePointType(VerboseValueConstant):
+@export
+class FlightWaypointType(VerboseValueConstant):
   ...
 
 
-class RoutePointTypes(with_constant_class(RoutePointType), Values):
+@export
+class FlightWaypointTypes(with_constant_class(FlightWaypointType), Values):
 
   # Take-off ----------------------------------------------------------------
-  takeoff_normal = RoutePointType(
+  takeoff_normal = FlightWaypointType(
     'TAKEOFF',
     _("takeoff (normal)"),
   )
-  takeoff_pair = RoutePointType(
+  takeoff_pair = FlightWaypointType(
     'TAKEOFF_002',
     _("takeoff (pair)"),
     )
-  takeoff_in_line = RoutePointType(
+  takeoff_in_line = FlightWaypointType(
     'TAKEOFF_003',
     _("takeoff (in line)"),
   )
-  takeoff_taxiing = RoutePointType(
+  takeoff_taxiing = FlightWaypointType(
     'TAKEOFF_004',
     _("takeoff (taxiing)"),
   )
-  takeoff_taxiing_from_static = RoutePointType(
+  takeoff_taxiing_from_static = FlightWaypointType(
     'TAKEOFF_005',
     _("takeoff (taxiing from static)"),
   )
 
   # Normal flight -----------------------------------------------------------
-  normal = RoutePointType(
+  normal = FlightWaypointType(
     'NORMFLY',
     _("normal"),
   )
@@ -43,61 +46,61 @@ class RoutePointTypes(with_constant_class(RoutePointType), Values):
   #: .. warning::
   #:   air attack is not present in game. It is calculated as ``NORMFLY``
   #:   with a target
-  air_attack = RoutePointType(
+  air_attack = FlightWaypointType(
     'X_AIR_ATTACK',
     _("air attack"),
   )
-  ground_attack = RoutePointType(
+  ground_attack = FlightWaypointType(
     'GATTACK',
     _("ground attack"),
   )
 
   # Patrol ------------------------------------------------------------------
-  patrol_triangle = RoutePointType(
+  patrol_triangle = FlightWaypointType(
     'NORMFLY_401',
     _("patrol (triangle)"),
   )
-  patrol_square = RoutePointType(
+  patrol_square = FlightWaypointType(
     'NORMFLY_402',
     _("patrol (square)"),
   )
-  patrol_pentagon = RoutePointType(
+  patrol_pentagon = FlightWaypointType(
     'NORMFLY_403',
     _("patrol (pentagon)"),
   )
-  patrol_hexagon = RoutePointType(
+  patrol_hexagon = FlightWaypointType(
     'NORMFLY_404',
     _("patrol (hexagon)"),
   )
-  patrol_random = RoutePointType(
+  patrol_random = FlightWaypointType(
     'NORMFLY_405',
     _("patrol (random)"),
   )
 
   # Artillery spotter -------------------------------------------------------
-  artillery_spotter = RoutePointType(
+  artillery_spotter = FlightWaypointType(
     'NORMFLY_407',
     _("artillery spotter"),
   )
 
   # Langing -----------------------------------------------------------------
-  landing_on_left = RoutePointType(
+  landing_on_left = FlightWaypointType(
     'LANDING',
     _("landing (on left)"),
   )
-  landing_on_right = RoutePointType(
+  landing_on_right = FlightWaypointType(
     'LANDING_101',
     _("landing (on right)"),
   )
-  landing_short_on_left = RoutePointType(
+  landing_short_on_left = FlightWaypointType(
     'LANDING_102',
     _("landing (short on left)"),
   )
-  landing_short_on_right = RoutePointType(
+  landing_short_on_right = FlightWaypointType(
     'LANDING_103',
     _("landing (short on right)"),
   )
-  landing_straight = RoutePointType(
+  landing_straight = FlightWaypointType(
     'LANDING_104',
     _("landing (straight)"),
   )
