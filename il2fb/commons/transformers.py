@@ -1,5 +1,5 @@
-from il2fb.commons.organization import Belligerents
-from il2fb.commons.spatial import Point2D
+from .belligerents import Belligerents
+from .spatial import Point2D
 
 
 def get_2d_pos_transformer(

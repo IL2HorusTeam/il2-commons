@@ -1,3 +1,4 @@
+from .belligerents import *
 from .exceptions import *
 from .formations import *
 from .missions import *
