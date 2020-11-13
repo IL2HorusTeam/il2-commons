@@ -5,3 +5,4 @@ from .skills import *
 from .supported_languages import *
 from .units import *
 from .waypoints import *
+from .weather import *

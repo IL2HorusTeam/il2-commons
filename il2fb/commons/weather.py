@@ -3,12 +3,15 @@ from candv import VerboseValueConstant
 from candv import with_constant_class
 
 from ._translations import gettext_lazy as _
+from ._utils import export
 
 
+@export
 class WeatherCondition(VerboseValueConstant):
   ...
 
 
+@export
 class WeatherConditions(with_constant_class(WeatherCondition), Values):
   clear         = WeatherCondition(0, _("clear"))
   good          = WeatherCondition(1, _("good"))
@@ -19,10 +22,12 @@ class WeatherConditions(with_constant_class(WeatherCondition), Values):
   thunderstorm  = WeatherCondition(6, _("thunderstorm"))
 
 
+@export
 class WindGust(VerboseValueConstant):
   ...
 
 
+@export
 class WindGusts(with_constant_class(WindGust), Values):
   none     = WindGust(0,  _("none"))
   low      = WindGust(8,  _("low_gust"))
@@ -30,10 +35,12 @@ class WindGusts(with_constant_class(WindGust), Values):
   strong   = WindGust(12, _("strong_gust"))
 
 
+@export
 class TurbulenceType(VerboseValueConstant):
   ...
 
 
+@export
 class Turbulence(with_constant_class(TurbulenceType), Values):
   none        = TurbulenceType(0, _("none"))
   low         = TurbulenceType(3, _("low_turbulence"))
