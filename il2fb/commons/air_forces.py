@@ -3,6 +3,7 @@ from candv import VerboseValueConstant
 from candv import with_constant_class
 
 from .countries import Countries
+from .exceptions import IL2FBLookupError
 
 from ._translations import gettext_lazy as _
 from ._utils import export
@@ -195,9 +196,8 @@ class AirForces(with_constant_class(AirForce), Values):
       if constant.default_flight_prefix == prefix:
         return constant
 
-    raise ValueError(
-      "Air force with prefix '{0}' is not present in '{1}'"
-      .format(prefix, cls.__name__)
+    raise IL2FBLookupError(
+      f"air force with prefix '{prefix}' is not present in '{cls.__name__}'"
     )
 
   @classmethod

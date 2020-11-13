@@ -9,6 +9,7 @@ from il2fb.commons.air_forces import AirForce
 from il2fb.commons.air_forces import AirForces
 
 from il2fb.commons.countries import Countries
+from il2fb.commons.exceptions import IL2FBLookupError
 
 
 class AirForcesTestCase(unittest.TestCase):
@@ -71,7 +72,7 @@ class AirForcesTestCase(unittest.TestCase):
       AirForces.get_by_flight_prefix("r01"),
       AirForces.vvs_rkka
     )
-    self.assertRaises(ValueError, AirForces.get_by_flight_prefix, "foo")
+    self.assertRaises(IL2FBLookupError, AirForces.get_by_flight_prefix, "foo")
 
   def test_filter_by_country(self):
     self.assertEqual(
