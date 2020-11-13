@@ -3,7 +3,7 @@ IL-2 FB Commons
 
 |pypi_package| |python_versions| |license|
 
-|linux_build| |windows_build| |coverage| |codebeat| |codacy| |scrutinizer|
+|linux_build| |windows_build| |codebeat| |codacy| |scrutinizer|
 
 
 This repository contains common helpers and data structures for projects related to «IL-2 Sturmovik: Forgotten Battles» flight simulator.
@@ -27,10 +27,6 @@ This repository contains common helpers and data structures for projects related
 .. |windows_build| image:: https://ci.appveyor.com/api/projects/status/mbi1ajws3e4p4nll/branch/master?svg=true
    :target: https://ci.appveyor.com/project/oblalex/il2fb-commons
    :alt: Build status of the master branch on Windows
-
-.. |coverage| image:: https://scrutinizer-ci.com/g/IL2HorusTeam/il2fb-commons/badges/coverage.png?b=master
-   :target: https://scrutinizer-ci.com/g/IL2HorusTeam/il2fb-commons/?branch=master
-   :alt: Code coverage
 
 .. |codebeat| image:: https://codebeat.co/badges/faf0173d-6985-471a-97ff-ee8d4a882d3b
    :target: https://codebeat.co/projects/github-com-il2horusteam-il2fb-commons-master
