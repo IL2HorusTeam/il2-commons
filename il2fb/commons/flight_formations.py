@@ -3,12 +3,15 @@ from candv import VerboseValueConstant
 from candv import with_constant_class
 
 from ._translations import gettext_lazy as _
+from ._utils import export
 
 
+@export
 class FlightFormation(VerboseValueConstant):
   ...
 
 
+@export
 class FlightFormations(with_constant_class(FlightFormation), Values):
   echelon_right = FlightFormation("F2", _("echelon right"))
   echelon_left  = FlightFormation("F3", _("echelon left"))
