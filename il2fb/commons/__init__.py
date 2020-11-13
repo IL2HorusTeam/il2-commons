@@ -1,4 +1,5 @@
 from .belligerents import *
+from .countries import *
 from .exceptions import *
 from .formations import *
 from .missions import *

@@ -5,39 +5,9 @@ from candv import SimpleConstant
 from candv import Values
 from candv import with_constant_class
 
-from il2fb.commons.organization import Country
 from il2fb.commons.organization import Countries
 from il2fb.commons.organization import AirForce
 from il2fb.commons.organization import AirForces
-
-
-class CountriesTestCase(unittest.TestCase):
-
-  def test_to_group(self):
-
-    class FOO(with_constant_class(Country), Values):
-      bar = Country(
-        verbose_name="Bar",
-      ).to_group(
-        group_class=Constants,
-        qux=SimpleConstant(),
-      )
-
-    self.assertEqual(FOO.bar.names(), ["qux", ])
-
-  def test_to_primitive(self):
-
-    class FOO(with_constant_class(Country), Values):
-        bar = Country("Bar")
-
-    self.assertEqual(
-      FOO.bar.to_primitive(),
-      {
-        'name': "bar",
-        'verbose_name': "Bar",
-        'help_text': None,
-      }
-    )
 
 
 class AirForcesTestCase(unittest.TestCase):
