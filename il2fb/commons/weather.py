@@ -19,15 +19,15 @@ class WeatherConditions(with_constant_class(WeatherCondition), Values):
   thunderstorm  = WeatherCondition(6, _("thunderstorm"))
 
 
-class GustType(VerboseValueConstant):
+class WindGust(VerboseValueConstant):
   ...
 
 
-class Gust(with_constant_class(GustType), Values):
-  none     = GustType(0,  _("none"))
-  low      = GustType(8,  _("low_gust"))
-  moderate = GustType(10, _("moderate_gust"))
-  strong   = GustType(12, _("strong_gust"))
+class WindGusts(with_constant_class(WindGust), Values):
+  none     = WindGust(0,  _("none"))
+  low      = WindGust(8,  _("low_gust"))
+  moderate = WindGust(10, _("moderate_gust"))
+  strong   = WindGust(12, _("strong_gust"))
 
 
 class TurbulenceType(VerboseValueConstant):
