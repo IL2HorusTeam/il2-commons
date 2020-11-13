@@ -1,3 +1,5 @@
+from .supported_languages import *
+
 from candv import Constants
 from candv import SimpleConstant
 from candv import Values
@@ -5,19 +7,6 @@ from candv import VerboseValueConstant
 from candv import with_constant_class
 
 from ._translations import gettext_lazy as _
-
-
-class SupportedLanguage(SimpleConstant):
-  ...
-
-
-class SupportedLanguages(with_constant_class(SupportedLanguage), Constants):
-  en = SupportedLanguage()
-  ru = SupportedLanguage()
-
-  @classmethod
-  def get_default(cls):
-    return cls.en
 
 
 class Skill(VerboseValueConstant):
