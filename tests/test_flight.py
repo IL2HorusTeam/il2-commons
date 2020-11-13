@@ -2,24 +2,10 @@
 
 import unittest
 
-from il2fb.commons.flight import Formations, RoutePointTypes
+from il2fb.commons.flight import RoutePointTypes
 
 
 class FlightTestCase(unittest.TestCase):
-
-    def test_formations(self):
-        self.assertEqual(
-            [(x.name, x.value) for x in Formations.constants()],
-            [
-                ('echelon_right', 'F2'),
-                ('echelon_left', 'F3'),
-                ('line_abreast', 'F4'),
-                ('line_asteam', 'F5'),
-                ('vic', 'F6'),
-                ('finger_four', 'F7'),
-                ('diamond', 'F8'),
-            ]
-        )
 
     def test_waypoint_types(self):
         self.assertEqual(

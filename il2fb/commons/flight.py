@@ -5,20 +5,6 @@ from candv import with_constant_class
 from ._translations import gettext_lazy as _
 
 
-class Formation(VerboseValueConstant):
-  ...
-
-
-class Formations(with_constant_class(Formation), Values):
-  echelon_right = Formation('F2', _("echelon right"))
-  echelon_left  = Formation('F3', _("echelon left"))
-  line_abreast  = Formation('F4', _("line abreast"))
-  line_asteam   = Formation('F5', _("line asteam"))
-  vic           = Formation('F6', _("vic"))
-  finger_four   = Formation('F7', _("finger four"))
-  diamond       = Formation('F8', _("diamond"))
-
-
 class RoutePointType(VerboseValueConstant):
   ...
 
