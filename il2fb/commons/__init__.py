@@ -1,3 +1,4 @@
+from .skills import *
 from .supported_languages import *
 
 from candv import Constants
@@ -7,17 +8,6 @@ from candv import VerboseValueConstant
 from candv import with_constant_class
 
 from ._translations import gettext_lazy as _
-
-
-class Skill(VerboseValueConstant):
-  ...
-
-
-class Skills(with_constant_class(Skill), Values):
-  rookie  = Skill(0, _("rookie"))
-  average = Skill(1, _("average"))
-  veteran = Skill(2, _("veteran"))
-  ace     = Skill(3, _("ace"))
 
 
 class UnitType(VerboseValueConstant):
