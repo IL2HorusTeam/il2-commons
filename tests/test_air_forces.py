@@ -71,6 +71,8 @@ class AirForcesTestCase(unittest.TestCase):
       AIR_FORCE.get_by_flight_prefix("r01"),
       AIR_FORCE.VVS_RKKA
     )
+
+  def test_get_by_flight_prefix_invalid_value(self):
     self.assertRaises(IL2FBLookupError, AIR_FORCE.get_by_flight_prefix, "foo")
 
   def test_filter_by_country(self):
