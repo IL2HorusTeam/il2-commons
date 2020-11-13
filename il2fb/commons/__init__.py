@@ -1,3 +1,4 @@
+from .air_forces import *
 from .belligerents import *
 from .countries import *
 from .exceptions import *

@@ -3,9 +3,12 @@ from candv import VerboseValueConstant
 from candv import with_constant_class
 
 from .countries import Countries
+
 from ._translations import gettext_lazy as _
+from ._utils import export
 
 
+@export
 class AirForce(VerboseValueConstant):
 
   def __init__(
@@ -39,6 +42,7 @@ class AirForce(VerboseValueConstant):
     return primitive
 
 
+@export
 class AirForces(with_constant_class(AirForce), Values):
   ala = AirForce(
     country=Countries.fr,

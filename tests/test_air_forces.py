@@ -5,9 +5,10 @@ from candv import SimpleConstant
 from candv import Values
 from candv import with_constant_class
 
-from il2fb.commons.organization import Countries
-from il2fb.commons.organization import AirForce
-from il2fb.commons.organization import AirForces
+from il2fb.commons.air_forces import AirForce
+from il2fb.commons.air_forces import AirForces
+
+from il2fb.commons.countries import Countries
 
 
 class AirForcesTestCase(unittest.TestCase):
@@ -17,8 +18,8 @@ class AirForcesTestCase(unittest.TestCase):
     class FOO(with_constant_class(AirForce), Values):
       bar = AirForce(
         country=Countries.au,
-        default_flight_prefix='brrr',
-        value='br',
+        default_flight_prefix="brrr",
+        value="br",
         verbose_name="BAR",
       ).to_group(
         group_class=Constants,
@@ -26,16 +27,16 @@ class AirForcesTestCase(unittest.TestCase):
       )
 
     self.assertEqual(FOO.bar.country, Countries.au)
-    self.assertEqual(FOO.bar.default_flight_prefix, 'brrr')
-    self.assertEqual(FOO.bar.names(), ['qux', ])
+    self.assertEqual(FOO.bar.default_flight_prefix, "brrr")
+    self.assertEqual(FOO.bar.names(), ["qux", ])
 
   def test_to_primitive(self):
 
     class FOO(with_constant_class(AirForce), Values):
       bar = AirForce(
         country=Countries.au,
-        default_flight_prefix='brrr',
-        value='br',
+        default_flight_prefix="brrr",
+        value="br",
         verbose_name="BAR",
       )
 
@@ -44,12 +45,12 @@ class AirForcesTestCase(unittest.TestCase):
       {
         'name': "bar",
         'country': {
-          'name': 'au',
+          'name': "au",
           'verbose_name': "Australia",
           'help_text': None,
         },
-        'default_flight_prefix': 'brrr',
-        'value': 'br',
+        'default_flight_prefix': "brrr",
+        'value': "br",
         'verbose_name': "BAR",
         'help_text': None,
       }
@@ -59,18 +60,18 @@ class AirForcesTestCase(unittest.TestCase):
     self.assertEqual(
       list(AirForces.get_flight_prefixes()),
       [
-        'fr01', 'f01', 'ro01', 'h01', 'g01', 'ja01', 'IN_NN', 'pl01',
-        'i01', 'RA_NN', 'gb01', 'RN_NN', 'DU_NN', 'RZ_NN', 'sk01',
-        'usa01', 'UM_NN', 'UN_NN', 'r01', None,
+        "fr01", "f01", "ro01", "h01", "g01", "ja01", "IN_NN", "pl01", "i01",
+        "RA_NN", "gb01", "RN_NN", "DU_NN", "RZ_NN", "sk01", "usa01", "UM_NN",
+        "UN_NN", "r01", None,
       ]
     )
 
   def test_get_by_flight_prefix(self):
     self.assertEqual(
-      AirForces.get_by_flight_prefix('r01'),
+      AirForces.get_by_flight_prefix("r01"),
       AirForces.vvs_rkka
     )
-    self.assertRaises(ValueError, AirForces.get_by_flight_prefix, 'foo')
+    self.assertRaises(ValueError, AirForces.get_by_flight_prefix, "foo")
 
   def test_filter_by_country(self):
     self.assertEqual(
