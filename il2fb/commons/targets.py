@@ -3,12 +3,15 @@ from candv import VerboseValueConstant
 from candv import with_constant_class
 
 from ._translations import gettext_lazy as _
+from ._utils import export
 
 
+@export
 class TargetType(VerboseValueConstant):
   ...
 
 
+@export
 class TargetTypes(with_constant_class(TargetType), Values):
   destroy        = TargetType(0, _("destroy"))
   destroy_area   = TargetType(1, _("destroy area"))
@@ -20,10 +23,12 @@ class TargetTypes(with_constant_class(TargetType), Values):
   cover_bridge   = TargetType(7, _("cover bridge"))
 
 
+@export
 class TargetPriority(VerboseValueConstant):
   ...
 
 
+@export
 class TargetPriorities(with_constant_class(TargetPriority), Values):
   primary   = TargetPriority(0, _("primary"))
   secondary = TargetPriority(1, _("secondary"))

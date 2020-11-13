@@ -3,6 +3,7 @@ from .formations import *
 from .missions import *
 from .skills import *
 from .supported_languages import *
+from .targets import *
 from .units import *
 from .waypoints import *
 from .weather import *
