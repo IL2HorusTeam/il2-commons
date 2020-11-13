@@ -7,38 +7,38 @@ from ._utils import export
 
 
 @export
-class FlightWaypointType(VerboseValueConstant):
+class FlightWaypointTypeConstant(VerboseValueConstant):
   ...
 
 
 @export
-class FlightWaypointTypes(with_constant_class(FlightWaypointType), Values):
+class FLIGHT_WAYPOINT_TYPE(with_constant_class(FlightWaypointTypeConstant), Values):
 
   # Take-off ----------------------------------------------------------------
-  takeoff_normal = FlightWaypointType(
-    'TAKEOFF',
+  TAKEOFF_NORMAL = FlightWaypointTypeConstant(
+    "TAKEOFF",
     _("takeoff (normal)"),
   )
-  takeoff_pair = FlightWaypointType(
-    'TAKEOFF_002',
+  TAKEOFF_PAIR = FlightWaypointTypeConstant(
+    "TAKEOFF_002",
     _("takeoff (pair)"),
     )
-  takeoff_in_line = FlightWaypointType(
-    'TAKEOFF_003',
+  TAKEOFF_IN_LINE = FlightWaypointTypeConstant(
+    "TAKEOFF_003",
     _("takeoff (in line)"),
   )
-  takeoff_taxiing = FlightWaypointType(
-    'TAKEOFF_004',
+  TAKEOFF_TAXIING = FlightWaypointTypeConstant(
+    "TAKEOFF_004",
     _("takeoff (taxiing)"),
   )
-  takeoff_taxiing_from_static = FlightWaypointType(
-    'TAKEOFF_005',
+  TAKEOFF_TAXIING_FROM_STATIC = FlightWaypointTypeConstant(
+    "TAKEOFF_005",
     _("takeoff (taxiing from static)"),
   )
 
   # Normal flight -----------------------------------------------------------
-  normal = FlightWaypointType(
-    'NORMFLY',
+  NORMAL = FlightWaypointTypeConstant(
+    "NORMFLY",
     _("normal"),
   )
 
@@ -46,61 +46,61 @@ class FlightWaypointTypes(with_constant_class(FlightWaypointType), Values):
   #: .. warning::
   #:   air attack is not present in game. It is calculated as ``NORMFLY``
   #:   with a target
-  air_attack = FlightWaypointType(
-    'X_AIR_ATTACK',
+  AIR_ATTACK = FlightWaypointTypeConstant(
+    "X_AIR_ATTACK",
     _("air attack"),
   )
-  ground_attack = FlightWaypointType(
-    'GATTACK',
+  GROUND_ATTACK = FlightWaypointTypeConstant(
+    "GATTACK",
     _("ground attack"),
   )
 
   # Patrol ------------------------------------------------------------------
-  patrol_triangle = FlightWaypointType(
-    'NORMFLY_401',
+  PATROL_TRIANGLE = FlightWaypointTypeConstant(
+    "NORMFLY_401",
     _("patrol (triangle)"),
   )
-  patrol_square = FlightWaypointType(
-    'NORMFLY_402',
+  PATROL_SQUARE = FlightWaypointTypeConstant(
+    "NORMFLY_402",
     _("patrol (square)"),
   )
-  patrol_pentagon = FlightWaypointType(
-    'NORMFLY_403',
+  PATROL_PENTAGON = FlightWaypointTypeConstant(
+    "NORMFLY_403",
     _("patrol (pentagon)"),
   )
-  patrol_hexagon = FlightWaypointType(
-    'NORMFLY_404',
+  PATROL_HEXAGON = FlightWaypointTypeConstant(
+    "NORMFLY_404",
     _("patrol (hexagon)"),
   )
-  patrol_random = FlightWaypointType(
-    'NORMFLY_405',
+  PATROL_RANDOM = FlightWaypointTypeConstant(
+    "NORMFLY_405",
     _("patrol (random)"),
   )
 
   # Artillery spotter -------------------------------------------------------
-  artillery_spotter = FlightWaypointType(
-    'NORMFLY_407',
+  ARTILLERY_SPOTTER = FlightWaypointTypeConstant(
+    "NORMFLY_407",
     _("artillery spotter"),
   )
 
   # Langing -----------------------------------------------------------------
-  landing_on_left = FlightWaypointType(
-    'LANDING',
+  LANDING_ON_LEFT = FlightWaypointTypeConstant(
+    "LANDING",
     _("landing (on left)"),
   )
-  landing_on_right = FlightWaypointType(
-    'LANDING_101',
+  LANDING_ON_RIGHT = FlightWaypointTypeConstant(
+    "LANDING_101",
     _("landing (on right)"),
   )
-  landing_short_on_left = FlightWaypointType(
-    'LANDING_102',
+  LANDING_SHORT_ON_LEFT = FlightWaypointTypeConstant(
+    "LANDING_102",
     _("landing (short on left)"),
   )
-  landing_short_on_right = FlightWaypointType(
-    'LANDING_103',
+  LANDING_SHORT_ON_RIGHT = FlightWaypointTypeConstant(
+    "LANDING_103",
     _("landing (short on right)"),
   )
-  landing_straight = FlightWaypointType(
-    'LANDING_104',
+  LANDING_STRAIGHT = FlightWaypointTypeConstant(
+    "LANDING_104",
     _("landing (straight)"),
   )

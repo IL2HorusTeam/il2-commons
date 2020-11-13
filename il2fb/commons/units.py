@@ -7,19 +7,19 @@ from ._utils import export
 
 
 @export
-class UnitType(VerboseValueConstant):
+class UnitTypeConstant(VerboseValueConstant):
   ...
 
 
 @export
-class UnitTypes(with_constant_class(UnitType), Values):
-  aircraft   = UnitType("planes",      _("aircraft"))
-  armor      = UnitType("armor",       _("armor"))
-  artillery  = UnitType("artillery",   _("artillery"))
-  balloon    = UnitType("aeronautics", _("balloon"))
-  light      = UnitType("lights",      _("light"))
-  radio      = UnitType("radios",      _("radio"))
-  ship       = UnitType("ships",       _("ship"))
-  stationary = UnitType("stationary",  _("stationary"))
-  train      = UnitType("trains",      _("train"))
-  vehicle    = UnitType("vehicles",    _("vehicle"))
+class UNIT_TYPE(with_constant_class(UnitTypeConstant), Values):
+  AIRCRAFT   = UnitTypeConstant("planes",      _("aircraft"))
+  ARMOR      = UnitTypeConstant("armor",       _("armor"))
+  ARTILLERY  = UnitTypeConstant("artillery",   _("artillery"))
+  BALLOON    = UnitTypeConstant("aeronautics", _("balloon"))
+  LIGHT      = UnitTypeConstant("lights",      _("light"))
+  RADIO      = UnitTypeConstant("radios",      _("radio"))
+  SHIP       = UnitTypeConstant("ships",       _("ship"))
+  STATIONARY = UnitTypeConstant("stationary",  _("stationary"))
+  TRAIN      = UnitTypeConstant("trains",      _("train"))
+  VEHICLE    = UnitTypeConstant("vehicles",    _("vehicle"))

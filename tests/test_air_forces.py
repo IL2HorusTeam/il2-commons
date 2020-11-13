@@ -5,20 +5,19 @@ from candv import SimpleConstant
 from candv import Values
 from candv import with_constant_class
 
-from il2fb.commons.air_forces import AirForce
-from il2fb.commons.air_forces import AirForces
-
-from il2fb.commons.countries import Countries
-from il2fb.commons.exceptions import IL2FBLookupError
+from il2fb.commons import AirForceConstant
+from il2fb.commons import AIR_FORCE
+from il2fb.commons import COUNTRY
+from il2fb.commons import IL2FBLookupError
 
 
 class AirForcesTestCase(unittest.TestCase):
 
   def test_to_group(self):
 
-    class FOO(with_constant_class(AirForce), Values):
-      bar = AirForce(
-        country=Countries.au,
+    class FOO(with_constant_class(AirForceConstant), Values):
+      BAR = AirForceConstant(
+        country=COUNTRY.AU,
         default_flight_prefix="brrr",
         value="br",
         verbose_name="BAR",
@@ -27,26 +26,26 @@ class AirForcesTestCase(unittest.TestCase):
         qux=SimpleConstant(),
       )
 
-    self.assertEqual(FOO.bar.country, Countries.au)
-    self.assertEqual(FOO.bar.default_flight_prefix, "brrr")
-    self.assertEqual(FOO.bar.names(), ["qux", ])
+    self.assertEqual(FOO.BAR.country, COUNTRY.AU)
+    self.assertEqual(FOO.BAR.default_flight_prefix, "brrr")
+    self.assertEqual(FOO.BAR.names(), ["qux", ])
 
   def test_to_primitive(self):
 
-    class FOO(with_constant_class(AirForce), Values):
-      bar = AirForce(
-        country=Countries.au,
+    class FOO(with_constant_class(AirForceConstant), Values):
+      BAR = AirForceConstant(
+        country=COUNTRY.AU,
         default_flight_prefix="brrr",
         value="br",
         verbose_name="BAR",
       )
 
     self.assertEqual(
-      FOO.bar.to_primitive(),
+      FOO.BAR.to_primitive(),
       {
-        'name': "bar",
+        'name': "BAR",
         'country': {
-          'name': "au",
+          'name': "AU",
           'verbose_name': "Australia",
           'help_text': None,
         },
@@ -59,7 +58,7 @@ class AirForcesTestCase(unittest.TestCase):
 
   def test_get_flight_prefixes(self):
     self.assertEqual(
-      list(AirForces.get_flight_prefixes()),
+      list(AIR_FORCE.get_flight_prefixes()),
       [
         "fr01", "f01", "ro01", "h01", "g01", "ja01", "IN_NN", "pl01", "i01",
         "RA_NN", "gb01", "RN_NN", "DU_NN", "RZ_NN", "sk01", "usa01", "UM_NN",
@@ -69,17 +68,17 @@ class AirForcesTestCase(unittest.TestCase):
 
   def test_get_by_flight_prefix(self):
     self.assertEqual(
-      AirForces.get_by_flight_prefix("r01"),
-      AirForces.vvs_rkka
+      AIR_FORCE.get_by_flight_prefix("r01"),
+      AIR_FORCE.VVS_RKKA
     )
-    self.assertRaises(IL2FBLookupError, AirForces.get_by_flight_prefix, "foo")
+    self.assertRaises(IL2FBLookupError, AIR_FORCE.get_by_flight_prefix, "foo")
 
   def test_filter_by_country(self):
     self.assertEqual(
-      list(AirForces.filter_by_country(Countries.su)),
-      [AirForces.vvs_rkka, ]
+      list(AIR_FORCE.filter_by_country(COUNTRY.SU)),
+      [AIR_FORCE.VVS_RKKA, ]
     )
     self.assertEqual(
-      list(AirForces.filter_by_country(Countries.us)),
-      [AirForces.usaaf, AirForces.usmc, AirForces.usn, ]
+      list(AIR_FORCE.filter_by_country(COUNTRY.US)),
+      [AIR_FORCE.USAAF, AIR_FORCE.USMC, AIR_FORCE.USN, ]
     )

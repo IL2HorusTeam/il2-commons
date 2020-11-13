@@ -7,16 +7,16 @@ from ._utils import export
 
 
 @export
-class FlightFormation(VerboseValueConstant):
+class FlightFormationConstant(VerboseValueConstant):
   ...
 
 
 @export
-class FlightFormations(with_constant_class(FlightFormation), Values):
-  echelon_right = FlightFormation("F2", _("echelon right"))
-  echelon_left  = FlightFormation("F3", _("echelon left"))
-  line_abreast  = FlightFormation("F4", _("line abreast"))
-  line_asteam   = FlightFormation("F5", _("line asteam"))
-  vic           = FlightFormation("F6", _("vic"))
-  finger_four   = FlightFormation("F7", _("finger four"))
-  diamond       = FlightFormation("F8", _("diamond"))
+class FLIGHT_FORMATION(with_constant_class(FlightFormationConstant), Values):
+  ECHELON_RIGHT = FlightFormationConstant("F2", _("echelon right"))
+  ECHELON_LEFT  = FlightFormationConstant("F3", _("echelon left"))
+  LINE_ABREAST  = FlightFormationConstant("F4", _("line abreast"))
+  LINE_ASTEAM   = FlightFormationConstant("F5", _("line asteam"))
+  VIC           = FlightFormationConstant("F6", _("vic"))
+  FINGER_FOUR   = FlightFormationConstant("F7", _("finger four"))
+  DIAMOND       = FlightFormationConstant("F8", _("diamond"))

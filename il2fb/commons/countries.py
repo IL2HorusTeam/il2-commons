@@ -7,24 +7,24 @@ from ._utils import export
 
 
 @export
-class Country(VerboseConstant):
+class CountryConstant(VerboseConstant):
   ...
 
 
 @export
-class Countries(with_constant_class(Country), Constants):
-  au = Country(verbose_name=_("Australia"))
-  fi = Country(verbose_name=_("Finland"))
-  fr = Country(verbose_name=_("France"))
-  de = Country(verbose_name=_("Germany"))
-  hu = Country(verbose_name=_("Hungary"))
-  jp = Country(verbose_name=_("Japan"))
-  it = Country(verbose_name=_("Italy"))
-  nl = Country(verbose_name=_("Netherlands"))
-  nz = Country(verbose_name=_("New Zealand"))
-  pl = Country(verbose_name=_("Poland"))
-  ro = Country(verbose_name=_("Romania"))
-  sk = Country(verbose_name=_("Slovakia"))
-  su = Country(verbose_name=_("Soviet Union"))
-  uk = Country(verbose_name=_("United Kingdom"))
-  us = Country(verbose_name=_("United States"))
+class COUNTRY(with_constant_class(CountryConstant), Constants):
+  AU = CountryConstant(verbose_name=_("Australia"))
+  FI = CountryConstant(verbose_name=_("Finland"))
+  FR = CountryConstant(verbose_name=_("France"))
+  DE = CountryConstant(verbose_name=_("Germany"))
+  HU = CountryConstant(verbose_name=_("Hungary"))
+  JP = CountryConstant(verbose_name=_("Japan"))
+  IT = CountryConstant(verbose_name=_("Italy"))
+  NL = CountryConstant(verbose_name=_("Netherlands"))
+  NZ = CountryConstant(verbose_name=_("New Zealand"))
+  PL = CountryConstant(verbose_name=_("Poland"))
+  RO = CountryConstant(verbose_name=_("Romania"))
+  SK = CountryConstant(verbose_name=_("Slovakia"))
+  SU = CountryConstant(verbose_name=_("Soviet Union"))
+  UK = CountryConstant(verbose_name=_("United Kingdom"))
+  US = CountryConstant(verbose_name=_("United States"))

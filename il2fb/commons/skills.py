@@ -7,13 +7,13 @@ from ._utils import export
 
 
 @export
-class Skill(VerboseValueConstant):
+class SkillConstant(VerboseValueConstant):
   ...
 
 
 @export
-class Skills(with_constant_class(Skill), Values):
-  rookie  = Skill(0, _("rookie"))
-  average = Skill(1, _("average"))
-  veteran = Skill(2, _("veteran"))
-  ace     = Skill(3, _("ace"))
+class SKILL(with_constant_class(SkillConstant), Values):
+  ROOKIE  = SkillConstant(0, _("rookie"))
+  AVERAGE = SkillConstant(1, _("average"))
+  VETERAN = SkillConstant(2, _("veteran"))
+  ACE     = SkillConstant(3, _("ace"))

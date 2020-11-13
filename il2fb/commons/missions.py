@@ -6,12 +6,12 @@ from ._utils import export
 
 
 @export
-class MissionStatus(SimpleConstant):
+class MissionStatusConstant(SimpleConstant):
   ...
 
 
 @export
-class MissionStatuses(with_constant_class(MissionStatus), Constants):
-  not_loaded = MissionStatus()
-  loaded     = MissionStatus()
-  playing    = MissionStatus()
+class MISSION_STATUS(with_constant_class(MissionStatusConstant), Constants):
+  NOT_LOADED = MissionStatusConstant()
+  LOADED     = MissionStatusConstant()
+  PLAYING    = MissionStatusConstant()

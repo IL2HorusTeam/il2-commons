@@ -6,15 +6,15 @@ from ._utils import export
 
 
 @export
-class SupportedLanguage(SimpleConstant):
+class SupportedLanguageConstant(SimpleConstant):
   ...
 
 
 @export
-class SupportedLanguages(with_constant_class(SupportedLanguage), Constants):
-  en = SupportedLanguage()
-  ru = SupportedLanguage()
+class SUPPORTED_LANGUAGE(with_constant_class(SupportedLanguageConstant), Constants):
+  EN = SupportedLanguageConstant()
+  RU = SupportedLanguageConstant()
 
   @classmethod
   def get_default(cls):
-    return cls.en
+    return cls.EN

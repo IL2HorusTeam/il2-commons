@@ -7,43 +7,43 @@ from ._utils import export
 
 
 @export
-class WeatherCondition(VerboseValueConstant):
+class WeatherConditionConstant(VerboseValueConstant):
   ...
 
 
 @export
-class WeatherConditions(with_constant_class(WeatherCondition), Values):
-  clear         = WeatherCondition(0, _("clear"))
-  good          = WeatherCondition(1, _("good"))
-  hazy          = WeatherCondition(2, _("hazy"))
-  poor          = WeatherCondition(3, _("poor"))
-  blind         = WeatherCondition(4, _("blind"))
-  precipitation = WeatherCondition(5, _("precipitation"))
-  thunderstorm  = WeatherCondition(6, _("thunderstorm"))
+class WEATHER_CONDITION(with_constant_class(WeatherConditionConstant), Values):
+  CLEAR         = WeatherConditionConstant(0, _("clear"))
+  GOOD          = WeatherConditionConstant(1, _("good"))
+  HAZY          = WeatherConditionConstant(2, _("hazy"))
+  POOR          = WeatherConditionConstant(3, _("poor"))
+  BLIND         = WeatherConditionConstant(4, _("blind"))
+  PRECIPITATION = WeatherConditionConstant(5, _("precipitation"))
+  THUNDERSTORM  = WeatherConditionConstant(6, _("thunderstorm"))
 
 
 @export
-class WindGust(VerboseValueConstant):
+class WindGustConstant(VerboseValueConstant):
   ...
 
 
 @export
-class WindGusts(with_constant_class(WindGust), Values):
-  none     = WindGust(0,  _("none"))
-  low      = WindGust(8,  _("low_gust"))
-  moderate = WindGust(10, _("moderate_gust"))
-  strong   = WindGust(12, _("strong_gust"))
+class WIND_GUST(with_constant_class(WindGustConstant), Values):
+  NONE     = WindGustConstant(0,  _("none"))
+  LOW      = WindGustConstant(8,  _("low_gust"))
+  MODERATE = WindGustConstant(10, _("moderate_gust"))
+  STRONG   = WindGustConstant(12, _("strong_gust"))
 
 
 @export
-class TurbulenceType(VerboseValueConstant):
+class TurbulenceConstant(VerboseValueConstant):
   ...
 
 
 @export
-class Turbulence(with_constant_class(TurbulenceType), Values):
-  none        = TurbulenceType(0, _("none"))
-  low         = TurbulenceType(3, _("low_turbulence"))
-  moderate    = TurbulenceType(4, _("moderate_turbulence"))
-  strong      = TurbulenceType(5, _("strong_turbulence"))
-  very_strong = TurbulenceType(6, _("very_strong_turbulence"))
+class TURBULENCE(with_constant_class(TurbulenceConstant), Values):
+  NONE        = TurbulenceConstant(0, _("none"))
+  LOW         = TurbulenceConstant(3, _("low_turbulence"))
+  MODERATE    = TurbulenceConstant(4, _("moderate_turbulence"))
+  STRONG      = TurbulenceConstant(5, _("strong_turbulence"))
+  VERY_STRONG = TurbulenceConstant(6, _("very_strong_turbulence"))

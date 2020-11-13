@@ -6,16 +6,15 @@ from candv import Values
 from candv import VerboseValueConstant
 from candv import with_constant_class
 
-from il2fb.commons import Belligerent
-from il2fb.commons import Belligerents
+from il2fb.commons import BelligerentConstant
 
 
 class BelligerentsTestCase(unittest.TestCase):
 
   def test_to_group(self):
 
-    class FOO(with_constant_class(Belligerent), Values):
-      bar = Belligerent(
+    class FOO(with_constant_class(BelligerentConstant), Values):
+      bar = BelligerentConstant(
         value=999,
         color="000000",
         verbose_name="bar",
@@ -29,8 +28,8 @@ class BelligerentsTestCase(unittest.TestCase):
 
   def test_to_primitive(self):
 
-    class FOO(with_constant_class(Belligerent), Values):
-      bar = Belligerent(
+    class FOO(with_constant_class(BelligerentConstant), Values):
+      bar = BelligerentConstant(
         value=999,
         color="000000",
         verbose_name="bar",

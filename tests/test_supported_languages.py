@@ -1,12 +1,12 @@
 import unittest
 
-from il2fb.commons import SupportedLanguages
+from il2fb.commons import SUPPORTED_LANGUAGE
 
 
 class SupportedLanguagesTestCase(unittest.TestCase):
 
   def test_names(self):
-    self.assertEqual(SupportedLanguages.names(), ["en", "ru", ])
+    self.assertEqual(SUPPORTED_LANGUAGE.names(), ["EN", "RU", ])
 
   def test_default_language(self):
-    self.assertEqual(SupportedLanguages.get_default().name, "en")
+    self.assertEqual(SUPPORTED_LANGUAGE.get_default().name, "EN")

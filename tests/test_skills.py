@@ -1,17 +1,17 @@
 import unittest
 
-from il2fb.commons import Skills
+from il2fb.commons import SKILL
 
 
 class SkillsTestCase(unittest.TestCase):
 
   def test_skills(self):
     self.assertEqual(
-      [(x.name, x.value) for x in Skills.constants()],
+      [(x.name, x.value) for x in SKILL.constants()],
       [
-        ('rookie',  0),
-        ('average', 1),
-        ('veteran', 2),
-        ('ace',     3),
+        ("ROOKIE",  0),
+        ("AVERAGE", 1),
+        ("VETERAN", 2),
+        ("ACE",     3),
       ]
     )
