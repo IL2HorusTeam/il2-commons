@@ -5,18 +5,18 @@ from candv import with_constant_class
 from ._translations import gettext_lazy as _
 
 
-class ConditionType(VerboseValueConstant):
+class WeatherCondition(VerboseValueConstant):
   ...
 
 
-class Conditions(with_constant_class(ConditionType), Values):
-  clear         = ConditionType(0, _("clear"))
-  good          = ConditionType(1, _("good"))
-  hazy          = ConditionType(2, _("hazy"))
-  poor          = ConditionType(3, _("poor"))
-  blind         = ConditionType(4, _("blind"))
-  precipitation = ConditionType(5, _("precipitation"))
-  thunderstorm  = ConditionType(6, _("thunderstorm"))
+class WeatherConditions(with_constant_class(WeatherCondition), Values):
+  clear         = WeatherCondition(0, _("clear"))
+  good          = WeatherCondition(1, _("good"))
+  hazy          = WeatherCondition(2, _("hazy"))
+  poor          = WeatherCondition(3, _("poor"))
+  blind         = WeatherCondition(4, _("blind"))
+  precipitation = WeatherCondition(5, _("precipitation"))
+  thunderstorm  = WeatherCondition(6, _("thunderstorm"))
 
 
 class GustType(VerboseValueConstant):
