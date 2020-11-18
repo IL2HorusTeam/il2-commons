@@ -5,10 +5,11 @@ from candv import SimpleConstant
 from candv import Values
 from candv import with_constant_class
 
-from il2fb.commons import AirForceConstant
-from il2fb.commons import AIR_FORCE
-from il2fb.commons import COUNTRY
-from il2fb.commons import IL2FBLookupError
+from il2fb.commons.air_forces import AirForceConstant
+from il2fb.commons.air_forces import AIR_FORCE
+
+from il2fb.commons.countries  import COUNTRY
+from il2fb.commons.exceptions import IL2FBLookupError
 
 
 class AirForcesTestCase(unittest.TestCase):

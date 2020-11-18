@@ -1,6 +1,6 @@
 import unittest
 
-from il2fb.commons import SUPPORTED_LANGUAGE
+from il2fb.commons.supported_languages import SUPPORTED_LANGUAGE
 
 
 class SupportedLanguagesTestCase(unittest.TestCase):

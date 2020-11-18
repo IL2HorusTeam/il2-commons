@@ -1,38 +1,78 @@
-class BaseStructure:
-  __slots__ = []
+import dataclasses
 
-  def __eq__(self, other):
-    if not isinstance(other, self.__class__):
-      return NotImplemented
+from collections import UserString
 
-    if self.__class__ != other.__class__:
-      return False
+from typing import Any
+from typing import ClassVar
+from typing import Dict
+from typing import Optional
 
-    return all([
-      getattr(self, x) == getattr(other, x)
-      for x in self.__slots__
-    ])
+from .typing import String
 
-  def __ne__(self, other):
-    return not (self == other)
+from ._utils import export
 
-  def __hash__(self):
-    return hash(tuple(
-      getattr(self, x) for x in self.__slots__
-    ))
 
-  def to_primitive(self, context=None):
-    fields = ((key, getattr(self, key)) for key in self.__slots__)
+@export
+@dataclasses.dataclass(frozen=True)
+class VerboseDataclassMixin:
+  verbose_name: ClassVar[String] = dataclasses.field(
+    init=False,
+  )
+  help_text: ClassVar[Optional[String]] = dataclasses.field(
+    init=False,
+    default=None,
+  )
+
+
+@export
+class PrimitiveDataclassMixin:
+
+  def to_primitive(self, *args, **kwargs) -> Dict[str, Any]:
     return {
-      key: self._to_primitive(value, context)
-      for key, value in fields
+      key: self._value_to_primitive(getattr(self, key), *args, **kwargs)
+      for key in self.__dataclass_fields__.keys()
     }
 
   @staticmethod
-  def _to_primitive(instance, context):
-    if hasattr(instance, 'to_primitive'):
-      return instance.to_primitive(context)
-    elif hasattr(instance, 'isoformat'):
-      return instance.isoformat()
-    else:
-      return instance
+  def _value_to_primitive(value: Any, *args, **kwargs) -> Any:
+    if value is None:
+      return
+
+    if hasattr(value, "to_primitive"):
+      return value.to_primitive(*args, **kwargs)
+
+    if hasattr(value, "isoformat"):
+      return value.isoformat()
+
+    if isinstance(value, UserString):
+      return str(value)
+
+    return value
+
+  @classmethod
+  def from_primitive(cls, value: Dict[str, Any]) -> Any:
+    kwargs = {
+      key: cls._value_from_primitive(
+        value=value[key],
+        type_=field.type,
+      )
+      for key, field in cls.__dataclass_fields__.items()
+      if field.init
+    }
+    return cls(**kwargs)
+
+  @staticmethod
+  def _value_from_primitive(value: Any, type_: type) -> Any:
+    if value is None:
+      return
+
+    if isinstance(value, type_):
+      return value
+
+    if hasattr(type_, "fromisoformat"):
+      return type_.fromisoformat(value)
+
+    if hasattr(type_, "from_primitive"):
+      return type_.from_primitive(value)
+
+    return value

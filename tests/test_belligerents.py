@@ -6,7 +6,7 @@ from candv import Values
 from candv import VerboseValueConstant
 from candv import with_constant_class
 
-from il2fb.commons import BelligerentConstant
+from il2fb.commons.belligerents import BelligerentConstant
 
 
 class BelligerentsTestCase(unittest.TestCase):

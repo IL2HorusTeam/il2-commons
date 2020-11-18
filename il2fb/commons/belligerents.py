@@ -4,6 +4,8 @@ from candv import Values
 from candv import VerboseValueConstant
 from candv import with_constant_class
 
+from .typing import String
+
 from ._translations import gettext_lazy as _
 from ._utils import export
 
@@ -15,8 +17,8 @@ class BelligerentConstant(VerboseValueConstant):
     self,
     value:        int,
     color:        str,
-    verbose_name: Optional[str]=None,
-    help_text:    Optional[str]=None,
+    verbose_name: Optional[String] = None,
+    help_text:    Optional[String] = None,
   ):
     super().__init__(
       value=value,
@@ -29,8 +31,8 @@ class BelligerentConstant(VerboseValueConstant):
     super().merge_into_group(group)
     group.color = self.color
 
-  def to_primitive(self, context=None):
-    primitive = super().to_primitive(context)
+  def to_primitive(self, *args, **kwargs):
+    primitive = super().to_primitive(*args, **kwargs)
     primitive['color'] = self.color
     return primitive
 

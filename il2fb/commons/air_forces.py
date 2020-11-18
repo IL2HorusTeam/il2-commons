@@ -1,9 +1,14 @@
+from typing import Optional
+
 from candv import Values
 from candv import VerboseValueConstant
 from candv import with_constant_class
 
 from .countries import COUNTRY
+from .countries import CountryConstant
+
 from .exceptions import IL2FBLookupError
+from .typing import String
 
 from ._translations import gettext_lazy as _
 from ._utils import export
@@ -14,11 +19,11 @@ class AirForceConstant(VerboseValueConstant):
 
   def __init__(
     self,
-    country,
-    default_flight_prefix,
-    value,
-    verbose_name=None,
-    help_text=None,
+    country: CountryConstant,
+    default_flight_prefix: str,
+    value: str,
+    verbose_name: Optional[String] = None,
+    help_text: Optional[String] = None,
   ):
     super().__init__(value, verbose_name=verbose_name, help_text=help_text)
     self.country = country
@@ -33,13 +38,11 @@ class AirForceConstant(VerboseValueConstant):
     group.country = self.country
     group.default_flight_prefix = self.default_flight_prefix
 
-  def to_primitive(self, context=None):
-    primitive = super().to_primitive(context)
-    country = self.country and self.country.to_primitive(context)
-    primitive.update({
-      'country': country,
-      'default_flight_prefix': self.default_flight_prefix,
-    })
+  def to_primitive(self, *args, **kwargs):
+    primitive = super().to_primitive(*args, **kwargs)
+    country = self.country and self.country.to_primitive(*args, **kwargs)
+    primitive['country'] = country
+    primitive['default_flight_prefix'] = self.default_flight_prefix
     return primitive
 
 

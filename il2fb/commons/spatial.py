@@ -1,24 +1,24 @@
-from .structures import BaseStructure
+from dataclasses import dataclass
+
+from .structures import PrimitiveDataclassMixin
+
+from ._utils import export
 
 
-class Point2D(BaseStructure):
-  __slots__ = ['x', 'y', ]
+@export
+@dataclass(frozen=True)
+class Point2D(PrimitiveDataclassMixin):
+  __slots__ = ["x", "y", ]
 
-  def __init__(self, x, y):
-    self.x = float(x)
-    self.y = float(y)
-
-  def __repr__(self):
-    return "<Point2D '{0};{1}'>".format(self.x, self.y)
+  x: float
+  y: float
 
 
-class Point3D(BaseStructure):
-  __slots__ = ['x', 'y', 'z', ]
+@export
+@dataclass(frozen=True)
+class Point3D(PrimitiveDataclassMixin):
+  __slots__ = ["x", "y", "z", ]
 
-  def __init__(self, x, y, z):
-    self.x = float(x)
-    self.y = float(y)
-    self.z = float(z)
-
-  def __repr__(self):
-    return "<Point3D '{0};{1};{2}'>".format(self.x, self.y, self.z)
+  x: float
+  y: float
+  z: float
