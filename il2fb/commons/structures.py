@@ -1,10 +1,15 @@
 import dataclasses
+import sys
+
+if sys.version_info >= (3, 9):
+  Dict = dict
+else:
+  from typing import Dict
 
 from collections import UserString
 
 from typing import Any
 from typing import ClassVar
-from typing import Dict
 from typing import Optional
 
 from .typing import String
