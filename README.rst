@@ -1,7 +1,7 @@
 IL-2 FB Commons
 ===============
 
-|pypi_package| |python_versions| |docs| |license|
+|pypi_package| |python_versions| |license|
 
 |linux_build| |windows_build| |codebeat| |codacy| |scrutinizer|
 
@@ -15,10 +15,6 @@ This repository contains common helpers and data structures for projects related
 
 .. |python_versions| image:: https://img.shields.io/badge/Python-3.8+-brightgreen.svg
    :alt: Supported versions of Python
-
-.. |docs| image:: https://readthedocs.org/projects/il2fb-commons/badge/?version=latest
-   :target: https://il2fb-commons.readthedocs.io/en/latest/?badge=latest
-   :alt: Documentation Status
 
 .. |license| image:: https://img.shields.io/badge/license-MIT-blue.svg
    :target: https://github.com/IL2HorusTeam/il2fb-commons/blob/master/LICENSE
