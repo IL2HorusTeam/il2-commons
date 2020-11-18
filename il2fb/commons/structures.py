@@ -80,4 +80,4 @@ class PrimitiveDataclassMixin:
     if hasattr(type_, "from_primitive"):
       return type_.from_primitive(value)
 
-    return value
+    return type_(value)
