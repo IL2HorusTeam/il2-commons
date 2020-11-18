@@ -43,13 +43,18 @@ class FLIGHT_WAYPOINT_TYPE(with_constant_class(FlightWaypointTypeConstant), Valu
   )
 
   # Attack ------------------------------------------------------------------
-  #: .. warning::
-  #:   air attack is not present in game. It is calculated as ``NORMFLY``
-  #:   with a target
   AIR_ATTACK = FlightWaypointTypeConstant(
     "X_AIR_ATTACK",
     _("air attack"),
   )
+  """
+  .. warning::
+
+    "Air attack" is not present in the game. It is calculated as ``NORMFLY``
+    with a target.
+
+  """
+
   GROUND_ATTACK = FlightWaypointTypeConstant(
     "GATTACK",
     _("ground attack"),
