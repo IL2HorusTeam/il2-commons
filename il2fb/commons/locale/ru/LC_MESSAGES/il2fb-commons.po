@@ -1,558 +1,584 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.0\n"
-"POT-Creation-Date: 2020-11-11 18:43+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-19 14:18+0200\n"
 "Last-Translator: Oleksandr Oblovatnyi <oblovatniy@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: __init__.py:28
-msgid "rookie"
-msgstr "курсант"
-
-#: __init__.py:29
-msgid "average"
-msgstr "новичек"
-
-#: __init__.py:30
-msgid "veteran"
-msgstr "ветеран"
-
-#: __init__.py:31
-msgid "ace"
-msgstr "ас"
-
-#: __init__.py:39
-msgid "aircraft"
-msgstr "самолет"
-
-#: __init__.py:40
-msgid "armor"
-msgstr "бронетранспорт"
-
-#: __init__.py:41
-msgid "artillery"
-msgstr "артиллерия"
-
-#: __init__.py:42
-msgid "balloon"
-msgstr "аэростат"
-
-#: __init__.py:43
-msgid "light"
-msgstr "источник света"
-
-#: __init__.py:44
-msgid "radio"
-msgstr "радио"
-
-#: __init__.py:45
-msgid "ship"
-msgstr "корабль"
-
-#: __init__.py:46
-msgid "stationary"
-msgstr "неподвижный объект"
-
-#: __init__.py:47
-msgid "train"
-msgstr "поезд"
-
-#: __init__.py:48
-msgid "vehicle"
-msgstr "транспорт"
-
-#: flight.py:13
-msgid "echelon right"
-msgstr "правый пеленг"
-
-#: flight.py:14
-msgid "echelon left"
-msgstr "левый пеленг"
-
-#: flight.py:15
-msgid "line abreast"
-msgstr "шеренга"
-
-#: flight.py:16
-msgid "line asteam"
-msgstr "колонна"
-
-#: flight.py:17
-msgid "vic"
-msgstr "клин"
-
-#: flight.py:18
-msgid "finger four"
-msgstr "4 пальца"
-
-#: flight.py:19
-msgid "diamond"
-msgstr "ромб"
-
-#: flight.py:31
-msgid "takeoff (normal)"
-msgstr "взлёт (нормальный)"
-
-#: flight.py:35
-msgid "takeoff (pair)"
-msgstr "взлёт (парой)"
-
-#: flight.py:39
-msgid "takeoff (in line)"
-msgstr "взлёт (в линию)"
-
-#: flight.py:43
-msgid "takeoff (taxiing)"
-msgstr "взлёт (руление)"
-
-#: flight.py:47
-msgid "takeoff (taxiing from static)"
-msgstr "взлёт (руление из статического объекта)"
-
-#: flight.py:53
-msgid "normal"
-msgstr "нормальный полёт"
-
-#: flight.py:62
-msgid "air attack"
-msgstr "атака воздушной цели"
-
-#: flight.py:66
-msgid "ground attack"
-msgstr "атака наземной цели"
-
-#: flight.py:72
-msgid "patrol (triangle)"
-msgstr "патрулирование (треугольником)"
-
-#: flight.py:76
-msgid "patrol (square)"
-msgstr "патрулирование (квадратом)"
-
-#: flight.py:80
-msgid "patrol (pentagon)"
-msgstr "патрулирование (пятиугольником)"
-
-#: flight.py:84
-msgid "patrol (hexagon)"
-msgstr "патрулирование (шестиугольником)"
-
-#: flight.py:88
-msgid "patrol (random)"
-msgstr "патрулирование (произвольно)"
-
-#: flight.py:94
-msgid "artillery spotter"
-msgstr "артиллерийский корректировщик"
-
-#: flight.py:100
-msgid "landing (on left)"
-msgstr "посадка (слева)"
-
-#: flight.py:104
-msgid "landing (on right)"
-msgstr "посадка (справа)"
-
-#: flight.py:108
-msgid "landing (short on left)"
-msgstr "посадка (короткий слева)"
-
-#: flight.py:112
-msgid "landing (short on right)"
-msgstr "посадка (короткий справа)"
-
-#: flight.py:116
-msgid "landing (straight)"
-msgstr "посадка (по прямой)"
-
-#: organization.py:15 weather.py:27 weather.py:38
-msgid "none"
-msgstr "нет"
-
-#: organization.py:16
-msgid "red"
-msgstr "красная"
-
-#: organization.py:17
-msgid "blue"
-msgstr "синяя"
-
-#: organization.py:18
-msgid "green"
-msgstr "зелёная"
-
-#: organization.py:19
-msgid "gold"
-msgstr "золотая"
-
-#: organization.py:20
-msgid "purple"
-msgstr "фиолетовая"
-
-#: organization.py:21
-msgid "aqua"
-msgstr "лазурная"
-
-#: organization.py:22
-msgid "maroon"
-msgstr "бордовая"
-
-#: organization.py:23
-msgid "navy"
-msgstr "темно-синяя"
-
-#: organization.py:24
-msgid "emerald"
-msgstr "изумрудная"
-
-#: organization.py:25
-msgid "olive"
-msgstr "оливковая"
-
-#: organization.py:26
-msgid "magenta"
-msgstr "пурпурная"
-
-#: organization.py:27
-msgid "teal"
-msgstr "стальная"
-
-#: organization.py:28
-msgid "orange"
-msgstr "оранжевая"
-
-#: organization.py:29
-msgid "turquoise"
-msgstr "бирюзовая"
-
-#: organization.py:30
-msgid "brown"
-msgstr "коричневая"
-
-#: organization.py:31
-msgid "salad"
-msgstr "салатовая"
-
-#: organization.py:39
-msgid "Australia"
-msgstr "Австралия"
-
-#: organization.py:40
-msgid "Finland"
-msgstr "Финляндия"
-
-#: organization.py:41
-msgid "France"
-msgstr "Франция"
-
-#: organization.py:42
-msgid "Germany"
-msgstr "Германия"
-
-#: organization.py:43
-msgid "Hungary"
-msgstr "Венгрия"
-
-#: organization.py:44
-msgid "Japan"
-msgstr "Япония"
-
-#: organization.py:45
-msgid "Italy"
-msgstr "Италия"
-
-#: organization.py:46
-msgid "Netherlands"
-msgstr "Голландия"
-
-#: organization.py:47
-msgid "New Zealand"
-msgstr "Новая Зеландия"
-
-#: organization.py:48
-msgid "Poland"
-msgstr "Польша"
-
-#: organization.py:49
-msgid "Romania"
-msgstr "Румыния"
-
-#: organization.py:50
-msgid "Slovakia"
-msgstr "Словакия"
-
-#: organization.py:51
-msgid "Soviet Union"
-msgstr "Советский Союз"
-
-#: organization.py:52
-msgid "United Kingdom"
-msgstr "Объединённое королевство"
-
-#: organization.py:53
-msgid "United States"
-msgstr "Соединённые Штаты"
-
-#: organization.py:94
+#: air_forces.py:55
 msgid "ALA"
 msgstr ""
 
-#: organization.py:95
+#: air_forces.py:56
 msgid "Army of the Air"
 msgstr "ВВС Франции"
 
-#: organization.py:101
+#: air_forces.py:62
 msgid "FAF"
 msgstr ""
 
-#: organization.py:102
+#: air_forces.py:63
 msgid "Finnish Air Force"
 msgstr "ВВС Финляндии"
 
-#: organization.py:108
+#: air_forces.py:69
 msgid "FAR"
 msgstr ""
 
-#: organization.py:109
+#: air_forces.py:70
 msgid "Romanian Air Force"
 msgstr "ВВС Румынии"
 
-#: organization.py:115
+#: air_forces.py:76
 msgid "HAF"
 msgstr ""
 
-#: organization.py:116
+#: air_forces.py:77
 msgid "Hungarian Air Force"
 msgstr "ВВС Венгрии"
 
-#: organization.py:122
+#: air_forces.py:83
 msgid "Luftwaffe"
 msgstr "Люфтваффе"
 
-#: organization.py:123
+#: air_forces.py:84
 msgid "German Air Force"
 msgstr "ВВС Германии"
 
-#: organization.py:129
+#: air_forces.py:90
 msgid "IJA"
 msgstr ""
 
-#: organization.py:130
+#: air_forces.py:91
 msgid "Imperial Japanese Army"
 msgstr "Императорская армия Японии"
 
-#: organization.py:136
+#: air_forces.py:97
 msgid "IJN"
 msgstr ""
 
-#: organization.py:137
+#: air_forces.py:98
 msgid "Imperial Japanese Navy"
 msgstr "Императорский флот Японии"
 
-#: organization.py:143
+#: air_forces.py:104
 msgid "PAF"
 msgstr ""
 
-#: organization.py:144
+#: air_forces.py:105
 msgid "Polish Air Force"
 msgstr "ВВС Польши"
 
-#: organization.py:150
+#: air_forces.py:111
 msgid "RAI"
 msgstr ""
 
-#: organization.py:151
+#: air_forces.py:112
 msgid "Regia Aeronautica Italiana"
 msgstr "Королевские ВВС Италии"
 
-#: organization.py:157
+#: air_forces.py:118
 msgid "RAAF"
 msgstr ""
 
-#: organization.py:158
+#: air_forces.py:119
 msgid "Royal Australian Air Force"
 msgstr "Королевские ВВС Австралии"
 
-#: organization.py:164
+#: air_forces.py:125
 msgid "RAF"
 msgstr ""
 
-#: organization.py:165
+#: air_forces.py:126
 msgid "Royal Air Force"
 msgstr "Королевские ВВС"
 
-#: organization.py:171
+#: air_forces.py:132
 msgid "RN"
 msgstr ""
 
-#: organization.py:172
+#: air_forces.py:133
 msgid "Royal Navy"
 msgstr "Королевский флот"
 
-#: organization.py:178
+#: air_forces.py:139
 msgid "RNLAF"
 msgstr ""
 
-#: organization.py:179
+#: air_forces.py:140
 msgid "Royal Netherlands Air Force"
 msgstr "Королевские ВВС Голландии"
 
-#: organization.py:185
+#: air_forces.py:146
 msgid "RNZAF"
 msgstr ""
 
-#: organization.py:186
+#: air_forces.py:147
 msgid "Royal New Zealand Air Force"
 msgstr "Королевские ВВС Новой Зеландии"
 
-#: organization.py:192
+#: air_forces.py:153
 msgid "SAF"
 msgstr ""
 
-#: organization.py:193
+#: air_forces.py:154
 msgid "Slovak Air Force"
 msgstr "ВВС Словакии"
 
-#: organization.py:199
+#: air_forces.py:160
 msgid "USAAF"
 msgstr ""
 
-#: organization.py:200
+#: air_forces.py:161
 msgid "United States Army Air Forces"
 msgstr "ВВС Армии США"
 
-#: organization.py:206
+#: air_forces.py:167
 msgid "USMC"
 msgstr ""
 
-#: organization.py:207
+#: air_forces.py:168
 msgid "United States Marine Corps"
 msgstr "Корпус морской пехоты США"
 
-#: organization.py:213
+#: air_forces.py:174
 msgid "USN"
 msgstr ""
 
-#: organization.py:214
+#: air_forces.py:175
 msgid "United States Navy"
 msgstr "Военно-морские силы США"
 
-#: organization.py:220
+#: air_forces.py:181
 msgid "VVS RKKA"
 msgstr "ВВС РККА"
 
-#: organization.py:221
+#: air_forces.py:182
 msgid "Workers-Peasants Red Army Air Forces"
 msgstr "ВВС Рабоче-Крестьянской Красной Армии"
 
-#: organization.py:227
+#: air_forces.py:188
 msgid "None"
 msgstr ""
 
-#: organization.py:228
+#: air_forces.py:189
 msgid "No Air Force"
 msgstr "Без ВВС"
 
-#: targets.py:13
+#: belligerents.py:48
+msgid "none"
+msgstr "нет"
+
+#: belligerents.py:49
+msgid "red"
+msgstr "красная"
+
+#: belligerents.py:50
+msgid "blue"
+msgstr "синяя"
+
+#: belligerents.py:51
+msgid "green"
+msgstr "зелёная"
+
+#: belligerents.py:52
+msgid "gold"
+msgstr "золотая"
+
+#: belligerents.py:53
+msgid "purple"
+msgstr "фиолетовая"
+
+#: belligerents.py:54
+msgid "aqua"
+msgstr "лазурная"
+
+#: belligerents.py:55
+msgid "maroon"
+msgstr "бордовая"
+
+#: belligerents.py:56
+msgid "navy"
+msgstr "темно-синяя"
+
+#: belligerents.py:57
+msgid "emerald"
+msgstr "изумрудная"
+
+#: belligerents.py:58
+msgid "olive"
+msgstr "оливковая"
+
+#: belligerents.py:59
+msgid "magenta"
+msgstr "пурпурная"
+
+#: belligerents.py:60
+msgid "teal"
+msgstr "стальная"
+
+#: belligerents.py:61
+msgid "orange"
+msgstr "оранжевая"
+
+#: belligerents.py:62
+msgid "turquoise"
+msgstr "бирюзовая"
+
+#: belligerents.py:63
+msgid "brown"
+msgstr "коричневая"
+
+#: belligerents.py:64
+msgid "salad"
+msgstr "салатовая"
+
+#: countries.py:16
+msgid "Australia"
+msgstr "Австралия"
+
+#: countries.py:17
+msgid "Finland"
+msgstr "Финляндия"
+
+#: countries.py:18
+msgid "France"
+msgstr "Франция"
+
+#: countries.py:19
+msgid "Germany"
+msgstr "Германия"
+
+#: countries.py:20
+msgid "Hungary"
+msgstr "Венгрия"
+
+#: countries.py:21
+msgid "Japan"
+msgstr "Япония"
+
+#: countries.py:22
+msgid "Italy"
+msgstr "Италия"
+
+#: countries.py:23
+msgid "Netherlands"
+msgstr "Голландия"
+
+#: countries.py:24
+msgid "New Zealand"
+msgstr "Новая Зеландия"
+
+#: countries.py:25
+msgid "Poland"
+msgstr "Польша"
+
+#: countries.py:26
+msgid "Romania"
+msgstr "Румыния"
+
+#: countries.py:27
+msgid "Slovakia"
+msgstr "Словакия"
+
+#: countries.py:28
+msgid "Soviet Union"
+msgstr "Советский Союз"
+
+#: countries.py:29
+msgid "United Kingdom"
+msgstr "Объединённое королевство"
+
+#: countries.py:30
+msgid "United States"
+msgstr "Соединённые Штаты"
+
+#: formations.py:16
+msgid "echelon right"
+msgstr "правый пеленг"
+
+#: formations.py:17
+msgid "echelon left"
+msgstr "левый пеленг"
+
+#: formations.py:18
+msgid "line abreast"
+msgstr "шеренга"
+
+#: formations.py:19
+msgid "line asteam"
+msgstr "колонна"
+
+#: formations.py:20
+msgid "vic"
+msgstr "клин"
+
+#: formations.py:21
+msgid "finger four"
+msgstr "4 пальца"
+
+#: formations.py:22
+msgid "diamond"
+msgstr "ромб"
+
+#: skills.py:16
+msgid "rookie"
+msgstr "курсант"
+
+#: skills.py:17
+msgid "average"
+msgstr "новичек"
+
+#: skills.py:18
+msgid "veteran"
+msgstr "ветеран"
+
+#: skills.py:19
+msgid "ace"
+msgstr "ас"
+
+#: targets.py:16
 msgid "destroy"
 msgstr "уничтожить"
 
-#: targets.py:14
+#: targets.py:17
 msgid "destroy area"
 msgstr "уничтожить участок"
 
-#: targets.py:15
+#: targets.py:18
 msgid "destroy bridge"
 msgstr "уничтожить мост"
 
-#: targets.py:16
+#: targets.py:19
 msgid "recon"
 msgstr "разведка"
 
-#: targets.py:17
+#: targets.py:20
 msgid "escort"
 msgstr "сопровождение"
 
-#: targets.py:18
+#: targets.py:21
 msgid "cover"
 msgstr "защита"
 
-#: targets.py:19
+#: targets.py:22
 msgid "cover area"
 msgstr "защита участка"
 
-#: targets.py:20
+#: targets.py:23
 msgid "cover bridge"
 msgstr "защита моста"
 
-#: targets.py:28
+#: targets.py:33
 msgid "primary"
 msgstr "основная"
 
-#: targets.py:29
+#: targets.py:34
 msgid "secondary"
 msgstr "дополнительная"
 
-#: targets.py:30
+#: targets.py:35
 msgid "hidden"
 msgstr "скрытая"
 
-#: weather.py:13
+#: units.py:16
+msgid "aircraft"
+msgstr "самолет"
+
+#: units.py:17
+msgid "armor"
+msgstr "бронетранспорт"
+
+#: units.py:18
+msgid "artillery"
+msgstr "артиллерия"
+
+#: units.py:19
+msgid "balloon"
+msgstr "аэростат"
+
+#: units.py:20
+msgid "light"
+msgstr "источник света"
+
+#: units.py:21
+msgid "radio"
+msgstr "радио"
+
+#: units.py:22
+msgid "ship"
+msgstr "корабль"
+
+#: units.py:23
+msgid "stationary"
+msgstr "неподвижный объект"
+
+#: units.py:24
+msgid "train"
+msgstr "поезд"
+
+#: units.py:25
+msgid "vehicle"
+msgstr "транспорт"
+
+#: waypoints.py:20
+msgid "takeoff (normal)"
+msgstr "взлёт (нормальный)"
+
+#: waypoints.py:24
+msgid "takeoff (pair)"
+msgstr "взлёт (парой)"
+
+#: waypoints.py:28
+msgid "takeoff (in line)"
+msgstr "взлёт (в линию)"
+
+#: waypoints.py:32
+msgid "takeoff (taxiing)"
+msgstr "взлёт (руление)"
+
+#: waypoints.py:36
+msgid "takeoff (taxiing from static)"
+msgstr "взлёт (руление из статического объекта)"
+
+#: waypoints.py:42
+msgid "normal"
+msgstr "нормальный полёт"
+
+#: waypoints.py:48
+msgid "air attack"
+msgstr "атака воздушной цели"
+
+#: waypoints.py:60
+msgid "ground attack"
+msgstr "атака наземной цели"
+
+#: waypoints.py:66
+msgid "patrol (triangle)"
+msgstr "патрулирование (треугольником)"
+
+#: waypoints.py:70
+msgid "patrol (square)"
+msgstr "патрулирование (квадратом)"
+
+#: waypoints.py:74
+msgid "patrol (pentagon)"
+msgstr "патрулирование (пятиугольником)"
+
+#: waypoints.py:78
+msgid "patrol (hexagon)"
+msgstr "патрулирование (шестиугольником)"
+
+#: waypoints.py:82
+msgid "patrol (random)"
+msgstr "патрулирование (произвольно)"
+
+#: waypoints.py:88
+msgid "artillery spotter"
+msgstr "артиллерийский корректировщик"
+
+#: waypoints.py:94
+msgid "landing (on left)"
+msgstr "посадка (слева)"
+
+#: waypoints.py:98
+msgid "landing (on right)"
+msgstr "посадка (справа)"
+
+#: waypoints.py:102
+msgid "landing (short on left)"
+msgstr "посадка (короткий слева)"
+
+#: waypoints.py:106
+msgid "landing (short on right)"
+msgstr "посадка (короткий справа)"
+
+#: waypoints.py:110
+msgid "landing (straight)"
+msgstr "посадка (по прямой)"
+
+#: weather.py:17
+msgctxt "weather"
 msgid "clear"
 msgstr "безоблачно"
 
-#: weather.py:14
+#: weather.py:18
+msgctxt "weather"
 msgid "good"
 msgstr "ясно"
 
-#: weather.py:15
+#: weather.py:19
+msgctxt "weather"
 msgid "hazy"
 msgstr "дымка"
 
-#: weather.py:16
+#: weather.py:20
+msgctxt "weather"
 msgid "poor"
 msgstr "слабый туман"
 
-#: weather.py:17
+#: weather.py:21
+msgctxt "weather"
 msgid "blind"
 msgstr "туман"
 
-#: weather.py:18
+#: weather.py:22
+msgctxt "weather"
 msgid "precipitation"
 msgstr "осадки"
 
-#: weather.py:19
+#: weather.py:23
+msgctxt "weather"
 msgid "thunderstorm"
 msgstr "гроза"
 
-#: weather.py:28
-msgid "low_gust"
+#: weather.py:33
+msgctxt "gust"
+msgid "none"
+msgstr "нет"
+
+#: weather.py:34
+msgctxt "gust"
+msgid "low"
 msgstr "слабые"
 
-#: weather.py:29
-msgid "moderate_gust"
+#: weather.py:35
+msgctxt "gust"
+msgid "moderate"
 msgstr "средние"
 
-#: weather.py:30
-msgid "strong_gust"
+#: weather.py:36
+msgctxt "gust"
+msgid "strong"
 msgstr "сильные"
 
-#: weather.py:39
-msgid "low_turbulence"
+#: weather.py:46
+msgctxt "turbulence"
+msgid "none"
+msgstr "нет"
+
+#: weather.py:47
+msgctxt "turbulence"
+msgid "low"
 msgstr "слабая"
 
-#: weather.py:40
-msgid "moderate_turbulence"
+#: weather.py:48
+msgctxt "turbulence"
+msgid "moderate"
 msgstr "средняя"
 
-#: weather.py:41
-msgid "strong_turbulence"
+#: weather.py:49
+msgctxt "turbulence"
+msgid "strong"
 msgstr "сильная"
 
-#: weather.py:42
-msgid "very_strong_turbulence"
+#: weather.py:50
+msgctxt "turbulence"
+msgid "very strong"
 msgstr "очень сильная"

@@ -2,557 +2,581 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-11 18:43+0200\n"
+"POT-Creation-Date: 2020-11-19 14:18+0200\n"
 "Last-Translator: Oleksandr Oblovatnyi <oblovatniy@gmail.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:28
-msgid "rookie"
-msgstr ""
-
-#: __init__.py:29
-msgid "average"
-msgstr ""
-
-#: __init__.py:30
-msgid "veteran"
-msgstr ""
-
-#: __init__.py:31
-msgid "ace"
-msgstr ""
-
-#: __init__.py:39
-msgid "aircraft"
-msgstr ""
-
-#: __init__.py:40
-msgid "armor"
-msgstr ""
-
-#: __init__.py:41
-msgid "artillery"
-msgstr ""
-
-#: __init__.py:42
-msgid "balloon"
-msgstr ""
-
-#: __init__.py:43
-msgid "light"
-msgstr ""
-
-#: __init__.py:44
-msgid "radio"
-msgstr ""
-
-#: __init__.py:45
-msgid "ship"
-msgstr ""
-
-#: __init__.py:46
-msgid "stationary"
-msgstr ""
-
-#: __init__.py:47
-msgid "train"
-msgstr ""
-
-#: __init__.py:48
-msgid "vehicle"
-msgstr ""
-
-#: flight.py:13
-msgid "echelon right"
-msgstr ""
-
-#: flight.py:14
-msgid "echelon left"
-msgstr ""
-
-#: flight.py:15
-msgid "line abreast"
-msgstr ""
-
-#: flight.py:16
-msgid "line asteam"
-msgstr ""
-
-#: flight.py:17
-msgid "vic"
-msgstr ""
-
-#: flight.py:18
-msgid "finger four"
-msgstr ""
-
-#: flight.py:19
-msgid "diamond"
-msgstr ""
-
-#: flight.py:31
-msgid "takeoff (normal)"
-msgstr ""
-
-#: flight.py:35
-msgid "takeoff (pair)"
-msgstr ""
-
-#: flight.py:39
-msgid "takeoff (in line)"
-msgstr ""
-
-#: flight.py:43
-msgid "takeoff (taxiing)"
-msgstr ""
-
-#: flight.py:47
-msgid "takeoff (taxiing from static)"
-msgstr ""
-
-#: flight.py:53
-msgid "normal"
-msgstr ""
-
-#: flight.py:62
-msgid "air attack"
-msgstr ""
-
-#: flight.py:66
-msgid "ground attack"
-msgstr ""
-
-#: flight.py:72
-msgid "patrol (triangle)"
-msgstr ""
-
-#: flight.py:76
-msgid "patrol (square)"
-msgstr ""
-
-#: flight.py:80
-msgid "patrol (pentagon)"
-msgstr ""
-
-#: flight.py:84
-msgid "patrol (hexagon)"
-msgstr ""
-
-#: flight.py:88
-msgid "patrol (random)"
-msgstr ""
-
-#: flight.py:94
-msgid "artillery spotter"
-msgstr ""
-
-#: flight.py:100
-msgid "landing (on left)"
-msgstr ""
-
-#: flight.py:104
-msgid "landing (on right)"
-msgstr ""
-
-#: flight.py:108
-msgid "landing (short on left)"
-msgstr ""
-
-#: flight.py:112
-msgid "landing (short on right)"
-msgstr ""
-
-#: flight.py:116
-msgid "landing (straight)"
-msgstr ""
-
-#: organization.py:15 weather.py:27 weather.py:38
-msgid "none"
-msgstr ""
-
-#: organization.py:16
-msgid "red"
-msgstr ""
-
-#: organization.py:17
-msgid "blue"
-msgstr ""
-
-#: organization.py:18
-msgid "green"
-msgstr ""
-
-#: organization.py:19
-msgid "gold"
-msgstr ""
-
-#: organization.py:20
-msgid "purple"
-msgstr ""
-
-#: organization.py:21
-msgid "aqua"
-msgstr ""
-
-#: organization.py:22
-msgid "maroon"
-msgstr ""
-
-#: organization.py:23
-msgid "navy"
-msgstr ""
-
-#: organization.py:24
-msgid "emerald"
-msgstr ""
-
-#: organization.py:25
-msgid "olive"
-msgstr ""
-
-#: organization.py:26
-msgid "magenta"
-msgstr ""
-
-#: organization.py:27
-msgid "teal"
-msgstr ""
-
-#: organization.py:28
-msgid "orange"
-msgstr ""
-
-#: organization.py:29
-msgid "turquoise"
-msgstr ""
-
-#: organization.py:30
-msgid "brown"
-msgstr ""
-
-#: organization.py:31
-msgid "salad"
-msgstr ""
-
-#: organization.py:39
-msgid "Australia"
-msgstr ""
-
-#: organization.py:40
-msgid "Finland"
-msgstr ""
-
-#: organization.py:41
-msgid "France"
-msgstr ""
-
-#: organization.py:42
-msgid "Germany"
-msgstr ""
-
-#: organization.py:43
-msgid "Hungary"
-msgstr ""
-
-#: organization.py:44
-msgid "Japan"
-msgstr ""
-
-#: organization.py:45
-msgid "Italy"
-msgstr ""
-
-#: organization.py:46
-msgid "Netherlands"
-msgstr ""
-
-#: organization.py:47
-msgid "New Zealand"
-msgstr ""
-
-#: organization.py:48
-msgid "Poland"
-msgstr ""
-
-#: organization.py:49
-msgid "Romania"
-msgstr ""
-
-#: organization.py:50
-msgid "Slovakia"
-msgstr ""
-
-#: organization.py:51
-msgid "Soviet Union"
-msgstr ""
-
-#: organization.py:52
-msgid "United Kingdom"
-msgstr ""
-
-#: organization.py:53
-msgid "United States"
-msgstr ""
-
-#: organization.py:94
+#: air_forces.py:55
 msgid "ALA"
 msgstr ""
 
-#: organization.py:95
+#: air_forces.py:56
 msgid "Army of the Air"
 msgstr ""
 
-#: organization.py:101
+#: air_forces.py:62
 msgid "FAF"
 msgstr ""
 
-#: organization.py:102
+#: air_forces.py:63
 msgid "Finnish Air Force"
 msgstr ""
 
-#: organization.py:108
+#: air_forces.py:69
 msgid "FAR"
 msgstr ""
 
-#: organization.py:109
+#: air_forces.py:70
 msgid "Romanian Air Force"
 msgstr ""
 
-#: organization.py:115
+#: air_forces.py:76
 msgid "HAF"
 msgstr ""
 
-#: organization.py:116
+#: air_forces.py:77
 msgid "Hungarian Air Force"
 msgstr ""
 
-#: organization.py:122
+#: air_forces.py:83
 msgid "Luftwaffe"
 msgstr ""
 
-#: organization.py:123
+#: air_forces.py:84
 msgid "German Air Force"
 msgstr ""
 
-#: organization.py:129
+#: air_forces.py:90
 msgid "IJA"
 msgstr ""
 
-#: organization.py:130
+#: air_forces.py:91
 msgid "Imperial Japanese Army"
 msgstr ""
 
-#: organization.py:136
+#: air_forces.py:97
 msgid "IJN"
 msgstr ""
 
-#: organization.py:137
+#: air_forces.py:98
 msgid "Imperial Japanese Navy"
 msgstr ""
 
-#: organization.py:143
+#: air_forces.py:104
 msgid "PAF"
 msgstr ""
 
-#: organization.py:144
+#: air_forces.py:105
 msgid "Polish Air Force"
 msgstr ""
 
-#: organization.py:150
+#: air_forces.py:111
 msgid "RAI"
 msgstr ""
 
-#: organization.py:151
+#: air_forces.py:112
 msgid "Regia Aeronautica Italiana"
 msgstr ""
 
-#: organization.py:157
+#: air_forces.py:118
 msgid "RAAF"
 msgstr ""
 
-#: organization.py:158
+#: air_forces.py:119
 msgid "Royal Australian Air Force"
 msgstr ""
 
-#: organization.py:164
+#: air_forces.py:125
 msgid "RAF"
 msgstr ""
 
-#: organization.py:165
+#: air_forces.py:126
 msgid "Royal Air Force"
 msgstr ""
 
-#: organization.py:171
+#: air_forces.py:132
 msgid "RN"
 msgstr ""
 
-#: organization.py:172
+#: air_forces.py:133
 msgid "Royal Navy"
 msgstr ""
 
-#: organization.py:178
+#: air_forces.py:139
 msgid "RNLAF"
 msgstr ""
 
-#: organization.py:179
+#: air_forces.py:140
 msgid "Royal Netherlands Air Force"
 msgstr ""
 
-#: organization.py:185
+#: air_forces.py:146
 msgid "RNZAF"
 msgstr ""
 
-#: organization.py:186
+#: air_forces.py:147
 msgid "Royal New Zealand Air Force"
 msgstr ""
 
-#: organization.py:192
+#: air_forces.py:153
 msgid "SAF"
 msgstr ""
 
-#: organization.py:193
+#: air_forces.py:154
 msgid "Slovak Air Force"
 msgstr ""
 
-#: organization.py:199
+#: air_forces.py:160
 msgid "USAAF"
 msgstr ""
 
-#: organization.py:200
+#: air_forces.py:161
 msgid "United States Army Air Forces"
 msgstr ""
 
-#: organization.py:206
+#: air_forces.py:167
 msgid "USMC"
 msgstr ""
 
-#: organization.py:207
+#: air_forces.py:168
 msgid "United States Marine Corps"
 msgstr ""
 
-#: organization.py:213
+#: air_forces.py:174
 msgid "USN"
 msgstr ""
 
-#: organization.py:214
+#: air_forces.py:175
 msgid "United States Navy"
 msgstr ""
 
-#: organization.py:220
+#: air_forces.py:181
 msgid "VVS RKKA"
 msgstr ""
 
-#: organization.py:221
+#: air_forces.py:182
 msgid "Workers-Peasants Red Army Air Forces"
 msgstr ""
 
-#: organization.py:227
+#: air_forces.py:188
 msgid "None"
 msgstr ""
 
-#: organization.py:228
+#: air_forces.py:189
 msgid "No Air Force"
 msgstr ""
 
-#: targets.py:13
-msgid "destroy"
+#: belligerents.py:48
+msgid "none"
 msgstr ""
 
-#: targets.py:14
-msgid "destroy area"
+#: belligerents.py:49
+msgid "red"
 msgstr ""
 
-#: targets.py:15
-msgid "destroy bridge"
+#: belligerents.py:50
+msgid "blue"
+msgstr ""
+
+#: belligerents.py:51
+msgid "green"
+msgstr ""
+
+#: belligerents.py:52
+msgid "gold"
+msgstr ""
+
+#: belligerents.py:53
+msgid "purple"
+msgstr ""
+
+#: belligerents.py:54
+msgid "aqua"
+msgstr ""
+
+#: belligerents.py:55
+msgid "maroon"
+msgstr ""
+
+#: belligerents.py:56
+msgid "navy"
+msgstr ""
+
+#: belligerents.py:57
+msgid "emerald"
+msgstr ""
+
+#: belligerents.py:58
+msgid "olive"
+msgstr ""
+
+#: belligerents.py:59
+msgid "magenta"
+msgstr ""
+
+#: belligerents.py:60
+msgid "teal"
+msgstr ""
+
+#: belligerents.py:61
+msgid "orange"
+msgstr ""
+
+#: belligerents.py:62
+msgid "turquoise"
+msgstr ""
+
+#: belligerents.py:63
+msgid "brown"
+msgstr ""
+
+#: belligerents.py:64
+msgid "salad"
+msgstr ""
+
+#: countries.py:16
+msgid "Australia"
+msgstr ""
+
+#: countries.py:17
+msgid "Finland"
+msgstr ""
+
+#: countries.py:18
+msgid "France"
+msgstr ""
+
+#: countries.py:19
+msgid "Germany"
+msgstr ""
+
+#: countries.py:20
+msgid "Hungary"
+msgstr ""
+
+#: countries.py:21
+msgid "Japan"
+msgstr ""
+
+#: countries.py:22
+msgid "Italy"
+msgstr ""
+
+#: countries.py:23
+msgid "Netherlands"
+msgstr ""
+
+#: countries.py:24
+msgid "New Zealand"
+msgstr ""
+
+#: countries.py:25
+msgid "Poland"
+msgstr ""
+
+#: countries.py:26
+msgid "Romania"
+msgstr ""
+
+#: countries.py:27
+msgid "Slovakia"
+msgstr ""
+
+#: countries.py:28
+msgid "Soviet Union"
+msgstr ""
+
+#: countries.py:29
+msgid "United Kingdom"
+msgstr ""
+
+#: countries.py:30
+msgid "United States"
+msgstr ""
+
+#: formations.py:16
+msgid "echelon right"
+msgstr ""
+
+#: formations.py:17
+msgid "echelon left"
+msgstr ""
+
+#: formations.py:18
+msgid "line abreast"
+msgstr ""
+
+#: formations.py:19
+msgid "line asteam"
+msgstr ""
+
+#: formations.py:20
+msgid "vic"
+msgstr ""
+
+#: formations.py:21
+msgid "finger four"
+msgstr ""
+
+#: formations.py:22
+msgid "diamond"
+msgstr ""
+
+#: skills.py:16
+msgid "rookie"
+msgstr ""
+
+#: skills.py:17
+msgid "average"
+msgstr ""
+
+#: skills.py:18
+msgid "veteran"
+msgstr ""
+
+#: skills.py:19
+msgid "ace"
 msgstr ""
 
 #: targets.py:16
-msgid "recon"
+msgid "destroy"
 msgstr ""
 
 #: targets.py:17
-msgid "escort"
+msgid "destroy area"
 msgstr ""
 
 #: targets.py:18
-msgid "cover"
+msgid "destroy bridge"
 msgstr ""
 
 #: targets.py:19
-msgid "cover area"
+msgid "recon"
 msgstr ""
 
 #: targets.py:20
+msgid "escort"
+msgstr ""
+
+#: targets.py:21
+msgid "cover"
+msgstr ""
+
+#: targets.py:22
+msgid "cover area"
+msgstr ""
+
+#: targets.py:23
 msgid "cover bridge"
 msgstr ""
 
-#: targets.py:28
+#: targets.py:33
 msgid "primary"
 msgstr ""
 
-#: targets.py:29
+#: targets.py:34
 msgid "secondary"
 msgstr ""
 
-#: targets.py:30
+#: targets.py:35
 msgid "hidden"
 msgstr ""
 
-#: weather.py:13
-msgid "clear"
+#: units.py:16
+msgid "aircraft"
 msgstr ""
 
-#: weather.py:14
-msgid "good"
+#: units.py:17
+msgid "armor"
 msgstr ""
 
-#: weather.py:15
-msgid "hazy"
+#: units.py:18
+msgid "artillery"
 msgstr ""
 
-#: weather.py:16
-msgid "poor"
+#: units.py:19
+msgid "balloon"
+msgstr ""
+
+#: units.py:20
+msgid "light"
+msgstr ""
+
+#: units.py:21
+msgid "radio"
+msgstr ""
+
+#: units.py:22
+msgid "ship"
+msgstr ""
+
+#: units.py:23
+msgid "stationary"
+msgstr ""
+
+#: units.py:24
+msgid "train"
+msgstr ""
+
+#: units.py:25
+msgid "vehicle"
+msgstr ""
+
+#: waypoints.py:20
+msgid "takeoff (normal)"
+msgstr ""
+
+#: waypoints.py:24
+msgid "takeoff (pair)"
+msgstr ""
+
+#: waypoints.py:28
+msgid "takeoff (in line)"
+msgstr ""
+
+#: waypoints.py:32
+msgid "takeoff (taxiing)"
+msgstr ""
+
+#: waypoints.py:36
+msgid "takeoff (taxiing from static)"
+msgstr ""
+
+#: waypoints.py:42
+msgid "normal"
+msgstr ""
+
+#: waypoints.py:48
+msgid "air attack"
+msgstr ""
+
+#: waypoints.py:60
+msgid "ground attack"
+msgstr ""
+
+#: waypoints.py:66
+msgid "patrol (triangle)"
+msgstr ""
+
+#: waypoints.py:70
+msgid "patrol (square)"
+msgstr ""
+
+#: waypoints.py:74
+msgid "patrol (pentagon)"
+msgstr ""
+
+#: waypoints.py:78
+msgid "patrol (hexagon)"
+msgstr ""
+
+#: waypoints.py:82
+msgid "patrol (random)"
+msgstr ""
+
+#: waypoints.py:88
+msgid "artillery spotter"
+msgstr ""
+
+#: waypoints.py:94
+msgid "landing (on left)"
+msgstr ""
+
+#: waypoints.py:98
+msgid "landing (on right)"
+msgstr ""
+
+#: waypoints.py:102
+msgid "landing (short on left)"
+msgstr ""
+
+#: waypoints.py:106
+msgid "landing (short on right)"
+msgstr ""
+
+#: waypoints.py:110
+msgid "landing (straight)"
 msgstr ""
 
 #: weather.py:17
-msgid "blind"
+msgctxt "weather"
+msgid "clear"
 msgstr ""
 
 #: weather.py:18
-msgid "precipitation"
+msgctxt "weather"
+msgid "good"
 msgstr ""
 
 #: weather.py:19
+msgctxt "weather"
+msgid "hazy"
+msgstr ""
+
+#: weather.py:20
+msgctxt "weather"
+msgid "poor"
+msgstr ""
+
+#: weather.py:21
+msgctxt "weather"
+msgid "blind"
+msgstr ""
+
+#: weather.py:22
+msgctxt "weather"
+msgid "precipitation"
+msgstr ""
+
+#: weather.py:23
+msgctxt "weather"
 msgid "thunderstorm"
 msgstr ""
 
-#: weather.py:28
-msgid "low_gust"
-msgstr "low"
+#: weather.py:33
+msgctxt "gust"
+msgid "none"
+msgstr ""
 
-#: weather.py:29
-msgid "moderate_gust"
+#: weather.py:34
+msgctxt "gust"
+msgid "low"
+msgstr ""
+
+#: weather.py:35
+msgctxt "gust"
+msgid "moderate"
 msgstr "moderate"
 
-#: weather.py:30
-msgid "strong_gust"
+#: weather.py:36
+msgctxt "gust"
+msgid "strong"
 msgstr "strong"
 
-#: weather.py:39
-msgid "low_turbulence"
-msgstr "low"
+#: weather.py:46
+msgctxt "turbulence"
+msgid "none"
+msgstr ""
 
-#: weather.py:40
-msgid "moderate_turbulence"
+#: weather.py:47
+msgctxt "turbulence"
+msgid "low"
+msgstr ""
+
+#: weather.py:48
+msgctxt "turbulence"
+msgid "moderate"
 msgstr "moderate"
 
-#: weather.py:41
-msgid "strong_turbulence"
+#: weather.py:49
+msgctxt "turbulence"
+msgid "strong"
 msgstr "strong"
 
-#: weather.py:42
-msgid "very_strong_turbulence"
+#: weather.py:50
+msgctxt "turbulence"
+msgid "very strong"
 msgstr "very strong"
