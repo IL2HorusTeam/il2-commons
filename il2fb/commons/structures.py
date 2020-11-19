@@ -55,11 +55,13 @@ class PrimitiveDataclassMixin:
     return value
 
   @classmethod
-  def from_primitive(cls, value: Dict[str, Any]) -> Any:
+  def from_primitive(cls, value: Dict[str, Any], *args, **kwargs) -> Any:
     kwargs = {
       key: cls._value_from_primitive(
         value=value[key],
         type_=field.type,
+        *args,
+        **kwargs
       )
       for key, field in cls.__dataclass_fields__.items()
       if field.init
@@ -67,7 +69,7 @@ class PrimitiveDataclassMixin:
     return cls(**kwargs)
 
   @staticmethod
-  def _value_from_primitive(value: Any, type_: type) -> Any:
+  def _value_from_primitive(value: Any, type_: type, *args, **kwargs) -> Any:
     if value is None:
       return
 
@@ -78,6 +80,6 @@ class PrimitiveDataclassMixin:
       return type_.fromisoformat(value)
 
     if hasattr(type_, "from_primitive"):
-      return type_.from_primitive(value)
+      return type_.from_primitive(value, *args, **kwargs)
 
     return type_(value)
