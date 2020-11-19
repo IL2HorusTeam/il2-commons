@@ -17,7 +17,7 @@ class Actor(PrimitiveDataclassMixin):
 
 @export
 @dataclass(frozen=True)
-class Human(Actor):
+class HumanActor(Actor):
   __slots__ = ["callsign", ]
 
   callsign: str
@@ -25,23 +25,23 @@ class Human(Actor):
 
 @export
 @dataclass(frozen=True)
-class HumanAircraft(Human):
-  __slots__ = Human.__slots__ + ["aircraft", ]
+class HumanAircraftActor(HumanActor):
+  __slots__ = HumanActor.__slots__ + ["aircraft", ]
 
   aircraft: str
 
 
 @export
 @dataclass(frozen=True)
-class HumanAircraftCrewMember(HumanAircraft):
-  __slots__ = HumanAircraft.__slots__ + ["index", ]
+class HumanAircraftCrewMemberActor(HumanAircraftActor):
+  __slots__ = HumanAircraftActor.__slots__ + ["index", ]
 
   index: int
 
 
 @export
 @dataclass(frozen=True)
-class AIAircraft(Actor):
+class AIAircraftActor(Actor):
   __slots__ = ["flight_id", "aircraft", ]
 
   flight_id: str
@@ -50,15 +50,15 @@ class AIAircraft(Actor):
 
 @export
 @dataclass(frozen=True)
-class AIAircraftCrewMember(AIAircraft):
-  __slots__ = AIAircraft.__slots__ + ["index", ]
+class AIAircraftCrewMemberActor(AIAircraftActor):
+  __slots__ = AIAircraftActor.__slots__ + ["index", ]
 
   index: int
 
 
 @export
 @dataclass(frozen=True)
-class Unit(Actor):
+class UnitActor(Actor):
   __slots__ = ["id", ]
 
   id: str
@@ -66,27 +66,27 @@ class Unit(Actor):
 
 @export
 @dataclass(frozen=True)
-class StationaryUnit(Unit):
+class StationaryUnitActor(UnitActor):
   ...
 
 
 @export
 @dataclass(frozen=True)
-class MovingUnit(Unit):
+class MovingUnitActor(UnitActor):
   ...
 
 
 @export
 @dataclass(frozen=True)
-class MovingUnitMember(MovingUnit):
-  __slots__ = MovingUnit.__slots__ + ["index", ]
+class MovingUnitMemberActor(MovingUnitActor):
+  __slots__ = MovingUnitActor.__slots__ + ["index", ]
 
   index: int
 
 
 @export
 @dataclass(frozen=True)
-class Building(Actor):
+class BuildingActor(Actor):
   __slots__ = ["name", ]
 
   name: str
@@ -94,7 +94,7 @@ class Building(Actor):
 
 @export
 @dataclass(frozen=True)
-class Bridge(Actor):
+class BridgeActor(Actor):
   __slots__ = ["id", ]
 
   id: str
