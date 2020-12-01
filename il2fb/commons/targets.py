@@ -12,7 +12,7 @@ class TargetTypeConstant(VerboseValueConstant):
 
 
 @export
-class TARGET_TYPE(with_constant_class(TargetTypeConstant), Values):
+class TARGET_TYPES(with_constant_class(TargetTypeConstant), Values):
   DESTROY        = TargetTypeConstant(0, _("destroy"))
   DESTROY_AREA   = TargetTypeConstant(1, _("destroy area"))
   DESTROY_BRIDGE = TargetTypeConstant(2, _("destroy bridge"))
@@ -29,7 +29,7 @@ class TargetPriorityConstant(VerboseValueConstant):
 
 
 @export
-class TARGET_PRIORITY(with_constant_class(TargetPriorityConstant), Values):
+class TARGET_PRIORITIES(with_constant_class(TargetPriorityConstant), Values):
   PRIMARY   = TargetPriorityConstant(0, _("primary"))
   SECONDARY = TargetPriorityConstant(1, _("secondary"))
   HIDDEN    = TargetPriorityConstant(2, _("hidden"))

@@ -12,7 +12,7 @@ class CountryConstant(VerboseConstant):
 
 
 @export
-class COUNTRY(with_constant_class(CountryConstant), Constants):
+class COUNTRIES(with_constant_class(CountryConstant), Constants):
   AU = CountryConstant(verbose_name=_("Australia"))
   FI = CountryConstant(verbose_name=_("Finland"))
   FR = CountryConstant(verbose_name=_("France"))

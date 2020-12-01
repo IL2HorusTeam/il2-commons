@@ -12,7 +12,7 @@ class FlightWaypointTypeConstant(VerboseValueConstant):
 
 
 @export
-class FLIGHT_WAYPOINT_TYPE(with_constant_class(FlightWaypointTypeConstant), Values):
+class FLIGHT_WAYPOINT_TYPES(with_constant_class(FlightWaypointTypeConstant), Values):
 
   # Take-off ----------------------------------------------------------------
   TAKEOFF_NORMAL = FlightWaypointTypeConstant(

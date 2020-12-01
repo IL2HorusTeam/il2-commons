@@ -1,4 +1,4 @@
-from .belligerents import BELLIGERENT
+from .belligerents import BELLIGERENTS
 from .spatial import Point2D
 
 
@@ -29,7 +29,7 @@ def get_belligerent_transformer(
 
   def _transformer(data):
     value = data[src_field_name]
-    data[dst_field_name] = BELLIGERENT[value.lower()]
+    data[dst_field_name] = BELLIGERENTS[value.lower()]
 
   return _transformer
 

@@ -38,7 +38,7 @@ class BelligerentConstant(VerboseValueConstant):
 
 
 @export
-class BELLIGERENT(with_constant_class(BelligerentConstant), Values):
+class BELLIGERENTS(with_constant_class(BelligerentConstant), Values):
   """
   Definitions of belligerents (a.k.a "armies").
 

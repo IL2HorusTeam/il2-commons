@@ -11,7 +11,7 @@ class MissionStatusConstant(SimpleConstant):
 
 
 @export
-class MISSION_STATUS(with_constant_class(MissionStatusConstant), Constants):
+class MISSION_STATUSES(with_constant_class(MissionStatusConstant), Constants):
   NOT_LOADED = MissionStatusConstant()
   LOADED     = MissionStatusConstant()
   PLAYING    = MissionStatusConstant()

@@ -11,7 +11,7 @@ class SupportedLanguageConstant(SimpleConstant):
 
 
 @export
-class SUPPORTED_LANGUAGE(with_constant_class(SupportedLanguageConstant), Constants):
+class SUPPORTED_LANGUAGES(with_constant_class(SupportedLanguageConstant), Constants):
   EN = SupportedLanguageConstant()
   RU = SupportedLanguageConstant()
 

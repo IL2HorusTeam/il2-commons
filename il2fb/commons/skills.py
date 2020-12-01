@@ -12,7 +12,7 @@ class SkillConstant(VerboseValueConstant):
 
 
 @export
-class SKILL(with_constant_class(SkillConstant), Values):
+class SKILLS(with_constant_class(SkillConstant), Values):
   ROOKIE  = SkillConstant(0, _("rookie"))
   AVERAGE = SkillConstant(1, _("average"))
   VETERAN = SkillConstant(2, _("veteran"))

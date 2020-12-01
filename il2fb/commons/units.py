@@ -12,7 +12,7 @@ class UnitTypeConstant(VerboseValueConstant):
 
 
 @export
-class UNIT_TYPE(with_constant_class(UnitTypeConstant), Values):
+class UNIT_TYPES(with_constant_class(UnitTypeConstant), Values):
   AIRCRAFT   = UnitTypeConstant("planes",      _("aircraft"))
   ARMOR      = UnitTypeConstant("armor",       _("armor"))
   ARTILLERY  = UnitTypeConstant("artillery",   _("artillery"))

@@ -4,7 +4,7 @@ from candv import Values
 from candv import VerboseValueConstant
 from candv import with_constant_class
 
-from .countries import COUNTRY
+from .countries import COUNTRIES
 from .countries import CountryConstant
 
 from .exceptions import IL2FBLookupError
@@ -47,135 +47,135 @@ class AirForceConstant(VerboseValueConstant):
 
 
 @export
-class AIR_FORCE(with_constant_class(AirForceConstant), Values):
+class AIR_FORCES(with_constant_class(AirForceConstant), Values):
   ALA = AirForceConstant(
-    country=COUNTRY.FR,
+    country=COUNTRIES.FR,
     default_flight_prefix="fr01",
     value="fr",
     verbose_name=_("ALA"),
     help_text=_("Army of the Air"),
   )
   FAF = AirForceConstant(
-    country=COUNTRY.FI,
+    country=COUNTRIES.FI,
     default_flight_prefix="f01",
     value="fi",
     verbose_name=_("FAF"),
     help_text=_("Finnish Air Force"),
   )
   FAR = AirForceConstant(
-    country=COUNTRY.RO,
+    country=COUNTRIES.RO,
     default_flight_prefix="ro01",
     value="ro",
     verbose_name=_("FAR"),
     help_text=_("Romanian Air Force"),
   )
   HAF = AirForceConstant(
-    country=COUNTRY.HU,
+    country=COUNTRIES.HU,
     default_flight_prefix="h01",
     value="hu",
     verbose_name=_("HAF"),
     help_text=_("Hungarian Air Force"),
   )
   LUFTWAFFE = AirForceConstant(
-    country=COUNTRY.DE,
+    country=COUNTRIES.DE,
     default_flight_prefix="g01",
     value="de",
     verbose_name=_("Luftwaffe"),
     help_text=_("German Air Force"),
   )
   IJA = AirForceConstant(
-    country=COUNTRY.JP,
+    country=COUNTRIES.JP,
     default_flight_prefix="ja01",
     value="ja",
     verbose_name=_("IJA"),
     help_text=_("Imperial Japanese Army"),
   )
   IJN = AirForceConstant(
-    country=COUNTRY.JP,
+    country=COUNTRIES.JP,
     default_flight_prefix="IN_NN",
     value="in",
     verbose_name=_("IJN"),
     help_text=_("Imperial Japanese Navy"),
   )
   PAF = AirForceConstant(
-    country=COUNTRY.PL,
+    country=COUNTRIES.PL,
     default_flight_prefix="pl01",
     value="pl",
     verbose_name=_("PAF"),
     help_text=_("Polish Air Force"),
   )
   RAI = AirForceConstant(
-    country=COUNTRY.IT,
+    country=COUNTRIES.IT,
     default_flight_prefix="i01",
     value="it",
     verbose_name=_("RAI"),
     help_text=_("Regia Aeronautica Italiana"),
   )
   RAAF = AirForceConstant(
-    country=COUNTRY.AU,
+    country=COUNTRIES.AU,
     default_flight_prefix="RA_NN",
     value="ra",
     verbose_name=_("RAAF"),
     help_text=_("Royal Australian Air Force"),
   )
   RAF = AirForceConstant(
-    country=COUNTRY.UK,
+    country=COUNTRIES.UK,
     default_flight_prefix="gb01",
     value="gb",
     verbose_name=_("RAF"),
     help_text=_("Royal Air Force"),
   )
   RN = AirForceConstant(
-    country=COUNTRY.UK,
+    country=COUNTRIES.UK,
     default_flight_prefix="RN_NN",
     value="rn",
     verbose_name=_("RN"),
     help_text=_("Royal Navy"),
   )
   RNLAF = AirForceConstant(
-    country=COUNTRY.NL,
+    country=COUNTRIES.NL,
     default_flight_prefix="DU_NN",
     value="du",
     verbose_name=_("RNLAF"),
     help_text=_("Royal Netherlands Air Force"),
   )
   RNZAF = AirForceConstant(
-    country=COUNTRY.NZ,
+    country=COUNTRIES.NZ,
     default_flight_prefix="RZ_NN",
     value="rz",
     verbose_name=_("RNZAF"),
     help_text=_("Royal New Zealand Air Force"),
   )
   SAF = AirForceConstant(
-    country=COUNTRY.SK,
+    country=COUNTRIES.SK,
     default_flight_prefix="sk01",
     value="sk",
     verbose_name=_("SAF"),
     help_text=_("Slovak Air Force"),
   )
   USAAF = AirForceConstant(
-    country=COUNTRY.US,
+    country=COUNTRIES.US,
     default_flight_prefix="usa01",
     value="us",
     verbose_name=_("USAAF"),
     help_text=_("United States Army Air Forces"),
   )
   USMC = AirForceConstant(
-    country=COUNTRY.US,
+    country=COUNTRIES.US,
     default_flight_prefix="UM_NN",
     value="um",
     verbose_name=_("USMC"),
     help_text=_("United States Marine Corps"),
   )
   USN = AirForceConstant(
-    country=COUNTRY.US,
+    country=COUNTRIES.US,
     default_flight_prefix="UN_NN",
     value="un",
     verbose_name=_("USN"),
     help_text=_("United States Navy"),
   )
   VVS_RKKA = AirForceConstant(
-    country=COUNTRY.SU,
+    country=COUNTRIES.SU,
     default_flight_prefix="r01",
     value="ru",
     verbose_name=_("VVS RKKA"),

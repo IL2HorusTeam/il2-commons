@@ -12,7 +12,7 @@ class FlightFormationConstant(VerboseValueConstant):
 
 
 @export
-class FLIGHT_FORMATION(with_constant_class(FlightFormationConstant), Values):
+class FLIGHT_FORMATIONS(with_constant_class(FlightFormationConstant), Values):
   ECHELON_RIGHT = FlightFormationConstant("F2", _("echelon right"))
   ECHELON_LEFT  = FlightFormationConstant("F3", _("echelon left"))
   LINE_ABREAST  = FlightFormationConstant("F4", _("line abreast"))

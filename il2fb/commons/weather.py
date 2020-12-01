@@ -13,7 +13,7 @@ class WeatherConditionConstant(VerboseValueConstant):
 
 
 @export
-class WEATHER_CONDITION(with_constant_class(WeatherConditionConstant), Values):
+class WEATHER_CONDITIONS(with_constant_class(WeatherConditionConstant), Values):
   CLEAR         = WeatherConditionConstant(0, P_("weather", "clear"))
   GOOD          = WeatherConditionConstant(1, P_("weather", "good"))
   HAZY          = WeatherConditionConstant(2, P_("weather", "hazy"))
@@ -29,7 +29,7 @@ class WindGustConstant(VerboseValueConstant):
 
 
 @export
-class WIND_GUST(with_constant_class(WindGustConstant), Values):
+class WIND_GUSTS(with_constant_class(WindGustConstant), Values):
   NONE     = WindGustConstant(0,  P_("gust", "none"))
   LOW      = WindGustConstant(8,  P_("gust", "low"))
   MODERATE = WindGustConstant(10, P_("gust", "moderate"))
@@ -42,7 +42,7 @@ class TurbulenceConstant(VerboseValueConstant):
 
 
 @export
-class TURBULENCE(with_constant_class(TurbulenceConstant), Values):
+class TURBULENCES(with_constant_class(TurbulenceConstant), Values):
   NONE        = TurbulenceConstant(0, P_("turbulence", "none"))
   LOW         = TurbulenceConstant(3, P_("turbulence", "low"))
   MODERATE    = TurbulenceConstant(4, P_("turbulence", "moderate"))
