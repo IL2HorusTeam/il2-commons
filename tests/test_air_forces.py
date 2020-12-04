@@ -57,9 +57,9 @@ class AirForcesTestCase(unittest.TestCase):
       }
     )
 
-  def test_get_flight_prefixes(self):
+  def test_get_default_regiment_ids(self):
     self.assertEqual(
-      list(AIR_FORCES.get_flight_prefixes()),
+      list(AIR_FORCES.get_default_regiment_ids()),
       [
         "fr01", "f01", "ro01", "h01", "g01", "ja01", "IN_NN", "pl01", "i01",
         "RA_NN", "gb01", "RN_NN", "DU_NN", "RZ_NN", "sk01", "usa01", "UM_NN",
@@ -67,14 +67,14 @@ class AirForcesTestCase(unittest.TestCase):
       ]
     )
 
-  def test_get_by_flight_prefix(self):
+  def test_get_by_default_regiment_id(self):
     self.assertEqual(
-      AIR_FORCES.get_by_flight_prefix("r01"),
+      AIR_FORCES.get_by_default_regiment_id("r01"),
       AIR_FORCES.VVS_RKKA
     )
 
-  def test_get_by_flight_prefix_invalid_value(self):
-    self.assertRaises(IL2FBLookupError, AIR_FORCES.get_by_flight_prefix, "foo")
+  def test_get_by_default_regiment_id_invalid_value(self):
+    self.assertRaises(IL2FBLookupError, AIR_FORCES.get_by_default_regiment_id, "foo")
 
   def test_filter_by_country(self):
     self.assertEqual(

@@ -190,17 +190,18 @@ class AIR_FORCES(with_constant_class(AirForceConstant), Values):
   )
 
   @classmethod
-  def get_flight_prefixes(cls):
+  def get_default_regiment_ids(cls):
     return [x.default_regiment_id for x in cls.iterconstants()]
 
   @classmethod
-  def get_by_flight_prefix(cls, prefix):
+  def get_by_default_regiment_id(cls, default_regiment_id):
     for constant in cls.iterconstants():
-      if constant.default_regiment_id == prefix:
+      if constant.default_regiment_id == default_regiment_id:
         return constant
 
     raise IL2FBLookupError(
-      f"air force with prefix '{prefix}' is not present in '{cls.__name__}'"
+      f"air force with default regiment ID '{default_regiment_id}' "
+      f"is not present in '{cls.__name__}'"
     )
 
   @classmethod
