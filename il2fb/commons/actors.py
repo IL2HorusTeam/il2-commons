@@ -86,9 +86,9 @@ class MovingUnitMemberActor(MovingUnitActor):
 @export
 @dataclass(frozen=True)
 class BuildingActor(Actor):
-  __slots__ = ["name", ]
+  __slots__ = ["id", ]
 
-  name: str
+  id: str
 
 
 @export
