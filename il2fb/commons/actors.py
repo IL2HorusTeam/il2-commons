@@ -41,18 +41,12 @@ class HumanAircraftCrewMemberActor(HumanAircraftActor):
 
 @export
 @dataclass(frozen=True)
-class UnitActor(Actor):
-  __slots__ = ["id", ]
+class AIAircraftActor(Actor):
+  __slots__ = ["regiment_id", "squadron_index", "wing_index", ]
 
-  id: str
-
-
-@export
-@dataclass(frozen=True)
-class AIAircraftActor(UnitActor):
-  __slots__ = UnitActor.__slots__ + ["index", ]
-
-  index: int
+  regiment_id:    str
+  squadron_index: int
+  wing_index:     int
 
 
 @export
@@ -61,6 +55,14 @@ class AIAircraftCrewMemberActor(AIAircraftActor):
   __slots__ = AIAircraftActor.__slots__ + ["crew_index", ]
 
   crew_index: int
+
+
+@export
+@dataclass(frozen=True)
+class UnitActor(Actor):
+  __slots__ = ["id", ]
+
+  id: str
 
 
 @export
