@@ -19,7 +19,7 @@ class AirForcesTestCase(unittest.TestCase):
     class FOO(with_constant_class(AirForceConstant), Values):
       BAR = AirForceConstant(
         country=COUNTRIES.AU,
-        default_flight_prefix="brrr",
+        default_regiment_id="brrr",
         value="br",
         verbose_name="BAR",
       ).to_group(
@@ -28,7 +28,7 @@ class AirForcesTestCase(unittest.TestCase):
       )
 
     self.assertEqual(FOO.BAR.country, COUNTRIES.AU)
-    self.assertEqual(FOO.BAR.default_flight_prefix, "brrr")
+    self.assertEqual(FOO.BAR.default_regiment_id, "brrr")
     self.assertEqual(FOO.BAR.names(), ["qux", ])
 
   def test_to_primitive(self):
@@ -36,7 +36,7 @@ class AirForcesTestCase(unittest.TestCase):
     class FOO(with_constant_class(AirForceConstant), Values):
       BAR = AirForceConstant(
         country=COUNTRIES.AU,
-        default_flight_prefix="brrr",
+        default_regiment_id="brrr",
         value="br",
         verbose_name="BAR",
       )
@@ -50,7 +50,7 @@ class AirForcesTestCase(unittest.TestCase):
           'verbose_name': "Australia",
           'help_text': None,
         },
-        'default_flight_prefix': "brrr",
+        'default_regiment_id': "brrr",
         'value': "br",
         'verbose_name': "BAR",
         'help_text': None,
