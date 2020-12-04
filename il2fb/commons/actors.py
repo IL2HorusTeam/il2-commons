@@ -95,10 +95,8 @@ class BuildingActor(Actor):
 
 @export
 @dataclass(frozen=True)
-class BridgeActor(Actor):
-  __slots__ = ["id", ]
-
-  id: str
+class BridgeActor(BuildingActor):
+  ...
 
 
 @export
