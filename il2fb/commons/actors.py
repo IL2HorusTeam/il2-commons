@@ -97,3 +97,9 @@ class BridgeActor(Actor):
   __slots__ = ["id", ]
 
   id: str
+
+
+@export
+@dataclass(frozen=True)
+class TreeActor(Actor):
+  ...
