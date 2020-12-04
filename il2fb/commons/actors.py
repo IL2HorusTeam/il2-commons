@@ -80,9 +80,9 @@ class MovingUnitActor(UnitActor):
 @export
 @dataclass(frozen=True)
 class MovingUnitMemberActor(MovingUnitActor):
-  __slots__ = MovingUnitActor.__slots__ + ["index", ]
+  __slots__ = MovingUnitActor.__slots__ + ["member_index", ]
 
-  index: int
+  member_index: int
 
 
 @export
