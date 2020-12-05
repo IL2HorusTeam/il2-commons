@@ -100,6 +100,12 @@ class BridgeActor(BuildingActor):
 
 @export
 @dataclass(frozen=True)
+class ObjectActor(UnitActor):
+  """3do actor"""
+
+
+@export
+@dataclass(frozen=True)
 class UnknownActor(UnitActor):
   ...
 
