@@ -108,9 +108,3 @@ class ObjectActor(UnitActor):
 @dataclass(frozen=True)
 class UnknownActor(UnitActor):
   ...
-
-
-@export
-@dataclass(frozen=True)
-class TreeActor(Actor):
-  ...
