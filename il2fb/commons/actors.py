@@ -34,28 +34,9 @@ class HumanAircraftActor(HumanActor):
 @export
 @dataclass(frozen=True)
 class HumanAircraftCrewMemberActor(HumanAircraftActor):
-  __slots__ = HumanAircraftActor.__slots__ + ["crew_index", ]
+  __slots__ = HumanAircraftActor.__slots__ + ["member_index", ]
 
-  crew_index: int
-
-
-@export
-@dataclass(frozen=True)
-class AIAircraftActor(Actor):
-  __slots__ = ["regiment_id", "squadron_id", "flight_id", "flight_index", ]
-
-  regiment_id:  str
-  squadron_id:  int
-  flight_id:    int
-  flight_index: int
-
-
-@export
-@dataclass(frozen=True)
-class AIAircraftCrewMemberActor(AIAircraftActor):
-  __slots__ = AIAircraftActor.__slots__ + ["crew_index", ]
-
-  crew_index: int
+  member_index: int
 
 
 @export
@@ -64,6 +45,20 @@ class UnitActor(Actor):
   __slots__ = ["id", ]
 
   id: str
+
+
+@export
+@dataclass(frozen=True)
+class AIAircraftActor(UnitActor):
+  ...
+
+
+@export
+@dataclass(frozen=True)
+class AIAircraftCrewMemberActor(AIAircraftActor):
+  __slots__ = AIAircraftActor.__slots__ + ["member_index", ]
+
+  member_index: int
 
 
 @export
@@ -94,7 +89,7 @@ class BuildingActor(UnitActor):
 
 @export
 @dataclass(frozen=True)
-class BridgeActor(BuildingActor):
+class BridgeActor(UnitActor):
   ...
 
 
@@ -102,9 +97,3 @@ class BridgeActor(BuildingActor):
 @dataclass(frozen=True)
 class ObjectActor(UnitActor):
   """3do actor"""
-
-
-@export
-@dataclass(frozen=True)
-class UnknownActor(UnitActor):
-  ...
