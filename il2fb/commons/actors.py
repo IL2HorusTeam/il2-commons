@@ -50,7 +50,9 @@ class UnitActor(Actor):
 @export
 @dataclass(frozen=True)
 class AIAircraftActor(UnitActor):
-  ...
+  __slots__ = UnitActor.__slots__ + ["flight_index", ]
+
+  flight_index: int
 
 
 @export
